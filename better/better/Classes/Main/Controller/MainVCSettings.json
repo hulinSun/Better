@@ -1,0 +1,22 @@
+[
+ {
+    "vcName": "HomeViewController",
+    "imageName": "tab_首页"
+ },
+ {
+     "vcName": "DiscoverViewController",
+     "imageName": "tab_社区"
+ },
+ {
+     "vcName": "PhotoViewController",
+     "imageName": ""
+ },
+ {
+     "vcName": "MessageViewController",
+     "imageName": "tab_分类"
+ },
+ {
+     "vcName": "ProfileViewController",
+     "imageName": "tab_我的"
+ }
+ ]
