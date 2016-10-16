@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		35B04F73FA88D94014F9A101 /* Pods_better.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB14B8F409C13C2E9FA9B62E /* Pods_better.framework */; };
+		FE238B341DB367D40005C190 /* UINavigationBar+Awesome.m in Sources */ = {isa = PBXBuildFile; fileRef = FE238B331DB367D40005C190 /* UINavigationBar+Awesome.m */; };
 		FE63AE0E1DB079460047F66E /* MainTabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE63AE0D1DB079460047F66E /* MainTabbar.swift */; };
 		FE63AE101DB07A390047F66E /* MainVCSettings.json in Resources */ = {isa = PBXBuildFile; fileRef = FE63AE0F1DB07A390047F66E /* MainVCSettings.json */; };
 		FE63AE171DB087190047F66E /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE63AE161DB087190047F66E /* PhotoViewController.swift */; };
@@ -27,6 +28,9 @@
 		B4C7458C0027C12305DE018F /* Pods-better.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-better.release.xcconfig"; path = "Pods/Target Support Files/Pods-better/Pods-better.release.xcconfig"; sourceTree = "<group>"; };
 		BB14B8F409C13C2E9FA9B62E /* Pods_better.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_better.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D96CF921BA0BE72B38A3D872 /* Pods-better.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-better.debug.xcconfig"; path = "Pods/Target Support Files/Pods-better/Pods-better.debug.xcconfig"; sourceTree = "<group>"; };
+		FE238B321DB367D40005C190 /* UINavigationBar+Awesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+Awesome.h"; sourceTree = "<group>"; };
+		FE238B331DB367D40005C190 /* UINavigationBar+Awesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+Awesome.m"; sourceTree = "<group>"; };
+		FE238B871DB3718C0005C190 /* better-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "better-Bridging-Header.h"; sourceTree = "<group>"; };
 		FE63AE0D1DB079460047F66E /* MainTabbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabbar.swift; sourceTree = "<group>"; };
 		FE63AE0F1DB07A390047F66E /* MainVCSettings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MainVCSettings.json; sourceTree = "<group>"; };
 		FE63AE161DB087190047F66E /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
@@ -71,6 +75,15 @@
 				B4C7458C0027C12305DE018F /* Pods-better.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		FE238B311DB367D40005C190 /* LTNavigationBar+awesome */ = {
+			isa = PBXGroup;
+			children = (
+				FE238B321DB367D40005C190 /* UINavigationBar+Awesome.h */,
+				FE238B331DB367D40005C190 /* UINavigationBar+Awesome.m */,
+			);
+			path = "LTNavigationBar+awesome";
 			sourceTree = "<group>";
 		};
 		FE63AE111DB087050047F66E /* Photo */ = {
@@ -137,6 +150,7 @@
 				FEA0CA9B1DAF950A00BF6766 /* Classes */,
 				FE83A41F1DAF5987002BB862 /* AppDelegate.swift */,
 				FEA0CAB81DAF959100BF6766 /* AppDelegate+Extension.swift */,
+				FE238B871DB3718C0005C190 /* better-Bridging-Header.h */,
 				FE83A4261DAF5987002BB862 /* Assets.xcassets */,
 				FE83A4281DAF5987002BB862 /* LaunchScreen.storyboard */,
 				FE83A42B1DAF5987002BB862 /* Info.plist */,
@@ -381,6 +395,7 @@
 		FEA0CAB71DAF950A00BF6766 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				FE238B311DB367D40005C190 /* LTNavigationBar+awesome */,
 			);
 			path = Vendors;
 			sourceTree = "<group>";
@@ -518,6 +533,7 @@
 				FEA0CAC11DAF981000BF6766 /* DiscoverViewController.swift in Sources */,
 				FEA0CAC31DAF982000BF6766 /* HomeViewController.swift in Sources */,
 				FEA0CAC71DAF984100BF6766 /* ProfileViewController.swift in Sources */,
+				FE238B341DB367D40005C190 /* UINavigationBar+Awesome.m in Sources */,
 				FEA0CAC51DAF983500BF6766 /* MessageViewController.swift in Sources */,
 				FE63AE171DB087190047F66E /* PhotoViewController.swift in Sources */,
 			);
@@ -638,6 +654,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sqyc.better;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "better/better-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -652,6 +669,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sqyc.better;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "better/better-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

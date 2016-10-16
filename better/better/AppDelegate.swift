@@ -17,7 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         /// 初始化window
         setupWindow()
-        
         return true
     }
 
