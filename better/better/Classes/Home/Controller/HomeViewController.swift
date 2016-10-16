@@ -16,12 +16,39 @@ class HomeViewController: UIViewController {
         setupUI()
     }
 
-    // MARK: - UI
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableview.delegate = self
+        navigationController?.navigationBar.shadowImage = UIImage()
+        scrollViewDidScroll(tableview)
+    }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        tableview.delegate = nil
+        navigationController?.navigationBar.lt_reset()
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let color = UIColor.white
+        let offsetY = scrollView.contentOffset.y
+        if offsetY > CGFloat(50) {
+            let alph = min(1, 1 - (CGFloat(50) + CGFloat(64) - offsetY) / CGFloat(64))
+            navigationController?.navigationBar.lt_setBackgroundColor(color.withAlphaComponent(alph))
+        }else{
+            navigationController?.navigationBar.lt_setBackgroundColor(color.withAlphaComponent(0))
+        }
+    }
+    
+    
+    // MARK: - UI
+
     /// 初始化ui
     private func setupUI() {
         view.backgroundColor = UIColor.white
         view.addSubview(tableview)
+        tableview.tableHeaderView = headImage
+        navigationController?.navigationBar.lt_setBackgroundColor(UIColor.clear)
     }
     
     override func didReceiveMemoryWarning() {
@@ -30,11 +57,18 @@ class HomeViewController: UIViewController {
     }
     
     // MARK: - LAZY
-
+    
+    
+    private lazy var headImage: UIImageView = {
+        let i = UIImageView()
+        i.image = UIImage(named: "bg")
+        i.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 200)
+        return i
+    }()
     
     private lazy var tableview: UITableView = {
         
-        let i = UITableView(frame:CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height) , style: .plain)
+        let i = UITableView(frame:CGRect(x: 0, y: -64, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height) , style: .plain)
         i.delegate = self
         i.dataSource = self
         i.register(UITableViewCell.self, forCellReuseIdentifier: "x")
