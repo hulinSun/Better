@@ -35,8 +35,10 @@ class HomeViewController: UIViewController {
         if offsetY > CGFloat(50) {
             let alph = min(1, 1 - (CGFloat(50) + CGFloat(64) - offsetY) / CGFloat(64))
             navigationController?.navigationBar.lt_setBackgroundColor(color.withAlphaComponent(alph))
+            navigationController?.navigationBar.shadowImage = nil
         }else{
             navigationController?.navigationBar.lt_setBackgroundColor(color.withAlphaComponent(0))
+            navigationController?.navigationBar.shadowImage = UIImage()
         }
     }
     
