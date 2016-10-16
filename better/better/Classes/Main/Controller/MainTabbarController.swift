@@ -82,7 +82,7 @@ class MainTabbarController: UITabBarController {
             // 获取类名
             let nameClass : AnyClass? = NSClassFromString(nameSpace + "." + vcName)
                 if let vcClass = nameClass as? UIViewController.Type{
-                let vc = vcClass.init() // 创建自控制球
+                let vc = vcClass.init() // 创建子控制器
                 let imageName = item["imageName"]! as! String // as! 确定有值
                 
                 let normoalImage = UIImage(named: imageName)

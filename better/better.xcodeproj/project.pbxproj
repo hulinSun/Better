@@ -86,6 +86,14 @@
 			path = "LTNavigationBar+awesome";
 			sourceTree = "<group>";
 		};
+		FE238B881DB394E60005C190 /* config */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = config;
+			path = View/config;
+			sourceTree = "<group>";
+		};
 		FE63AE111DB087050047F66E /* Photo */ = {
 			isa = PBXGroup;
 			children = (
@@ -263,11 +271,11 @@
 		FEA0CAA71DAF950A00BF6766 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				FE238B881DB394E60005C190 /* config */,
 				FEA0CAA81DAF950A00BF6766 /* Controller */,
 				FEA0CAA91DAF950A00BF6766 /* Model */,
 				FEA0CAAA1DAF950A00BF6766 /* Tool */,
 				FEA0CAAB1DAF950A00BF6766 /* View */,
-				FEA0CAAC1DAF950A00BF6766 /* config */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -302,14 +310,6 @@
 				FE63AE0D1DB079460047F66E /* MainTabbar.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		FEA0CAAC1DAF950A00BF6766 /* config */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = config;
-			path = "未命名文件夹";
 			sourceTree = "<group>";
 		};
 		FEA0CAAD1DAF950A00BF6766 /* Message */ = {
