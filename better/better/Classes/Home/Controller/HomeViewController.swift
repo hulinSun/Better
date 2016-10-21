@@ -51,6 +51,13 @@ class HomeViewController: UIViewController {
         view.addSubview(tableview)
         tableview.tableHeaderView = headImage
         navigationController?.navigationBar.lt_setBackgroundColor(UIColor.clear)
+        
+        tableview.addBetterRefreshHeader {
+            print("下拉刷新")
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: { 
+                self.tableview.betterHeader?.endRefreshing()
+            })
+        }
     }
     
     override func didReceiveMemoryWarning() {

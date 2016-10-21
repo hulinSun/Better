@@ -6,3 +6,4 @@
 
 
 #import "UINavigationBar+Awesome.h"
+#import "CAShapeLayer+AnimateText.h"

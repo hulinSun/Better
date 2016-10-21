@@ -15,6 +15,10 @@
 		FE83A4201DAF5987002BB862 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE83A41F1DAF5987002BB862 /* AppDelegate.swift */; };
 		FE83A4271DAF5987002BB862 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE83A4261DAF5987002BB862 /* Assets.xcassets */; };
 		FE83A42A1DAF5987002BB862 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE83A4281DAF5987002BB862 /* LaunchScreen.storyboard */; };
+		FE8522241DB9E07F00C0E2C1 /* BetterRefreshFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8522211DB9E07F00C0E2C1 /* BetterRefreshFooter.swift */; };
+		FE8522251DB9E07F00C0E2C1 /* BetterRefreshHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8522221DB9E07F00C0E2C1 /* BetterRefreshHeader.swift */; };
+		FE8522261DB9E07F00C0E2C1 /* UIScrollView+Refresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8522231DB9E07F00C0E2C1 /* UIScrollView+Refresh.swift */; };
+		FE8522291DB9E0B000C0E2C1 /* CAShapeLayer+AnimateText.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8522281DB9E0B000C0E2C1 /* CAShapeLayer+AnimateText.m */; };
 		FEA0CAB91DAF959100BF6766 /* AppDelegate+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA0CAB81DAF959100BF6766 /* AppDelegate+Extension.swift */; };
 		FEA0CABD1DAF972A00BF6766 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA0CABC1DAF972A00BF6766 /* MainNavigationController.swift */; };
 		FEA0CABF1DAF97BE00BF6766 /* MainTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA0CABE1DAF97BE00BF6766 /* MainTabbarController.swift */; };
@@ -39,6 +43,11 @@
 		FE83A4261DAF5987002BB862 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FE83A4291DAF5987002BB862 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FE83A42B1DAF5987002BB862 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FE8522211DB9E07F00C0E2C1 /* BetterRefreshFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BetterRefreshFooter.swift; sourceTree = "<group>"; };
+		FE8522221DB9E07F00C0E2C1 /* BetterRefreshHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BetterRefreshHeader.swift; sourceTree = "<group>"; };
+		FE8522231DB9E07F00C0E2C1 /* UIScrollView+Refresh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Refresh.swift"; sourceTree = "<group>"; };
+		FE8522271DB9E0B000C0E2C1 /* CAShapeLayer+AnimateText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CAShapeLayer+AnimateText.h"; sourceTree = "<group>"; };
+		FE8522281DB9E0B000C0E2C1 /* CAShapeLayer+AnimateText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CAShapeLayer+AnimateText.m"; sourceTree = "<group>"; };
 		FEA0CAB81DAF959100BF6766 /* AppDelegate+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Extension.swift"; sourceTree = "<group>"; };
 		FEA0CABC1DAF972A00BF6766 /* MainNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
 		FEA0CABE1DAF97BE00BF6766 /* MainTabbarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabbarController.swift; sourceTree = "<group>"; };
@@ -164,6 +173,18 @@
 				FE83A42B1DAF5987002BB862 /* Info.plist */,
 			);
 			path = better;
+			sourceTree = "<group>";
+		};
+		FE8522201DB9E07F00C0E2C1 /* BetterRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				FE8522211DB9E07F00C0E2C1 /* BetterRefreshFooter.swift */,
+				FE8522221DB9E07F00C0E2C1 /* BetterRefreshHeader.swift */,
+				FE8522231DB9E07F00C0E2C1 /* UIScrollView+Refresh.swift */,
+				FE8522271DB9E0B000C0E2C1 /* CAShapeLayer+AnimateText.h */,
+				FE8522281DB9E0B000C0E2C1 /* CAShapeLayer+AnimateText.m */,
+			);
+			path = BetterRefresh;
 			sourceTree = "<group>";
 		};
 		FEA0CA9B1DAF950A00BF6766 /* Classes */ = {
@@ -395,6 +416,7 @@
 		FEA0CAB71DAF950A00BF6766 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				FE8522201DB9E07F00C0E2C1 /* BetterRefresh */,
 				FE238B311DB367D40005C190 /* LTNavigationBar+awesome */,
 			);
 			path = Vendors;
@@ -533,8 +555,12 @@
 				FEA0CAC11DAF981000BF6766 /* DiscoverViewController.swift in Sources */,
 				FEA0CAC31DAF982000BF6766 /* HomeViewController.swift in Sources */,
 				FEA0CAC71DAF984100BF6766 /* ProfileViewController.swift in Sources */,
+				FE8522241DB9E07F00C0E2C1 /* BetterRefreshFooter.swift in Sources */,
+				FE8522261DB9E07F00C0E2C1 /* UIScrollView+Refresh.swift in Sources */,
 				FE238B341DB367D40005C190 /* UINavigationBar+Awesome.m in Sources */,
 				FEA0CAC51DAF983500BF6766 /* MessageViewController.swift in Sources */,
+				FE8522291DB9E0B000C0E2C1 /* CAShapeLayer+AnimateText.m in Sources */,
+				FE8522251DB9E07F00C0E2C1 /* BetterRefreshHeader.swift in Sources */,
 				FE63AE171DB087190047F66E /* PhotoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
