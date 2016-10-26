@@ -19,6 +19,7 @@ class HttpTool: NSObject {
     /// - parameter parameters: 参数
     /// - parameter respone:    返回结果
     class func GET(url: String, parameters:[String: AnyObject], respone: @escaping(DataResponse<Any>) -> Void){
+        
         Alamofire.request(url, method: .get, parameters: parameters).responseJSON { (rsp) in
             respone(rsp)
         }
