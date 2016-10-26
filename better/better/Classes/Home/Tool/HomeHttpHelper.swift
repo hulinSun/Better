@@ -38,7 +38,7 @@ class HomeHttpHelper: NSObject {
 
     
     /// 主页 下拉刷新 home接口数据
-    class func requestHomeData(resultHandler: @escaping resultHandler){
+    class func requestHomeData(back: @escaping (HomePageModel) -> Void){
         
         let parame = [
             "app_id": "com.jzyd.Better",
@@ -59,12 +59,10 @@ class HomeHttpHelper: NSObject {
             "track_user_id": "2670024",
             "v": "14"]
         
-        /// 请求
-        HttpTool.GET(url: "http://open3.bantangapp.com/recommend/index", parameters: parame as [String : AnyObject]) { (response) in
-            resultHandler(response)
+        Alamofire.request("http://open3.bantangapp.com/recommend/index", method: .get, parameters: parame).responseObject { (response: DataResponse<HomePageModel>) in
+            if let homedata = response.result.value{
+                back(homedata) // 回调
+            }
         }
     }
-    
-    
-    
 }

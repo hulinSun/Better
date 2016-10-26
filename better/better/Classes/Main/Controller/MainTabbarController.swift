@@ -31,11 +31,11 @@ class MainTabbarController: UITabBarController {
         for item in tabBar.subviews{
             let className: AnyClass? = NSClassFromString("UITabBarButton")
             if item.isKind(of: className!){
-                for subItem in item.subviews{
+//                for subItem in item.subviews{
 //                    subItem.backgroundColor = UIColor.blue
-                    print(subItem.frame)
+//                    print(subItem.frame)
 //                   subItem.frame = CGRect(x: 0, y: 10, width: 25, height: 25)
-                }
+//                }
             }
         }
     }
