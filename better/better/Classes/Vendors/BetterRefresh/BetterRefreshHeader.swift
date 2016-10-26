@@ -17,8 +17,6 @@ import UIKit
     /// 刷新中的渐变 颜色
     private let ingColor =  UIColor.init(red: 234.0 / 255, green: 84.0 / 255, blue: 87.0 / 255, alpha: 0.3).cgColor
     
-    private let springDamping: CGFloat = 0.4  /// spring 系数
-    private let initialSpringVelocity: CGFloat = 0.8
     private let animationPacing = kCAMediaTimingFunctionEaseIn /// 动画参数
     private let kAnimationKey = "HeaderRefreshViewAnimationKey" ///光晕动画ID
     private let pHaloWidth = 2.5 ///  默认光晕宽度
@@ -108,14 +106,15 @@ import UIKit
     
     /// 停止刷新
     func endRefreshing() {
-        UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: springDamping, initialSpringVelocity: initialSpringVelocity, options: .curveLinear, animations: {
+        
+        UIView.animate(withDuration: 0.3, animations: {
             self.alpha = 0.0
             self.associatedScrollView.contentInset = UIEdgeInsets(top: self.originOffsetY + 0.1, left: 0, bottom: 0, right: 0)
-        }) { (_) in
-            self.alpha = 1.0
-            self.stopAnimating()
-            self.addPullAnimation()
-            self.pathLayer?.strokeEnd = 0.0
+            }) { (_) in
+                self.alpha = 1.0
+                self.stopAnimating()
+                self.addPullAnimation()
+                self.pathLayer?.strokeEnd = 0.0
         }
         
     }

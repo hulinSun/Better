@@ -26,6 +26,11 @@
 		FEA0CAC31DAF982000BF6766 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA0CAC21DAF982000BF6766 /* HomeViewController.swift */; };
 		FEA0CAC51DAF983500BF6766 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA0CAC41DAF983500BF6766 /* MessageViewController.swift */; };
 		FEA0CAC71DAF984100BF6766 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA0CAC61DAF984100BF6766 /* ProfileViewController.swift */; };
+		FEF0B55F1DC046C6000C632C /* String+Directionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF0B55E1DC046C6000C632C /* String+Directionary.swift */; };
+		FEF0B5611DC047E2000C632C /* UIBarButtonItem+category.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF0B5601DC047E2000C632C /* UIBarButtonItem+category.swift */; };
+		FEF0B5631DC0485E000C632C /* UIColor+random.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF0B5621DC0485E000C632C /* UIColor+random.swift */; };
+		FEF0B5691DC04939000C632C /* HttpTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF0B5681DC04939000C632C /* HttpTool.swift */; };
+		FEF0B56B1DC05B18000C632C /* HomeHttpHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF0B56A1DC05B18000C632C /* HomeHttpHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +60,11 @@
 		FEA0CAC21DAF982000BF6766 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		FEA0CAC41DAF983500BF6766 /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		FEA0CAC61DAF984100BF6766 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		FEF0B55E1DC046C6000C632C /* String+Directionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Directionary.swift"; sourceTree = "<group>"; };
+		FEF0B5601DC047E2000C632C /* UIBarButtonItem+category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+category.swift"; sourceTree = "<group>"; };
+		FEF0B5621DC0485E000C632C /* UIColor+random.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+random.swift"; sourceTree = "<group>"; };
+		FEF0B5681DC04939000C632C /* HttpTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpTool.swift; sourceTree = "<group>"; };
+		FEF0B56A1DC05B18000C632C /* HomeHttpHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeHttpHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +215,9 @@
 		FEA0CA9C1DAF950A00BF6766 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				FEF0B55E1DC046C6000C632C /* String+Directionary.swift */,
+				FEF0B5601DC047E2000C632C /* UIBarButtonItem+category.swift */,
+				FEF0B5621DC0485E000C632C /* UIColor+random.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -278,6 +291,7 @@
 		FEA0CAA51DAF950A00BF6766 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				FEF0B56A1DC05B18000C632C /* HomeHttpHelper.swift */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -321,6 +335,7 @@
 		FEA0CAAA1DAF950A00BF6766 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				FEF0B5681DC04939000C632C /* HttpTool.swift */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -550,6 +565,7 @@
 				FE83A4201DAF5987002BB862 /* AppDelegate.swift in Sources */,
 				FEA0CABD1DAF972A00BF6766 /* MainNavigationController.swift in Sources */,
 				FEA0CABF1DAF97BE00BF6766 /* MainTabbarController.swift in Sources */,
+				FEF0B55F1DC046C6000C632C /* String+Directionary.swift in Sources */,
 				FE63AE0E1DB079460047F66E /* MainTabbar.swift in Sources */,
 				FEA0CAB91DAF959100BF6766 /* AppDelegate+Extension.swift in Sources */,
 				FEA0CAC11DAF981000BF6766 /* DiscoverViewController.swift in Sources */,
@@ -557,10 +573,14 @@
 				FEA0CAC71DAF984100BF6766 /* ProfileViewController.swift in Sources */,
 				FE8522241DB9E07F00C0E2C1 /* BetterRefreshFooter.swift in Sources */,
 				FE8522261DB9E07F00C0E2C1 /* UIScrollView+Refresh.swift in Sources */,
+				FEF0B5611DC047E2000C632C /* UIBarButtonItem+category.swift in Sources */,
+				FEF0B5691DC04939000C632C /* HttpTool.swift in Sources */,
 				FE238B341DB367D40005C190 /* UINavigationBar+Awesome.m in Sources */,
 				FEA0CAC51DAF983500BF6766 /* MessageViewController.swift in Sources */,
 				FE8522291DB9E0B000C0E2C1 /* CAShapeLayer+AnimateText.m in Sources */,
+				FEF0B56B1DC05B18000C632C /* HomeHttpHelper.swift in Sources */,
 				FE8522251DB9E07F00C0E2C1 /* BetterRefreshHeader.swift in Sources */,
+				FEF0B5631DC0485E000C632C /* UIColor+random.swift in Sources */,
 				FE63AE171DB087190047F66E /* PhotoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

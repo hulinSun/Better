@@ -58,6 +58,10 @@ class HomeViewController: UIViewController {
                 self.tableview.betterHeader?.endRefreshing()
             })
         }
+        
+        HomeHttpHelper.requestHomeData { (response) in
+            print(response)
+        }
     }
     
     override func didReceiveMemoryWarning() {
