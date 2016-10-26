@@ -90,12 +90,18 @@ class HomeHttpHelper: NSObject {
             "v": "14"]
         
        
-        Alamofire.request( "http://open3.bantangapp.com/recommend/index", method: .get, parameters: parame).responseJSON { (rsp) in
-            
-            guard let JSON = rsp.result.value as? NSDictionary else{ return }
-            if let model = JSONDeserializer<HomePageModel>.deserializeFrom(dict: JSON){
-                print(model.data?.topic?.first?.title)
-                
+//        Alamofire.request( "http://open3.bantangapp.com/recommend/index", method: .get, parameters: parame).responseJSON { (rsp) in
+//            
+//            guard let JSON = rsp.result.value as? NSDictionary else{ return }
+//            if let model = JSONDeserializer<HomePageModel>.deserializeFrom(dict: JSON){
+//                print(model.data?.topic?.first?.title)
+//                
+//            }
+//        }
+        
+        Alamofire.request( "http://open3.bantangapp.com/recommend/index", method: .get, parameters: parame).responseString { (rsp) in
+            if let model = JSONDeserializer<HomePageModel>.deserializeFrom(json: rsp.result.value){
+                print(model)
             }
         }
     }
