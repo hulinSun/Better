@@ -8,10 +8,11 @@
 
 import UIKit
 
+import HandyJSON
 import ObjectMapper
 
 /// 话题的 账号模型
-class User: Mappable {
+class User: Mappable , HandyJSON {
     
     var user_id: String?  /// 用户id
     var nickname: String? /// 用户昵称
@@ -21,7 +22,6 @@ class User: Mappable {
     var post_count: String?/// 转发数
     
     required init?(map: Map){}
-    
     func mapping(map: Map) {
         user_id <- map["user_id"]
         nickname <- map["nickname"]
@@ -30,11 +30,14 @@ class User: Mappable {
         article_topic_count <- map["article_topic_count"]
         post_count <- map["post_count"]
     }
+    
+    
+    required init() {} /// 如果是结构体，这个都可以不写
 }
 
 
 /// 话题模型
-class Topic: Mappable {
+class Topic: Mappable  , HandyJSON {
     
     var id: String?
     var type: String?
@@ -51,7 +54,7 @@ class Topic: Mappable {
     var comments: String?
     var update_time: String?
     var user: User?
-    var pics: [[String: AnyObject]]?
+//    var pics: [[String: AnyObject]]?
     var channel: [String: AnyObject]?
     var video: [String: AnyObject]?
     
@@ -72,16 +75,18 @@ class Topic: Mappable {
         comments <- map["comments"]
         update_time <- map["update_time"]
         user <- map["user"]
-        pics <- map["pics"]
+//        pics <- map["pics"]
         channel <- map["channel"]
         video <- map["video"]
     }
+    
+    required init() {}
 }
 
 
 
 /// 首页轮播图对应的模型
-class Banner: Mappable {
+class Banner: Mappable , HandyJSON  {
     
     var id: String?
     var title: String?
@@ -114,12 +119,14 @@ class Banner: Mappable {
         photo_height <- map["photo_height"]
         is_show_icon <- map["is_show_icon"]
     }
+    
+    required init() {}
 }
 
 
-class HomeData: Mappable {
+class HomeData: Mappable , HandyJSON {
     
-    class InsertElement: Mappable {
+    class InsertElement: Mappable , HandyJSON{
         
         var  index: Double = 0
         var element_list: [Banner]?
@@ -129,9 +136,8 @@ class HomeData: Mappable {
             index <- map["index"]
             element_list <- map["element_list"]
         }
+        required init() {}
     }
-    
-    
     
     var topic: [Topic]?
     var append_extend: [String: AnyObject]?
@@ -140,7 +146,6 @@ class HomeData: Mappable {
     var insert_element: [InsertElement]?
     
     required init?(map: Map){}
-    
     func mapping(map: Map) {
         topic <- map["topic"]
         append_extend <- map["append_extend"]
@@ -148,13 +153,15 @@ class HomeData: Mappable {
         category_element <- map["category_element"]
         insert_element <- map["insert_element"]
     }
+    
+    required init() {}
 }
 
 
 
 
 /// 最终的大模型
-class HomePageModel: Mappable {
+class HomePageModel: Mappable , HandyJSON {
     
     var status: String?
     var msg: String?
@@ -169,6 +176,8 @@ class HomePageModel: Mappable {
         ts <- map["ts"]
         data <- map["data"]
     }
+    
+    required init() {}
 }
 
 

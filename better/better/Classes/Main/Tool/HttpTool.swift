@@ -44,13 +44,13 @@ class HttpTool: NSObject {
     /// - parameter respone:    返回结果
     class func GET(url: URLConvertible, parameters:[String: AnyObject], respone: @escaping(DataResponse<Any>) -> Void){
         
-//        Alamofire.request(url, method: .get, parameters: parameters).responseJSON { (rsp) in
-//            respone(rsp)
-//        }
-        
-        Alamofire.request(url, method: .get, parameters: parameters,  headers: httpHeader()).responseJSON { rsp in
+        Alamofire.request(url, method: .get, parameters: parameters).responseJSON { (rsp) in
             respone(rsp)
         }
+        
+//        Alamofire.request(url, method: .get, parameters: parameters,  headers: httpHeader()).responseJSON { rsp in
+//            respone(rsp)
+//        }
     }
     
     
