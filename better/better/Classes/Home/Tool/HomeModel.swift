@@ -8,9 +8,10 @@
 
 import UIKit
 
+import ObjectMapper
 
 /// 话题的 账号模型
-class User: NSObject {
+class User: Mappable {
     
     var user_id: String?  /// 用户id
     var nickname: String? /// 用户昵称
@@ -19,11 +20,21 @@ class User: NSObject {
     var article_topic_count: String? /// 话题个数
     var post_count: String?/// 转发数
     
+    required init?(map: Map){}
+    
+    func mapping(map: Map) {
+        user_id <- map["user_id"]
+        nickname <- map["nickname"]
+        avatar <- map["avatar"]
+        is_official <- map["is_official"]
+        article_topic_count <- map["article_topic_count"]
+        post_count <- map["post_count"]
+    }
 }
 
 
 /// 话题模型
-class Topic: NSObject {
+class Topic: Mappable {
     
     var id: String?
     var type: String?
@@ -43,12 +54,34 @@ class Topic: NSObject {
     var pics: [[String: AnyObject]]?
     var channel: [String: AnyObject]?
     var video: [String: AnyObject]?
+    
+    required init?(map: Map){}
+    func mapping(map: Map) {
+        id <- map["id"]
+        type <- map["type"]
+        type_id <- map["type_id"]
+        title <- map["title"]
+        subtitle <- map["subtitle"]
+        pic <- map["pic"]
+        is_show_like <- map["is_show_like"]
+        is_recommend <- map["is_recommend"]
+        create_time_str <- map["create_time_str"]
+        islike <- map["islike"]
+        likes <- map["likes"]
+        views <- map["views"]
+        comments <- map["comments"]
+        update_time <- map["update_time"]
+        user <- map["user"]
+        pics <- map["pics"]
+        channel <- map["channel"]
+        video <- map["video"]
+    }
 }
 
 
 
 /// 首页轮播图对应的模型
-class Banner: NSObject {
+class Banner: Mappable {
     
     var id: String?
     var title: String?
@@ -64,4 +97,86 @@ class Banner: NSObject {
     var photo_height: String?
     var is_show_icon: Bool = false
     
+    required init?(map: Map){}
+    
+    func mapping(map: Map) {
+        id <- map["id"]
+        title <- map["title"]
+        sub_title <- map["sub_title"]
+        type <- map["type"]
+        topic_type <- map["topic_type"]
+        photo <- map["photo"]
+        extend <- map["extend"]
+        browser_url <- map["browser_url"]
+        index <- map["index"]
+        parent_id <- map["parent_id"]
+        photo_width <- map["photo_width"]
+        photo_height <- map["photo_height"]
+        is_show_icon <- map["is_show_icon"]
+    }
 }
+
+
+class HomeData: Mappable {
+    
+    class InsertElement: Mappable {
+        
+        var  index: Double = 0
+        var element_list: [Banner]?
+        
+        required init?(map: Map){}
+        func mapping(map: Map) {
+            index <- map["index"]
+            element_list <- map["element_list"]
+        }
+    }
+    
+    
+    
+    var topic: [Topic]?
+    var append_extend: [String: AnyObject]?
+    var banner : [Banner]?
+    var category_element: [Banner]?
+    var insert_element: [InsertElement]?
+    
+    required init?(map: Map){}
+    
+    func mapping(map: Map) {
+        topic <- map["topic"]
+        append_extend <- map["append_extend"]
+        banner <- map["banner"]
+        category_element <- map["category_element"]
+        insert_element <- map["insert_element"]
+    }
+}
+
+
+
+
+/// 最终的大模型
+class HomePageModel: Mappable {
+    
+    var status: String?
+    var msg: String?
+    var ts: Double = 0
+    var data :HomeData?
+    
+    required init?(map: Map){}
+    
+    func mapping(map: Map) {
+        status <- map["status"]
+        msg <- map["msg"]
+        ts <- map["ts"]
+        data <- map["data"]
+    }
+}
+
+
+
+
+
+
+
+
+
+
