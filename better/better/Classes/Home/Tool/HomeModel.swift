@@ -9,7 +9,7 @@
 import UIKit
 
 
-/// 账号模型
+/// 话题的 账号模型
 class User: NSObject {
     
     var user_id: String?  /// 用户id

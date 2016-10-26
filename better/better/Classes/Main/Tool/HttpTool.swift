@@ -9,6 +9,7 @@
 import UIKit
 
 import Alamofire
+import AlamofireObjectMapper
 
 
 class HttpTool: NSObject {
