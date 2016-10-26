@@ -31,6 +31,7 @@
 		FEF0B5631DC0485E000C632C /* UIColor+random.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF0B5621DC0485E000C632C /* UIColor+random.swift */; };
 		FEF0B5691DC04939000C632C /* HttpTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF0B5681DC04939000C632C /* HttpTool.swift */; };
 		FEF0B56B1DC05B18000C632C /* HomeHttpHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF0B56A1DC05B18000C632C /* HomeHttpHelper.swift */; };
+		FEF0B56D1DC07C23000C632C /* Topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF0B56C1DC07C23000C632C /* Topic.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +66,7 @@
 		FEF0B5621DC0485E000C632C /* UIColor+random.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+random.swift"; sourceTree = "<group>"; };
 		FEF0B5681DC04939000C632C /* HttpTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpTool.swift; sourceTree = "<group>"; };
 		FEF0B56A1DC05B18000C632C /* HomeHttpHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeHttpHelper.swift; sourceTree = "<group>"; };
+		FEF0B56C1DC07C23000C632C /* Topic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Topic.swift; path = better/Classes/Home/Tool/Topic.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -284,6 +286,7 @@
 		FEA0CAA41DAF950A00BF6766 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FEF0B56C1DC07C23000C632C /* Topic.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -575,6 +578,7 @@
 				FE8522261DB9E07F00C0E2C1 /* UIScrollView+Refresh.swift in Sources */,
 				FEF0B5611DC047E2000C632C /* UIBarButtonItem+category.swift in Sources */,
 				FEF0B5691DC04939000C632C /* HttpTool.swift in Sources */,
+				FEF0B56D1DC07C23000C632C /* Topic.swift in Sources */,
 				FE238B341DB367D40005C190 /* UINavigationBar+Awesome.m in Sources */,
 				FEA0CAC51DAF983500BF6766 /* MessageViewController.swift in Sources */,
 				FE8522291DB9E0B000C0E2C1 /* CAShapeLayer+AnimateText.m in Sources */,
