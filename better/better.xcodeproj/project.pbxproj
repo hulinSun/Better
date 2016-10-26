@@ -35,6 +35,7 @@
 		FEF0B5731DC087B8000C632C /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF0B5721DC087B8000C632C /* UIView+Extension.swift */; };
 		FEF0B5751DC08A9B000C632C /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF0B5741DC08A9B000C632C /* String+Extension.swift */; };
 		FEF0B5771DC08BD7000C632C /* GCD+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF0B5761DC08BD7000C632C /* GCD+Extension.swift */; };
+		FEF0B5791DC0A53E000C632C /* DiscoverModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF0B5781DC0A53E000C632C /* DiscoverModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +74,7 @@
 		FEF0B5721DC087B8000C632C /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		FEF0B5741DC08A9B000C632C /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		FEF0B5761DC08BD7000C632C /* GCD+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GCD+Extension.swift"; sourceTree = "<group>"; };
+		FEF0B5781DC0A53E000C632C /* DiscoverModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DiscoverModel.swift; path = better/Classes/Category/DiscoverModel.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -255,6 +257,7 @@
 		FEA0CA9F1DAF950A00BF6766 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FEF0B5781DC0A53E000C632C /* DiscoverModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -589,6 +592,7 @@
 				FEF0B5751DC08A9B000C632C /* String+Extension.swift in Sources */,
 				FEF0B5611DC047E2000C632C /* UIBarButtonItem+category.swift in Sources */,
 				FEF0B5691DC04939000C632C /* HttpTool.swift in Sources */,
+				FEF0B5791DC0A53E000C632C /* DiscoverModel.swift in Sources */,
 				FEF0B56D1DC07C23000C632C /* HomeModel.swift in Sources */,
 				FE238B341DB367D40005C190 /* UINavigationBar+Awesome.m in Sources */,
 				FEA0CAC51DAF983500BF6766 /* MessageViewController.swift in Sources */,
