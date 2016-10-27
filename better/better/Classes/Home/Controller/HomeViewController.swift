@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import AlamofireObjectMapper
+import Kingfisher
 
 class HomeViewController: UIViewController {
 
@@ -62,8 +63,21 @@ class HomeViewController: UIViewController {
         }
         
         HomeHttpHelper.requestHomeData { (model) in
-            print(model)
+//            guard let str = model.data?.banner?.first?.photo else{ return }
+//            let url = URL(string: str)
+//            self.headImage.kf.setImage(with: url)
+            if let ban = model.data?.banner {
+                let b = ban.flatMap{$0.photo}
+            let p = WirelessPictureView.init(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 180), networkImageArray: b)
+            self.view.addSubview(p)
+            }
+            
         }
+        
+        view.subviews.forEach { (v) in
+            v.removeFromSuperview()
+        }
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -113,7 +127,6 @@ extension TableViewDataSource : UITableViewDelegate , UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 20
     }
-    
     
 }
 
