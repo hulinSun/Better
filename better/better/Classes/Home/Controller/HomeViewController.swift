@@ -61,13 +61,9 @@ class HomeViewController: UIViewController {
             })
         }
         
-        HomeHttpHelper.requestHomeData1 { (model) in
+        HomeHttpHelper.requestHomeData { (model) in
             print(model)
         }
-        
-//        HomeHttpHelper.requestHomeData { (model) in
-//            print(model)
-//        }
     }
     
     override func didReceiveMemoryWarning() {

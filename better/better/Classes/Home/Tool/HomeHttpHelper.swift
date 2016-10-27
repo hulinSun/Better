@@ -42,24 +42,17 @@ class HomeHttpHelper: NSObject {
         realP["last_get_time"] = "1476607050"
         realP["page"] = "0"
         realP["pagesize"] = "20"
-        
         let parame =  (realP as NSDictionary) as! [String: String]
+        
+        /// 方法1 ObjcMapper 处理
+        /**
         Alamofire.request("http://open3.bantangapp.com/recommend/index", method: .get, parameters: parame ).responseObject { (response: DataResponse<HomePageModel>) in
             if let homedata = response.result.value{
                 back(homedata) // 回调
             }
-        }
-    }
-    
-    
-    class func requestHomeData1(back: @escaping (HomePageModel?) -> Void){
+        }*/
         
-        let realP = NSMutableDictionary.init(dictionary: constParame)
-        realP["last_get_time"] = "1476607050"
-        realP["page"] = "0"
-        realP["pagesize"] = "20"
-        let parame =  (realP as NSDictionary) as! [String: String]
-        
+        /// 方法2  handyJosn 处理
         Alamofire.request( "http://open3.bantangapp.com/recommend/index", method: .get, parameters: parame).responseString { (rsp) in
             if let model = JSONDeserializer<HomePageModel>.deserializeFrom(json: rsp.result.value){
                 back(model)
