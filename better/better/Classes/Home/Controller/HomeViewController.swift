@@ -68,7 +68,9 @@ class HomeViewController: UIViewController {
 //            self.headImage.kf.setImage(with: url)
             if let ban = model.data?.banner {
                 let b = ban.flatMap{$0.photo}
+                
             let p = WirelessPictureView.init(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 180), networkImageArray: b)
+                p.autoScroll = true
             self.view.addSubview(p)
             }
             

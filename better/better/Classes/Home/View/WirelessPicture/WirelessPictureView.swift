@@ -47,12 +47,12 @@ class WirelessPictureView: UIView , PageControlAlimentProtocol , WirelessPicture
         adjustPageControlPlace(pageControl: pageControl)
     }
     
-    override func willMove(toSuperview newSuperview: UIView?) {
-        super.willMove(toSuperview: newSuperview)
-        if let _ = newSuperview {
-            stopTimer()
-        }
-    }
+//    override func willMove(toSuperview newSuperview: UIView?) {
+//        super.willMove(toSuperview: newSuperview)
+//        if let _ = newSuperview {
+//            stopTimer()
+//        }
+//    }
     
     // MARK: - 懒加载
     fileprivate lazy var pageControl: UIPageControl = {
@@ -151,7 +151,7 @@ class WirelessPictureView: UIView , PageControlAlimentProtocol , WirelessPicture
     
     /// 开启无限滚动模式后,真实的cell数量
     var actualItemCount: Int = 0 // Protocol提供
-    let imageTimes: Int = 50   // Protocol提供的不能写private
+    let imageTimes: Int = 4   // Protocol提供的不能写private
     internal var timer: Timer?
     
     /// 加载网络图片使用的占位图片
@@ -223,11 +223,16 @@ extension CollectionViewProtocol: UICollectionViewDelegate , UICollectionViewDat
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.imageInfo.imageArray.count
+        return self.actualItemCount
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PictureCell", for: indexPath) as! PictureCell
-        cell.imageSource = self.imageInfo.imageArray[indexPath.item]
+        
+        let idx = Int(Double(indexPath.item).truncatingRemainder(dividingBy: Double(self.imageInfo.imageArray.count)))
+        
+        
+        cell.imageSource = self.imageInfo.imageArray[idx]
+        
         cell.placeHolderImage = self.placeholderImage
         cell.pictureContentMode = self.pictureContentMode ?? .scaleAspectFill
         return cell
