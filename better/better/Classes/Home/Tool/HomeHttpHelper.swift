@@ -101,7 +101,7 @@ class HomeHttpHelper: NSObject {
         
         Alamofire.request( "http://open3.bantangapp.com/recommend/index", method: .get, parameters: parame).responseString { (rsp) in
             if let model = JSONDeserializer<HomePageModel>.deserializeFrom(json: rsp.result.value){
-                print(model)
+                back(model)
             }
         }
     }

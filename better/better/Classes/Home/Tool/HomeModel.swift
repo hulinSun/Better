@@ -54,7 +54,7 @@ class Topic: Mappable  , HandyJSON {
     var comments: String?
     var update_time: String?
     var user: User?
-//    var pics: [[String: AnyObject]]?
+    var pics: [Pics] = [Pics]()
     var channel: [String: AnyObject]?
     var video: [String: AnyObject]?
     
@@ -75,7 +75,7 @@ class Topic: Mappable  , HandyJSON {
         comments <- map["comments"]
         update_time <- map["update_time"]
         user <- map["user"]
-//        pics <- map["pics"]
+        pics <- map["pics"]
         channel <- map["channel"]
         video <- map["video"]
     }
