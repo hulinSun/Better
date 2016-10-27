@@ -26,41 +26,25 @@ class HomeHttpHelper: NSObject {
         "client_id": "bt_app_ios",
         "client_secret": "9c1e6634ce1c5098e056628cd66a17a5",
         "device_token": "711214f0edd8fe4444aa69d56119e0bbf83bc1675292e4b9e81b0a83a7cdff0a",
-        "last_get_time": "1476607050",
         "oauth_token": "1cfdf7dc28066c076c23269874460b58",
         "os_versions": "10.0.2",
-        "page": "0",
-        "pagesize" : "20",
         "screensize": "750",
         "track_device_info": "iPhone7%2C2",
         "track_deviceid": "18B31DD0-2B1E-49A9-A78A-763C77FD65BD",
         "track_user_id": "2670024",
         "v": "14"]
-
+    
     
     /// 主页 下拉刷新 home接口数据
     class func requestHomeData(back: @escaping (HomePageModel) -> Void){
         
-        let parame = [
-            "app_id": "com.jzyd.Better",
-            "app_installtime": "1476251286",
-            "app_versions": "1.5.1",
-            "channel_name": "appStore",
-            "client_id": "bt_app_ios",
-            "client_secret": "9c1e6634ce1c5098e056628cd66a17a5",
-            "device_token": "711214f0edd8fe4444aa69d56119e0bbf83bc1675292e4b9e81b0a83a7cdff0a",
-            "last_get_time": "1476607050",
-            "oauth_token": "1cfdf7dc28066c076c23269874460b58",
-            "os_versions": "10.0.2",
-            "page": "0",
-            "pagesize" : "20",
-            "screensize": "750",
-            "track_device_info": "iPhone7%2C2",
-            "track_deviceid": "18B31DD0-2B1E-49A9-A78A-763C77FD65BD",
-            "track_user_id": "2670024",
-            "v": "14"]
+        let realP = NSMutableDictionary.init(dictionary: constParame)
+        realP["last_get_time"] = "1476607050"
+        realP["page"] = "0"
+        realP["pagesize"] = "20"
         
-        Alamofire.request("http://open3.bantangapp.com/recommend/index", method: .get, parameters: parame).responseObject { (response: DataResponse<HomePageModel>) in
+        let parame =  (realP as NSDictionary) as! [String: String]
+        Alamofire.request("http://open3.bantangapp.com/recommend/index", method: .get, parameters: parame ).responseObject { (response: DataResponse<HomePageModel>) in
             if let homedata = response.result.value{
                 back(homedata) // 回调
             }
@@ -70,34 +54,11 @@ class HomeHttpHelper: NSObject {
     
     class func requestHomeData1(back: @escaping (HomePageModel?) -> Void){
         
-        let parame = [
-            "app_id": "com.jzyd.Better",
-            "app_installtime": "1476251286",
-            "app_versions": "1.5.1",
-            "channel_name": "appStore",
-            "client_id": "bt_app_ios",
-            "client_secret": "9c1e6634ce1c5098e056628cd66a17a5",
-            "device_token": "711214f0edd8fe4444aa69d56119e0bbf83bc1675292e4b9e81b0a83a7cdff0a",
-            "last_get_time": "1476607050",
-            "oauth_token": "1cfdf7dc28066c076c23269874460b58",
-            "os_versions": "10.0.2",
-            "page": "0",
-            "pagesize" : "20",
-            "screensize": "750",
-            "track_device_info": "iPhone7%2C2",
-            "track_deviceid": "18B31DD0-2B1E-49A9-A78A-763C77FD65BD",
-            "track_user_id": "2670024",
-            "v": "14"]
-        
-       
-//        Alamofire.request( "http://open3.bantangapp.com/recommend/index", method: .get, parameters: parame).responseJSON { (rsp) in
-//            
-//            guard let JSON = rsp.result.value as? NSDictionary else{ return }
-//            if let model = JSONDeserializer<HomePageModel>.deserializeFrom(dict: JSON){
-//                print(model.data?.topic?.first?.title)
-//                
-//            }
-//        }
+        let realP = NSMutableDictionary.init(dictionary: constParame)
+        realP["last_get_time"] = "1476607050"
+        realP["page"] = "0"
+        realP["pagesize"] = "20"
+        let parame =  (realP as NSDictionary) as! [String: String]
         
         Alamofire.request( "http://open3.bantangapp.com/recommend/index", method: .get, parameters: parame).responseString { (rsp) in
             if let model = JSONDeserializer<HomePageModel>.deserializeFrom(json: rsp.result.value){

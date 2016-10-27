@@ -64,6 +64,10 @@ class HomeViewController: UIViewController {
         HomeHttpHelper.requestHomeData1 { (model) in
             print(model)
         }
+        
+//        HomeHttpHelper.requestHomeData { (model) in
+//            print(model)
+//        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -72,7 +76,6 @@ class HomeViewController: UIViewController {
     }
     
     // MARK: - LAZY
-    
     
     private lazy var headImage: UIImageView = {
         let i = UIImageView()
