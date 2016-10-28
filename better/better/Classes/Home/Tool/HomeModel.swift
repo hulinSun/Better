@@ -45,6 +45,7 @@ class Topic: Mappable  , HandyJSON {
     var title: String?
     var subtitle: String?
     var pic: String?
+    var desc: String?
     var is_show_like: Bool = false
     var is_recommend: Bool = false
     var create_time_str: String?

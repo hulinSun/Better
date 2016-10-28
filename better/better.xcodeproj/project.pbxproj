@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		35B04F73FA88D94014F9A101 /* Pods_better.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB14B8F409C13C2E9FA9B62E /* Pods_better.framework */; };
 		FE238B341DB367D40005C190 /* UINavigationBar+Awesome.m in Sources */ = {isa = PBXBuildFile; fileRef = FE238B331DB367D40005C190 /* UINavigationBar+Awesome.m */; };
+		FE2DA7AE1DC3321D007347C0 /* DiscoverHttpHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2DA7AD1DC3321D007347C0 /* DiscoverHttpHelper.swift */; };
 		FE558CAA1DC2F51C00AC15B3 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE558CA91DC2F51C00AC15B3 /* Theme.swift */; };
 		FE558CAC1DC2FA3E00AC15B3 /* UIBarButtonItem+item.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE558CAB1DC2FA3E00AC15B3 /* UIBarButtonItem+item.swift */; };
 		FE558CAE1DC2FC9B00AC15B3 /* DiscoverTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE558CAD1DC2FC9B00AC15B3 /* DiscoverTitleView.swift */; };
@@ -40,6 +41,8 @@
 		FEF0B5751DC08A9B000C632C /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF0B5741DC08A9B000C632C /* String+Extension.swift */; };
 		FEF0B5771DC08BD7000C632C /* GCD+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF0B5761DC08BD7000C632C /* GCD+Extension.swift */; };
 		FEF0B5791DC0A53E000C632C /* DiscoverModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF0B5781DC0A53E000C632C /* DiscoverModel.swift */; };
+		FEF551E71DC343460044F1D5 /* DiscoverArticleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF551E51DC343460044F1D5 /* DiscoverArticleCell.swift */; };
+		FEF551E81DC343460044F1D5 /* DiscoverArticleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEF551E61DC343460044F1D5 /* DiscoverArticleCell.xib */; };
 		FEFE5C1C1DC2000F00AD5D5E /* PictureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFE5C191DC2000F00AD5D5E /* PictureCell.swift */; };
 		FEFE5C1D1DC2000F00AD5D5E /* PictureProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFE5C1A1DC2000F00AD5D5E /* PictureProtocol.swift */; };
 		FEFE5C1E1DC2000F00AD5D5E /* WirelessPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFE5C1B1DC2000F00AD5D5E /* WirelessPictureView.swift */; };
@@ -52,6 +55,7 @@
 		FE238B321DB367D40005C190 /* UINavigationBar+Awesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+Awesome.h"; sourceTree = "<group>"; };
 		FE238B331DB367D40005C190 /* UINavigationBar+Awesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+Awesome.m"; sourceTree = "<group>"; };
 		FE238B871DB3718C0005C190 /* better-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "better-Bridging-Header.h"; sourceTree = "<group>"; };
+		FE2DA7AD1DC3321D007347C0 /* DiscoverHttpHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverHttpHelper.swift; sourceTree = "<group>"; };
 		FE558CA91DC2F51C00AC15B3 /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		FE558CAB1DC2FA3E00AC15B3 /* UIBarButtonItem+item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+item.swift"; sourceTree = "<group>"; };
 		FE558CAD1DC2FC9B00AC15B3 /* DiscoverTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverTitleView.swift; sourceTree = "<group>"; };
@@ -86,6 +90,8 @@
 		FEF0B5741DC08A9B000C632C /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		FEF0B5761DC08BD7000C632C /* GCD+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GCD+Extension.swift"; sourceTree = "<group>"; };
 		FEF0B5781DC0A53E000C632C /* DiscoverModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DiscoverModel.swift; path = better/Classes/Category/DiscoverModel.swift; sourceTree = SOURCE_ROOT; };
+		FEF551E51DC343460044F1D5 /* DiscoverArticleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverArticleCell.swift; sourceTree = "<group>"; };
+		FEF551E61DC343460044F1D5 /* DiscoverArticleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DiscoverArticleCell.xib; sourceTree = "<group>"; };
 		FEFE5C191DC2000F00AD5D5E /* PictureCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureCell.swift; sourceTree = "<group>"; };
 		FEFE5C1A1DC2000F00AD5D5E /* PictureProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureProtocol.swift; sourceTree = "<group>"; };
 		FEFE5C1B1DC2000F00AD5D5E /* WirelessPictureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WirelessPictureView.swift; sourceTree = "<group>"; };
@@ -280,6 +286,7 @@
 		FEA0CAA01DAF950A00BF6766 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				FE2DA7AD1DC3321D007347C0 /* DiscoverHttpHelper.swift */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -289,6 +296,8 @@
 			children = (
 				FE558CAD1DC2FC9B00AC15B3 /* DiscoverTitleView.swift */,
 				FE558CB11DC2FCB900AC15B3 /* DiscoverTitleView.xib */,
+				FEF551E51DC343460044F1D5 /* DiscoverArticleCell.swift */,
+				FEF551E61DC343460044F1D5 /* DiscoverArticleCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -548,6 +557,7 @@
 				FE83A4271DAF5987002BB862 /* Assets.xcassets in Resources */,
 				FE558CB21DC2FCB900AC15B3 /* DiscoverTitleView.xib in Resources */,
 				FE63AE101DB07A390047F66E /* MainVCSettings.json in Resources */,
+				FEF551E81DC343460044F1D5 /* DiscoverArticleCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -616,6 +626,7 @@
 				FE63AE0E1DB079460047F66E /* MainTabbar.swift in Sources */,
 				FEA0CAB91DAF959100BF6766 /* AppDelegate+Extension.swift in Sources */,
 				FEA0CAC11DAF981000BF6766 /* DiscoverViewController.swift in Sources */,
+				FEF551E71DC343460044F1D5 /* DiscoverArticleCell.swift in Sources */,
 				FEA0CAC31DAF982000BF6766 /* HomeViewController.swift in Sources */,
 				FEA0CAC71DAF984100BF6766 /* ProfileViewController.swift in Sources */,
 				FE8522241DB9E07F00C0E2C1 /* BetterRefreshFooter.swift in Sources */,
@@ -624,6 +635,7 @@
 				FEFE5C1D1DC2000F00AD5D5E /* PictureProtocol.swift in Sources */,
 				FEF0B5611DC047E2000C632C /* UIBarButtonItem+category.swift in Sources */,
 				FEF0B5691DC04939000C632C /* HttpTool.swift in Sources */,
+				FE2DA7AE1DC3321D007347C0 /* DiscoverHttpHelper.swift in Sources */,
 				FEF0B5791DC0A53E000C632C /* DiscoverModel.swift in Sources */,
 				FEF0B56D1DC07C23000C632C /* HomeModel.swift in Sources */,
 				FE238B341DB367D40005C190 /* UINavigationBar+Awesome.m in Sources */,

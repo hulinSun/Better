@@ -92,7 +92,6 @@ class HomeViewController: UIViewController {
     
     private lazy var tableview: UITableView = {
         
-        
         let i = UITableView(frame:CGRect(x: 0, y: -64, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height) , style: .plain)
         i.delegate = self
         i.dataSource = self

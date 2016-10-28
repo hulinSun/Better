@@ -86,6 +86,20 @@ class Article: HandyJSON {
 }
 
 
+class DiscoverTopic: HandyJSON {
+    
+    class DiscoverTopicData: HandyJSON {
+        var topic: [Topic]?
+        required init() {}
+    }
+    
+    var status: String?
+    var msg: String?
+    var ts:  String?
+    var  data: DiscoverTopicData?
+    required init() {}
+}
+
 
 
 
