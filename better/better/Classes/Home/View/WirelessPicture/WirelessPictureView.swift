@@ -151,7 +151,7 @@ class WirelessPictureView: UIView , PageControlAlimentProtocol , WirelessPicture
     
     /// 开启无限滚动模式后,真实的cell数量
     var actualItemCount: Int = 0 // Protocol提供
-    let imageTimes: Int = 4   // Protocol提供的不能写private
+    let imageTimes: Int = 50  // Protocol提供的不能写private
     internal var timer: Timer?
     
     /// 加载网络图片使用的占位图片
@@ -159,7 +159,6 @@ class WirelessPictureView: UIView , PageControlAlimentProtocol , WirelessPicture
     /// 图片的对齐模式
     var pictureContentMode: UIViewContentMode?
 
-    
     // MARK: - 私有属性
     fileprivate var imageInfo: ImageInfo!
     
@@ -260,8 +259,6 @@ extension WirelessPictureView: UIScrollViewDelegate{
         let offsetIndex = self.collectionView.contentOffset.x / self.pictureLayout.itemSize.width
         
         let currentIndex = Int((offsetIndex.truncatingRemainder(dividingBy: CGFloat(self.imageInfo.imageArray.count))) + 0.5)
-        
-//        let currentIndex = Int(offsetIndex / CGFloat(self.imageInfo!.imageArray.count) + 0.5)
         
         pageControl.currentPage = currentIndex == self.imageInfo!.imageArray.count ? 0 :currentIndex
     }

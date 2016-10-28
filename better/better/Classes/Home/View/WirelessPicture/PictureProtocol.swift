@@ -91,11 +91,7 @@ extension WirelessPictureProtocol where Self : UIView  {
         guard actualItemCount != 0 else { return }
         
         let flowLayout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
-        print(collectionView.contentOffset.x )
         let currentIndex = Int(collectionView.contentOffset.x / flowLayout.itemSize.width)
-        
-        print(currentIndex)
-        
         let nextIndex = currentIndex + 1
         if nextIndex >= actualItemCount {
             showFirstImagePageInCollectionView(collectionView: collectionView)

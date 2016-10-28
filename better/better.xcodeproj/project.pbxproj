@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		35B04F73FA88D94014F9A101 /* Pods_better.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB14B8F409C13C2E9FA9B62E /* Pods_better.framework */; };
 		FE238B341DB367D40005C190 /* UINavigationBar+Awesome.m in Sources */ = {isa = PBXBuildFile; fileRef = FE238B331DB367D40005C190 /* UINavigationBar+Awesome.m */; };
+		FE558CAA1DC2F51C00AC15B3 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE558CA91DC2F51C00AC15B3 /* Theme.swift */; };
 		FE63AE0E1DB079460047F66E /* MainTabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE63AE0D1DB079460047F66E /* MainTabbar.swift */; };
 		FE63AE101DB07A390047F66E /* MainVCSettings.json in Resources */ = {isa = PBXBuildFile; fileRef = FE63AE0F1DB07A390047F66E /* MainVCSettings.json */; };
 		FE63AE171DB087190047F66E /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE63AE161DB087190047F66E /* PhotoViewController.swift */; };
@@ -48,6 +49,7 @@
 		FE238B321DB367D40005C190 /* UINavigationBar+Awesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+Awesome.h"; sourceTree = "<group>"; };
 		FE238B331DB367D40005C190 /* UINavigationBar+Awesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+Awesome.m"; sourceTree = "<group>"; };
 		FE238B871DB3718C0005C190 /* better-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "better-Bridging-Header.h"; sourceTree = "<group>"; };
+		FE558CA91DC2F51C00AC15B3 /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		FE63AE0D1DB079460047F66E /* MainTabbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabbar.swift; sourceTree = "<group>"; };
 		FE63AE0F1DB07A390047F66E /* MainVCSettings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MainVCSettings.json; sourceTree = "<group>"; };
 		FE63AE161DB087190047F66E /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
@@ -121,12 +123,12 @@
 			path = "LTNavigationBar+awesome";
 			sourceTree = "<group>";
 		};
-		FE238B881DB394E60005C190 /* config */ = {
+		FE558CA81DC2F4DD00AC15B3 /* config */ = {
 			isa = PBXGroup;
 			children = (
+				FE558CA91DC2F51C00AC15B3 /* Theme.swift */,
 			);
-			name = config;
-			path = View/config;
+			path = config;
 			sourceTree = "<group>";
 		};
 		FE63AE111DB087050047F66E /* Photo */ = {
@@ -328,7 +330,7 @@
 		FEA0CAA71DAF950A00BF6766 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				FE238B881DB394E60005C190 /* config */,
+				FE558CA81DC2F4DD00AC15B3 /* config */,
 				FEA0CAA81DAF950A00BF6766 /* Controller */,
 				FEA0CAA91DAF950A00BF6766 /* Model */,
 				FEA0CAAA1DAF950A00BF6766 /* Tool */,
@@ -616,6 +618,7 @@
 				FE238B341DB367D40005C190 /* UINavigationBar+Awesome.m in Sources */,
 				FEA0CAC51DAF983500BF6766 /* MessageViewController.swift in Sources */,
 				FEF0B5771DC08BD7000C632C /* GCD+Extension.swift in Sources */,
+				FE558CAA1DC2F51C00AC15B3 /* Theme.swift in Sources */,
 				FE8522291DB9E0B000C0E2C1 /* CAShapeLayer+AnimateText.m in Sources */,
 				FEF0B56B1DC05B18000C632C /* HomeHttpHelper.swift in Sources */,
 				FE8522251DB9E07F00C0E2C1 /* BetterRefreshHeader.swift in Sources */,

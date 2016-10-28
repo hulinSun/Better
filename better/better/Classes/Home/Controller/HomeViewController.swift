@@ -52,7 +52,6 @@ class HomeViewController: UIViewController {
     private func setupUI() {
         view.backgroundColor = UIColor.white
         view.addSubview(tableview)
-        tableview.tableHeaderView = headImage
         navigationController?.navigationBar.lt_setBackgroundColor(UIColor.clear)
         
         tableview.addBetterRefreshHeader {
@@ -61,25 +60,20 @@ class HomeViewController: UIViewController {
                 self.tableview.betterHeader?.endRefreshing()
             })
         }
+        tableview.tableHeaderView = headContainView
         
         HomeHttpHelper.requestHomeData { (model) in
-//            guard let str = model.data?.banner?.first?.photo else{ return }
-//            let url = URL(string: str)
-//            self.headImage.kf.setImage(with: url)
             if let ban = model.data?.banner {
                 let b = ban.flatMap{$0.photo}
-                
-            let p = WirelessPictureView.init(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 180), networkImageArray: b)
+            let p = WirelessPictureView.init(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 220), networkImageArray: b)
                 p.autoScroll = true
-            self.view.addSubview(p)
+                p.currentPageIndicatorTintColor = UIConst.yellowPageColor
+                p.pageIndicatorTintColor = UIConst.grayPageColor
+                p.timeInterval = 5
+                self.headContainView.addSubview(p)
+                self.headView = p
             }
-            
         }
-        
-        view.subviews.forEach { (v) in
-            v.removeFromSuperview()
-        }
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -88,15 +82,16 @@ class HomeViewController: UIViewController {
     }
     
     // MARK: - LAZY
+    fileprivate var headView: WirelessPictureView!
     
-    private lazy var headImage: UIImageView = {
-        let i = UIImageView()
-        i.image = UIImage(named: "bg")
-        i.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 200)
+    private lazy var headContainView: UIView = {
+        let i = UIView()
+        i.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 220)
         return i
     }()
     
     private lazy var tableview: UITableView = {
+        
         
         let i = UITableView(frame:CGRect(x: 0, y: -64, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height) , style: .plain)
         i.delegate = self

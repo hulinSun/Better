@@ -55,6 +55,7 @@ class PictureCell: UICollectionViewCell {
         let i = UIImageView()
         i.clipsToBounds = true
         i.contentMode = self.pictureContentMode
+        i.backgroundColor = UIColor.white
         return i
     }()
     
@@ -101,5 +102,6 @@ class PictureCell: UICollectionViewCell {
     //MARK: - 私有方法
     private func setupUI() {
         contentView.addSubview(pictureView)
+        self.backgroundColor = UIColor.white
     }
 }
