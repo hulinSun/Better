@@ -77,11 +77,8 @@ extension TableViewProtocol : UITableViewDelegate , UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "DiscoverArticleCell") as! DiscoverArticleCell
-
-        if let tp = datas?[indexPath.row]{
-            cell.topic = tp
-        }
-        // cell.topic = datas?[indexPath.row]
+        
+         cell.topic = datas?[indexPath.row]
         return cell
     }
     

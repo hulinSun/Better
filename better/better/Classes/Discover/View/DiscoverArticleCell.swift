@@ -28,15 +28,16 @@ class DiscoverArticleCell: UITableViewCell {
         didSet{
             
             print(topic?.title)
-            descTitle.text = "x"
-            // topTitle.text = topic?.title!
-            // descTitle.text = topic?.desc!
+            topTitle.text = topic?.title!
             /**
+             topTitle.text = topic?.title!
+             descTitle.text = topic?.desc!
+            
             pictureView.kf.setImage(with: URL(string: topic!.pic!))
             commentView.setTitle(topic?.comments, for: .normal)
             scanView.setTitle(topic?.views, for: .normal)
             autoLabel.text = topic?.update_time + "|" + ""
-            smallIcon.kf.setImage(with: URL(string: topic?.user?.avatar)) */
+            smallIcon.kf.setImage(with: URL(string: topic?.user?.avatar))*/
         }
     }
     
