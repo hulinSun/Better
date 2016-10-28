@@ -46,6 +46,7 @@ class DiscoverViewController: UIViewController {
         let i = UITableView(frame: CGRect(x: 0, y: 0, width: UIConst.screenWidth, height: UIConst.screenHeight), style: .plain)
         
         i.register(UINib.init(nibName: "DiscoverArticleCell", bundle: nil), forCellReuseIdentifier: "DiscoverArticleCell")
+        i.separatorStyle = .none
         i.delegate = self
         i.dataSource = self
         return i
@@ -72,21 +73,21 @@ typealias TableViewProtocol = DiscoverViewController
 extension TableViewProtocol : UITableViewDelegate , UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 160
+        return 152
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "DiscoverArticleCell") as! DiscoverArticleCell
-        
          cell.topic = datas?[indexPath.row]
+        cell.selectionStyle = .none
         return cell
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-    
+     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return datas?.count ?? 0
     }

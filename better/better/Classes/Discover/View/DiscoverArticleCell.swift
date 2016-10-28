@@ -14,6 +14,9 @@ class DiscoverArticleCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        smallIcon.layer.cornerRadius = 9
+        smallIcon.clipsToBounds = true
+        pictureView.backgroundColor = UIColor.rgb(red: 240, green: 240, blue: 240)
     }
     
     @IBOutlet weak var commentView: UIButton!
@@ -32,8 +35,8 @@ class DiscoverArticleCell: UITableViewCell {
             pictureView.kf.setImage(with: URL(string: topic!.pic!))
             commentView.setTitle(topic?.comments, for: .normal)
             scanView.setTitle(topic?.views, for: .normal)
-            // autoLabel.text = (topic?.update_time)! + "|" + ""
-            //smallIcon.kf.setImage(with: URL(string: topic?.user?.avatar))
+            autoLabel.text = topic?.order_time_str
+            smallIcon.kf.setImage(with: URL(string: (topic?.user?.avatar)!))
         }
     }
     

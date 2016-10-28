@@ -54,6 +54,7 @@ class Topic: Mappable  , HandyJSON {
     var views: String?
     var comments: String?
     var update_time: String?
+    var order_time_str: String?
     var user: User?
     var pics: [Pics] = [Pics]()
     var channel: [String: AnyObject]?
