@@ -10,6 +10,9 @@
 		35B04F73FA88D94014F9A101 /* Pods_better.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB14B8F409C13C2E9FA9B62E /* Pods_better.framework */; };
 		FE238B341DB367D40005C190 /* UINavigationBar+Awesome.m in Sources */ = {isa = PBXBuildFile; fileRef = FE238B331DB367D40005C190 /* UINavigationBar+Awesome.m */; };
 		FE558CAA1DC2F51C00AC15B3 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE558CA91DC2F51C00AC15B3 /* Theme.swift */; };
+		FE558CAC1DC2FA3E00AC15B3 /* UIBarButtonItem+item.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE558CAB1DC2FA3E00AC15B3 /* UIBarButtonItem+item.swift */; };
+		FE558CAE1DC2FC9B00AC15B3 /* DiscoverTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE558CAD1DC2FC9B00AC15B3 /* DiscoverTitleView.swift */; };
+		FE558CB21DC2FCB900AC15B3 /* DiscoverTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE558CB11DC2FCB900AC15B3 /* DiscoverTitleView.xib */; };
 		FE63AE0E1DB079460047F66E /* MainTabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE63AE0D1DB079460047F66E /* MainTabbar.swift */; };
 		FE63AE101DB07A390047F66E /* MainVCSettings.json in Resources */ = {isa = PBXBuildFile; fileRef = FE63AE0F1DB07A390047F66E /* MainVCSettings.json */; };
 		FE63AE171DB087190047F66E /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE63AE161DB087190047F66E /* PhotoViewController.swift */; };
@@ -50,6 +53,9 @@
 		FE238B331DB367D40005C190 /* UINavigationBar+Awesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+Awesome.m"; sourceTree = "<group>"; };
 		FE238B871DB3718C0005C190 /* better-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "better-Bridging-Header.h"; sourceTree = "<group>"; };
 		FE558CA91DC2F51C00AC15B3 /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		FE558CAB1DC2FA3E00AC15B3 /* UIBarButtonItem+item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+item.swift"; sourceTree = "<group>"; };
+		FE558CAD1DC2FC9B00AC15B3 /* DiscoverTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverTitleView.swift; sourceTree = "<group>"; };
+		FE558CB11DC2FCB900AC15B3 /* DiscoverTitleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DiscoverTitleView.xib; sourceTree = "<group>"; };
 		FE63AE0D1DB079460047F66E /* MainTabbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabbar.swift; sourceTree = "<group>"; };
 		FE63AE0F1DB07A390047F66E /* MainVCSettings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MainVCSettings.json; sourceTree = "<group>"; };
 		FE63AE161DB087190047F66E /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
@@ -239,6 +245,7 @@
 				FEF0B5741DC08A9B000C632C /* String+Extension.swift */,
 				FEF0B5721DC087B8000C632C /* UIView+Extension.swift */,
 				FEF0B5761DC08BD7000C632C /* GCD+Extension.swift */,
+				FE558CAB1DC2FA3E00AC15B3 /* UIBarButtonItem+item.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -280,6 +287,8 @@
 		FEA0CAA11DAF950A00BF6766 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FE558CAD1DC2FC9B00AC15B3 /* DiscoverTitleView.swift */,
+				FE558CB11DC2FCB900AC15B3 /* DiscoverTitleView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -537,6 +546,7 @@
 			files = (
 				FE83A42A1DAF5987002BB862 /* LaunchScreen.storyboard in Resources */,
 				FE83A4271DAF5987002BB862 /* Assets.xcassets in Resources */,
+				FE558CB21DC2FCB900AC15B3 /* DiscoverTitleView.xib in Resources */,
 				FE63AE101DB07A390047F66E /* MainVCSettings.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -596,6 +606,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE558CAE1DC2FC9B00AC15B3 /* DiscoverTitleView.swift in Sources */,
 				FEF0B5731DC087B8000C632C /* UIView+Extension.swift in Sources */,
 				FEFE5C1C1DC2000F00AD5D5E /* PictureCell.swift in Sources */,
 				FE83A4201DAF5987002BB862 /* AppDelegate.swift in Sources */,
@@ -619,6 +630,7 @@
 				FEA0CAC51DAF983500BF6766 /* MessageViewController.swift in Sources */,
 				FEF0B5771DC08BD7000C632C /* GCD+Extension.swift in Sources */,
 				FE558CAA1DC2F51C00AC15B3 /* Theme.swift in Sources */,
+				FE558CAC1DC2FA3E00AC15B3 /* UIBarButtonItem+item.swift in Sources */,
 				FE8522291DB9E0B000C0E2C1 /* CAShapeLayer+AnimateText.m in Sources */,
 				FEF0B56B1DC05B18000C632C /* HomeHttpHelper.swift in Sources */,
 				FE8522251DB9E07F00C0E2C1 /* BetterRefreshHeader.swift in Sources */,

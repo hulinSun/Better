@@ -79,6 +79,16 @@ extension UIView {
 }
 
 
+extension UIView{
+    
+    class func loadFromNib()-> Self?{
+        
+        guard let arr = Bundle.main.loadNibNamed(NSStringFromClass(self as! AnyClass), owner: nil, options: nil) else{ return nil }
+
+        return nil
+    }
+
+}
 
 
 
