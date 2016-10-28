@@ -44,7 +44,8 @@ class DiscoverViewController: UIViewController {
     fileprivate lazy var tableView: UITableView = {
         
         let i = UITableView(frame: CGRect(x: 0, y: 0, width: UIConst.screenWidth, height: UIConst.screenHeight), style: .plain)
-        i.register(DiscoverArticleCell.self, forCellReuseIdentifier: "DiscoverArticleCell")
+        
+        i.register(UINib.init(nibName: "DiscoverArticleCell", bundle: nil), forCellReuseIdentifier: "DiscoverArticleCell")
         i.delegate = self
         i.dataSource = self
         return i
