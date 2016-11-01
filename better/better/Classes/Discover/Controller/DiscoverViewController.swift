@@ -38,6 +38,8 @@ class DiscoverViewController: UIViewController {
         DiscoverHttpHelper.requestDiscoverData { (discover) in
             self.datas = discover.data?.topic
         }
+        
+        configNav()
     }
   
     
@@ -93,3 +95,28 @@ extension TableViewProtocol : UITableViewDelegate , UITableViewDataSource{
     }
     
 }
+
+// MARK: - configNav
+extension DiscoverViewController{
+    
+    /// 初始化导航栏
+    fileprivate func configNav() {
+        
+        let editItem = UIBarButtonItem.itemWith(icon: "discover_write_article_icon", highlightIcon: "discover_write_article_icon", target: self, action: #selector(DiscoverViewController.edit))
+        navigationItem.rightBarButtonItem = editItem
+        
+        let leftItem = UIBarButtonItem.itemWithBack(icon: "discover_article_list_dark_icon", highlightIcon: "discover_article_list_icon", target: self, action: #selector(DiscoverViewController.leftClick))
+        navigationItem.leftBarButtonItem = leftItem
+    }
+    
+    func edit() {
+       print("点击了编辑按钮")
+    }
+    
+    func leftClick()  {
+        print("点击了菜单按钮")
+    }
+    
+}
+
+

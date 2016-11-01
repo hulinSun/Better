@@ -44,12 +44,23 @@ extension UIBarButtonItem{
         
         let btn = UIButton()
         btn.bounds.size = CGSize(width: 30, height: 30)
+        btn.setImage(UIImage(named: icon), for: .normal)
+        btn.setImage(UIImage(named: highlightIcon), for: .highlighted)
+        btn.addTarget(target, action: action, for: .touchUpInside)
+        return UIBarButtonItem(customView: btn)
+    }
+    
+    
+    class func itemWithBack(icon: String , highlightIcon: String ,target: AnyObject? ,action: Selector)-> UIBarButtonItem{
+        
+        let btn = UIButton()
+        btn.bounds.size = CGSize(width: 15, height: 18)
         btn.setBackgroundImage(UIImage(named: icon), for: .normal)
         btn.setBackgroundImage(UIImage(named: highlightIcon), for: .highlighted)
         btn.addTarget(target, action: action, for: .touchUpInside)
         return UIBarButtonItem(customView: btn)
     }
-    
+
     convenience init(imageName:String, target: AnyObject?, action: String?){
         let btn = UIButton()
         btn.setImage(UIImage(named: imageName), for: .normal)
