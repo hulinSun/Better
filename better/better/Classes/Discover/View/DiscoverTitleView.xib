@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -11,10 +12,60 @@
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="DiscoverTitleView" customModule="better" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="304" height="83"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bb9-c9-2QK">
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <state key="normal" title="文章">
+                        <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="selected">
+                        <color key="titleColor" red="0.92549019610000005" green="0.32156862749999998" blue="0.32156862749999998" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="leftClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="6u9-MY-XED"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ScK-61-eEd">
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <state key="normal" title="单品">
+                        <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="selected">
+                        <color key="titleColor" red="0.92549019610000005" green="0.32156862749999998" blue="0.32156862749999998" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="rightClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="Frz-3A-aYI"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PkO-dg-wva">
+                    <color key="backgroundColor" red="0.92549019607843142" green="0.32156862745098036" blue="0.32156862745098036" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="2.5" id="03v-vN-5RS"/>
+                        <constraint firstAttribute="width" constant="28" id="eZ6-iQ-gA9"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="ScK-61-eEd" firstAttribute="width" secondItem="Bb9-c9-2QK" secondAttribute="width" id="1Kp-Cd-EJL"/>
+                <constraint firstItem="PkO-dg-wva" firstAttribute="centerX" secondItem="Bb9-c9-2QK" secondAttribute="centerX" id="67R-9O-hOC"/>
+                <constraint firstItem="ScK-61-eEd" firstAttribute="height" secondItem="Bb9-c9-2QK" secondAttribute="height" id="73r-7z-keW"/>
+                <constraint firstAttribute="bottom" secondItem="PkO-dg-wva" secondAttribute="bottom" id="8Fw-R4-IlS"/>
+                <constraint firstItem="Bb9-c9-2QK" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="C1n-9M-7S5"/>
+                <constraint firstAttribute="trailing" secondItem="ScK-61-eEd" secondAttribute="trailing" id="T5X-nF-12q"/>
+                <constraint firstItem="ScK-61-eEd" firstAttribute="top" secondItem="Bb9-c9-2QK" secondAttribute="top" id="bYb-k2-Tbm"/>
+                <constraint firstItem="Bb9-c9-2QK" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="fsp-3W-6u6"/>
+                <constraint firstAttribute="bottom" secondItem="Bb9-c9-2QK" secondAttribute="bottom" constant="5" id="sFx-fY-BjD"/>
+                <constraint firstItem="Bb9-c9-2QK" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.5" id="wkC-5X-jIx"/>
+            </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="-177" y="-126"/>
+            <connections>
+                <outlet property="botLine" destination="PkO-dg-wva" id="inR-Ed-KaJ"/>
+                <outlet property="leftBtn" destination="Bb9-c9-2QK" id="E2q-11-1jE"/>
+                <outlet property="rightBtn" destination="ScK-61-eEd" id="ZZr-4a-qBI"/>
+            </connections>
+            <point key="canvasLocation" x="-222" y="-111.5"/>
         </view>
     </objects>
 </document>

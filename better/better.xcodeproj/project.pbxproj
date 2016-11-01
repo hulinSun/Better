@@ -31,6 +31,7 @@
 		FEA0CAC31DAF982000BF6766 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA0CAC21DAF982000BF6766 /* HomeViewController.swift */; };
 		FEA0CAC51DAF983500BF6766 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA0CAC41DAF983500BF6766 /* MessageViewController.swift */; };
 		FEA0CAC71DAF984100BF6766 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA0CAC61DAF984100BF6766 /* ProfileViewController.swift */; };
+		FEBB073D1DC8875800FF4989 /* UIColor+hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBB073C1DC8875800FF4989 /* UIColor+hex.swift */; };
 		FEF0B55F1DC046C6000C632C /* String+Directionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF0B55E1DC046C6000C632C /* String+Directionary.swift */; };
 		FEF0B5611DC047E2000C632C /* UIBarButtonItem+category.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF0B5601DC047E2000C632C /* UIBarButtonItem+category.swift */; };
 		FEF0B5631DC0485E000C632C /* UIColor+random.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF0B5621DC0485E000C632C /* UIColor+random.swift */; };
@@ -80,6 +81,7 @@
 		FEA0CAC21DAF982000BF6766 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		FEA0CAC41DAF983500BF6766 /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		FEA0CAC61DAF984100BF6766 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		FEBB073C1DC8875800FF4989 /* UIColor+hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+hex.swift"; sourceTree = "<group>"; };
 		FEF0B55E1DC046C6000C632C /* String+Directionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Directionary.swift"; sourceTree = "<group>"; };
 		FEF0B5601DC047E2000C632C /* UIBarButtonItem+category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+category.swift"; sourceTree = "<group>"; };
 		FEF0B5621DC0485E000C632C /* UIColor+random.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+random.swift"; sourceTree = "<group>"; };
@@ -250,6 +252,7 @@
 				FEF0B5621DC0485E000C632C /* UIColor+random.swift */,
 				FEF0B5741DC08A9B000C632C /* String+Extension.swift */,
 				FEF0B5721DC087B8000C632C /* UIView+Extension.swift */,
+				FEBB073C1DC8875800FF4989 /* UIColor+hex.swift */,
 				FEF0B5761DC08BD7000C632C /* GCD+Extension.swift */,
 				FE558CAB1DC2FA3E00AC15B3 /* UIBarButtonItem+item.swift */,
 			);
@@ -631,6 +634,7 @@
 				FEA0CAC71DAF984100BF6766 /* ProfileViewController.swift in Sources */,
 				FE8522241DB9E07F00C0E2C1 /* BetterRefreshFooter.swift in Sources */,
 				FE8522261DB9E07F00C0E2C1 /* UIScrollView+Refresh.swift in Sources */,
+				FEBB073D1DC8875800FF4989 /* UIColor+hex.swift in Sources */,
 				FEF0B5751DC08A9B000C632C /* String+Extension.swift in Sources */,
 				FEFE5C1D1DC2000F00AD5D5E /* PictureProtocol.swift in Sources */,
 				FEF0B5611DC047E2000C632C /* UIBarButtonItem+category.swift in Sources */,
