@@ -29,6 +29,7 @@ class DiscoverTitleView: UIView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
         leftBtn.isSelected = true
     }
     
@@ -38,6 +39,17 @@ class DiscoverTitleView: UIView {
         leftBtn.isSelected = true
         rightBtn.isSelected = false
         clickItemback?(ItemSelected.left)
+
+//        UIView.animate(withDuration: 0.25) {
+//            self.botLine.snp.remakeConstraints({ (make) in
+//                make.centerX.equalTo(self.leftBtn.snp.centerX)
+//            })
+//            self.layoutIfNeeded()
+//        }
+        
+        UIView.animate(withDuration: 0.3) {
+            self.botLine.left -= 50
+        }
     }
     
     /// 点击右边按钮
@@ -45,8 +57,18 @@ class DiscoverTitleView: UIView {
         leftBtn.isSelected = false
         rightBtn.isSelected = true
         clickItemback?(ItemSelected.right)
+        
+        UIView.animate(withDuration: 0.3) {
+            self.botLine.left += 50
+        }
+        
+//        UIView.animate(withDuration: 0.25) {
+//            self.botLine.snp.remakeConstraints({ (make) in
+//                make.centerX.equalTo(self.rightBtn.snp.centerX)
+//            })
+//            self.layoutIfNeeded()
+//        }
+        
     }
-    
-    
     
 }
