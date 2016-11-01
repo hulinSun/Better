@@ -52,6 +52,7 @@ class DiscoverViewController: UIViewController {
         if let hairl = findHairlineImageViewUnder(view: navigationController!.navigationBar){
             hairl.isHidden = true
         }
+        
         DiscoverHttpHelper.requestDiscoverData { (discover) in
             self.datas = discover.data?.topic
         }
