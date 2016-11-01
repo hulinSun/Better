@@ -15,6 +15,16 @@ class DiscoverViewController: UIViewController {
         setupUI()
     }
     
+    fileprivate lazy var editItem: UIBarButtonItem = {
+        let i =  UIBarButtonItem.itemWith(icon: "discover_write_article_icon", highlightIcon: "discover_write_article_icon", target: self, action: #selector(DiscoverViewController.edit))
+        return i
+    }()
+    
+    fileprivate lazy var takePhotoItem: UIBarButtonItem = {
+        let i =  UIBarButtonItem.itemWith(icon: "discovey_camera_btn", highlightIcon: "discovey_camera_btn", target: self, action: #selector(DiscoverViewController.takePhoto))
+        return i
+    }()
+
     
     fileprivate var titleV: DiscoverTitleView!
     
@@ -30,6 +40,13 @@ class DiscoverViewController: UIViewController {
         view.addSubview(tableView)
         view.backgroundColor = UIColor.white
         let v = DiscoverTitleView.discoverTitleView()
+        
+        v.clickItemback = { [weak self] item in
+            switch item {
+                case .left: self?.navigationItem.rightBarButtonItem = self?.editItem
+                case .right: self?.navigationItem.rightBarButtonItem = self?.takePhotoItem
+            }
+        }
         v.width = 100 ; v.height = 44
         navigationItem.titleView = v ; titleV = v
         if let hairl = findHairlineImageViewUnder(view: navigationController!.navigationBar){
@@ -42,7 +59,6 @@ class DiscoverViewController: UIViewController {
         configNav()
     }
   
-    
     fileprivate lazy var tableView: UITableView = {
         
         let i = UITableView(frame: CGRect(x: 0, y: 0, width: UIConst.screenWidth, height: UIConst.screenHeight), style: .plain)
@@ -102,7 +118,6 @@ extension DiscoverViewController{
     /// 初始化导航栏
     fileprivate func configNav() {
         
-        let editItem = UIBarButtonItem.itemWith(icon: "discover_write_article_icon", highlightIcon: "discover_write_article_icon", target: self, action: #selector(DiscoverViewController.edit))
         navigationItem.rightBarButtonItem = editItem
         
         let leftItem = UIBarButtonItem.itemWithBack(icon: "discover_article_list_dark_icon", highlightIcon: "discover_article_list_icon", target: self, action: #selector(DiscoverViewController.leftClick))
@@ -115,6 +130,10 @@ extension DiscoverViewController{
     
     func leftClick()  {
         print("点击了菜单按钮")
+    }
+    
+    func takePhoto()  {
+        print("照相")
     }
     
 }
