@@ -24,6 +24,8 @@
 		FE8522251DB9E07F00C0E2C1 /* BetterRefreshHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8522221DB9E07F00C0E2C1 /* BetterRefreshHeader.swift */; };
 		FE8522261DB9E07F00C0E2C1 /* UIScrollView+Refresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8522231DB9E07F00C0E2C1 /* UIScrollView+Refresh.swift */; };
 		FE8522291DB9E0B000C0E2C1 /* CAShapeLayer+AnimateText.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8522281DB9E0B000C0E2C1 /* CAShapeLayer+AnimateText.m */; };
+		FE96E2021DCB285100D28F0B /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE96E2001DCB285100D28F0B /* HomeCell.swift */; };
+		FE96E2031DCB285100D28F0B /* HomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE96E2011DCB285100D28F0B /* HomeCell.xib */; };
 		FEA0CAB91DAF959100BF6766 /* AppDelegate+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA0CAB81DAF959100BF6766 /* AppDelegate+Extension.swift */; };
 		FEA0CABD1DAF972A00BF6766 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA0CABC1DAF972A00BF6766 /* MainNavigationController.swift */; };
 		FEA0CABF1DAF97BE00BF6766 /* MainTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA0CABE1DAF97BE00BF6766 /* MainTabbarController.swift */; };
@@ -107,6 +109,8 @@
 		FE8522231DB9E07F00C0E2C1 /* UIScrollView+Refresh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Refresh.swift"; sourceTree = "<group>"; };
 		FE8522271DB9E0B000C0E2C1 /* CAShapeLayer+AnimateText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CAShapeLayer+AnimateText.h"; sourceTree = "<group>"; };
 		FE8522281DB9E0B000C0E2C1 /* CAShapeLayer+AnimateText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CAShapeLayer+AnimateText.m"; sourceTree = "<group>"; };
+		FE96E2001DCB285100D28F0B /* HomeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
+		FE96E2011DCB285100D28F0B /* HomeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeCell.xib; sourceTree = "<group>"; };
 		FEA0CAB81DAF959100BF6766 /* AppDelegate+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Extension.swift"; sourceTree = "<group>"; };
 		FEA0CABC1DAF972A00BF6766 /* MainNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
 		FEA0CABE1DAF97BE00BF6766 /* MainTabbarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabbarController.swift; sourceTree = "<group>"; };
@@ -411,6 +415,8 @@
 			isa = PBXGroup;
 			children = (
 				FEFE5C181DC2000F00AD5D5E /* WirelessPicture */,
+				FE96E2001DCB285100D28F0B /* HomeCell.swift */,
+				FE96E2011DCB285100D28F0B /* HomeCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -665,6 +671,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE96E2031DCB285100D28F0B /* HomeCell.xib in Resources */,
 				FE83A42A1DAF5987002BB862 /* LaunchScreen.storyboard in Resources */,
 				FE83A4271DAF5987002BB862 /* Assets.xcassets in Resources */,
 				FEBB077E1DC88ECE00FF4989 /* Info.plist in Resources */,
@@ -734,6 +741,7 @@
 				FEBB07771DC88ECE00FF4989 /* ConstraintPriorityTarget.swift in Sources */,
 				FEF0B5731DC087B8000C632C /* UIView+Extension.swift in Sources */,
 				FEFE5C1C1DC2000F00AD5D5E /* PictureCell.swift in Sources */,
+				FE96E2021DCB285100D28F0B /* HomeCell.swift in Sources */,
 				FE83A4201DAF5987002BB862 /* AppDelegate.swift in Sources */,
 				FEBB07811DC88ECE00FF4989 /* UILayoutSupport+Extensions.swift in Sources */,
 				FEBB077A1DC88ECE00FF4989 /* ConstraintView+Extensions.swift in Sources */,

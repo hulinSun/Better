@@ -18,6 +18,12 @@ class HomeViewController: UIViewController {
         
         setupUI()
     }
+    var data: HomePageModel?{
+        didSet{
+            tableview.reloadData()
+        }
+    }
+    
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -63,6 +69,7 @@ class HomeViewController: UIViewController {
         tableview.tableHeaderView = headContainView
         
         HomeHttpHelper.requestHomeData { (model) in
+            self.data = model
             if let ban = model.data?.banner {
                 let b = ban.flatMap{$0.photo}
             let p = WirelessPictureView.init(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 220), networkImageArray: b)
@@ -95,7 +102,7 @@ class HomeViewController: UIViewController {
         let i = UITableView(frame:CGRect(x: 0, y: -64, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height) , style: .plain)
         i.delegate = self
         i.dataSource = self
-        i.register(UITableViewCell.self, forCellReuseIdentifier: "x")
+        i.register( UINib(nibName: "HomeCell", bundle: nil), forCellReuseIdentifier: "HomeCell")
         return i
     }()
 }
@@ -106,13 +113,13 @@ typealias TableViewDataSource = HomeViewController
 extension TableViewDataSource : UITableViewDelegate , UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 66
+        return 260
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "x")!
-        cell.textLabel?.text = "呵呵 😑" + "  \(indexPath.row)  "
+        let cell = tableView.dequeueReusableCell(withIdentifier: "HomeCell") as! HomeCell
+        cell.topic = data?.data?.topic?[indexPath.row]
         return cell
     }
     
@@ -121,7 +128,11 @@ extension TableViewDataSource : UITableViewDelegate , UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
+        if let c = data?.data?.topic?.count {
+            return c
+        }else{
+            return 0
+        }
     }
     
 }
