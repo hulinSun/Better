@@ -45,9 +45,6 @@ class DiscoverArticleCell: UITableViewCell {
              descTitle.text = topic?.desc!
             commentView.setTitle(topic?.comments, for: .normal)
             scanView.setTitle(topic?.views, for: .normal)
-            
-//            scanView.setImage(UIImage(named: "home_article_comments"), for: .normal)
-//            scanView.setImage(UIImage(named:"home_article_views"), for: .normal)
             autoLabel.text = (topic?.order_time_str)! + " | " + (topic?.user?.nickname)!
             smallIcon.kf.setImage(with: URL(string: (topic?.user?.avatar)!))
             if let rightIcon = topic?.pics.first?.url{
