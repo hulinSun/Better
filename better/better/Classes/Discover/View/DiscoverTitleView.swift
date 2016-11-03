@@ -38,8 +38,9 @@ class DiscoverTitleView: UIView {
         rightBtn.isSelected = false
         clickItemback?(ItemSelected.left)
         
+        // MARK: 虽然用来autolayout，但是还是可以用transform 做动画的
         UIView.animate(withDuration: 0.3) {
-            self.botLine.left = 11
+           self.botLine.transform = CGAffineTransform.identity
         }
     }
     
@@ -50,9 +51,8 @@ class DiscoverTitleView: UIView {
         clickItemback?(ItemSelected.right)
         
         UIView.animate(withDuration: 0.3) {
-            self.botLine.left = 60
+            self.botLine.transform = CGAffineTransform.init(translationX: 50, y: 0)
         }
-        
     }
     
 }
