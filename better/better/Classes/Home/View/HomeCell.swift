@@ -17,6 +17,7 @@ class HomeCell: UITableViewCell {
             iconView.clipsToBounds = true
         }
     }
+    @IBOutlet weak var smallconView: UIImageView!
     @IBOutlet weak var originView: UIImageView! /// 是否是原创
     @IBOutlet weak var nameLabel: UILabel! /// 姓名
     @IBOutlet weak var picview: UIImageView! /// 大图片
@@ -31,7 +32,14 @@ class HomeCell: UITableViewCell {
                 iconView.kf.setImage(with:  URL(string: (topic?.user?.avatar)!))
             }
             nameLabel.text = topic?.user?.nickname ?? "匿名"
-            subTitleView.text = topic?.views!
+            if let show = topic?.is_show_like , show == true{
+                smallconView.image = UIImage(named: "home_likes_dark_icon")
+                subTitleView.text = topic?.likes!
+            }else{
+                smallconView.image = UIImage(named: "home_article_view_dark_icon")
+                subTitleView.text = topic?.views!
+                
+            }
         }
     }
     

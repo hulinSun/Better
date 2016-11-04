@@ -47,13 +47,6 @@ class WirelessPictureView: UIView , PageControlAlimentProtocol , WirelessPicture
         adjustPageControlPlace(pageControl: pageControl)
     }
     
-//    override func willMove(toSuperview newSuperview: UIView?) {
-//        super.willMove(toSuperview: newSuperview)
-//        if let _ = newSuperview {
-//            stopTimer()
-//        }
-//    }
-    
     // MARK: - 懒加载
     fileprivate lazy var pageControl: UIPageControl = {
         let i = UIPageControl()
