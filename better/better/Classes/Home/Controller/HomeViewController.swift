@@ -15,7 +15,6 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupUI()
     }
     var data: HomePageModel?{
@@ -56,10 +55,12 @@ class HomeViewController: UIViewController {
 
     /// 初始化ui
     private func setupUI() {
+
+        navigationItem.leftBarButtonItem = clearLeftItem
+        navigationItem.rightBarButtonItem = clearRightItem
         view.backgroundColor = UIColor.white
         view.addSubview(tableview)
         navigationController?.navigationBar.lt_setBackgroundColor(UIColor.clear)
-        
         tableview.addBetterRefreshHeader {
             print("下拉刷新")
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: { 
@@ -85,7 +86,6 @@ class HomeViewController: UIViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     // MARK: - LAZY
@@ -105,6 +105,33 @@ class HomeViewController: UIViewController {
         i.register( UINib(nibName: "HomeCell", bundle: nil), forCellReuseIdentifier: "HomeCell")
         return i
     }()
+    
+    /// 透明状态下 左item
+    fileprivate lazy var clearLeftItem: UIBarButtonItem = {
+        let searc = UIBarButtonItem.init(imageName: "home_search_icon", target: self, action: "searchClick")
+        return searc
+    }()
+    
+    
+    /// 透明状态下 右item
+    fileprivate lazy var clearRightItem: UIBarButtonItem = {
+        let searc = UIBarButtonItem.init(imageName: "home_sign_icon", target: self, action: "giftClearClick")
+        return searc
+    }()
+    
+    /// 有导航栏状态下 右item
+    fileprivate lazy var whiteRightItem: UIBarButtonItem = {
+        let searc = UIBarButtonItem.init(imageName: "home_sign_top_icon", target: self, action: "giftClearClick")
+        return searc
+    }()
+    
+    func searchClick() {
+        print("点击了搜索")
+    }
+    
+    func giftClearClick() {
+        print("点击了右边礼物")
+    }
 }
 
 
@@ -134,6 +161,5 @@ extension TableViewDataSource : UITableViewDelegate , UITableViewDataSource{
             return 0
         }
     }
-    
 }
 

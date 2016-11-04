@@ -64,11 +64,12 @@ extension UIBarButtonItem{
     convenience init(imageName:String, target: AnyObject?, action: String?){
         let btn = UIButton()
         btn.setImage(UIImage(named: imageName), for: .normal)
-        btn.setImage(UIImage(named: imageName + "_highlighted"), for: .highlighted)
+        btn.setImage(UIImage(named:imageName), for: .highlighted)
         if action != nil{
             btn.addTarget(target, action: Selector(action!), for: .touchUpInside)
         }
-        btn.sizeToFit()
+        btn.width = 27; btn.height = 27;
+//        btn.sizeToFit()
         self.init(customView: btn)
     }
 }
