@@ -39,8 +39,6 @@
 		FEB91C291DD05CAE007962BA /* TopCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB91C271DD05CAE007962BA /* TopCategoryCell.swift */; };
 		FEB91C2A1DD05CAE007962BA /* TopCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEB91C281DD05CAE007962BA /* TopCategoryCell.xib */; };
 		FEB91C2C1DD072C0007962BA /* HotRecommondController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB91C2B1DD072C0007962BA /* HotRecommondController.swift */; };
-		FEB91C381DD08794007962BA /* UITableView+SDAutoTableViewCellHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB91C351DD08794007962BA /* UITableView+SDAutoTableViewCellHeight.m */; };
-		FEB91C391DD08794007962BA /* UIView+SDAutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB91C371DD08794007962BA /* UIView+SDAutoLayout.m */; };
 		FEB91C3B1DD088D6007962BA /* HotRecommondCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB91C3A1DD088D6007962BA /* HotRecommondCell.swift */; };
 		FEB91C3D1DD089BB007962BA /* HotTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB91C3C1DD089BB007962BA /* HotTopView.swift */; };
 		FEBB073D1DC8875800FF4989 /* UIColor+hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBB073C1DC8875800FF4989 /* UIColor+hex.swift */; };
@@ -134,11 +132,6 @@
 		FEB91C271DD05CAE007962BA /* TopCategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopCategoryCell.swift; sourceTree = "<group>"; };
 		FEB91C281DD05CAE007962BA /* TopCategoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopCategoryCell.xib; sourceTree = "<group>"; };
 		FEB91C2B1DD072C0007962BA /* HotRecommondController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotRecommondController.swift; sourceTree = "<group>"; };
-		FEB91C331DD08794007962BA /* SDAutoLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDAutoLayout.h; sourceTree = "<group>"; };
-		FEB91C341DD08794007962BA /* UITableView+SDAutoTableViewCellHeight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+SDAutoTableViewCellHeight.h"; sourceTree = "<group>"; };
-		FEB91C351DD08794007962BA /* UITableView+SDAutoTableViewCellHeight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+SDAutoTableViewCellHeight.m"; sourceTree = "<group>"; };
-		FEB91C361DD08794007962BA /* UIView+SDAutoLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SDAutoLayout.h"; sourceTree = "<group>"; };
-		FEB91C371DD08794007962BA /* UIView+SDAutoLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SDAutoLayout.m"; sourceTree = "<group>"; };
 		FEB91C3A1DD088D6007962BA /* HotRecommondCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotRecommondCell.swift; sourceTree = "<group>"; };
 		FEB91C3C1DD089BB007962BA /* HotTopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotTopView.swift; sourceTree = "<group>"; };
 		FEBB073C1DC8875800FF4989 /* UIColor+hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+hex.swift"; sourceTree = "<group>"; };
@@ -580,24 +573,11 @@
 		FEA0CAB71DAF950A00BF6766 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
-				FEB91C321DD08794007962BA /* SDAutoLayout */,
 				FEBB073E1DC88ECE00FF4989 /* SnapKit */,
 				FE8522201DB9E07F00C0E2C1 /* BetterRefresh */,
 				FE238B311DB367D40005C190 /* LTNavigationBar+awesome */,
 			);
 			path = Vendors;
-			sourceTree = "<group>";
-		};
-		FEB91C321DD08794007962BA /* SDAutoLayout */ = {
-			isa = PBXGroup;
-			children = (
-				FEB91C331DD08794007962BA /* SDAutoLayout.h */,
-				FEB91C341DD08794007962BA /* UITableView+SDAutoTableViewCellHeight.h */,
-				FEB91C351DD08794007962BA /* UITableView+SDAutoTableViewCellHeight.m */,
-				FEB91C361DD08794007962BA /* UIView+SDAutoLayout.h */,
-				FEB91C371DD08794007962BA /* UIView+SDAutoLayout.m */,
-			);
-			path = SDAutoLayout;
 			sourceTree = "<group>";
 		};
 		FEBB073E1DC88ECE00FF4989 /* SnapKit */ = {
@@ -810,7 +790,6 @@
 				FEBB077F1DC88ECE00FF4989 /* LayoutConstraint.swift in Sources */,
 				FEA0CAC31DAF982000BF6766 /* HomeViewController.swift in Sources */,
 				FEBB076D1DC88ECE00FF4989 /* ConstraintLayoutSupport.swift in Sources */,
-				FEB91C381DD08794007962BA /* UITableView+SDAutoTableViewCellHeight.m in Sources */,
 				FEA0CAC71DAF984100BF6766 /* ProfileViewController.swift in Sources */,
 				FEBB07661DC88ECE00FF4989 /* ConstraintDSL.swift in Sources */,
 				FE8522241DB9E07F00C0E2C1 /* BetterRefreshFooter.swift in Sources */,
@@ -827,7 +806,6 @@
 				FE2DA7AE1DC3321D007347C0 /* DiscoverHttpHelper.swift in Sources */,
 				FEBB07641DC88ECE00FF4989 /* ConstraintConstantTarget.swift in Sources */,
 				FEBB07701DC88ECE00FF4989 /* ConstraintMakerEditable.swift in Sources */,
-				FEB91C391DD08794007962BA /* UIView+SDAutoLayout.m in Sources */,
 				FEBB077C1DC88ECE00FF4989 /* ConstraintViewDSL.swift in Sources */,
 				FEBB07711DC88ECE00FF4989 /* ConstraintMakerExtendable.swift in Sources */,
 				FEF0B5791DC0A53E000C632C /* DiscoverModel.swift in Sources */,

@@ -31,7 +31,6 @@ class HotTopView: UIView {
         addSubview(retweetBtn)
         addSubview(moreBtn)
         
-        
     }
     
     //MARL: - 懒加载
