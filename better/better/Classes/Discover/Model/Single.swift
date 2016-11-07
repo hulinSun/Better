@@ -58,7 +58,7 @@ class SingleProComment: HandyJSON {
     var reply: Double?
     var is_praise: Double?
     var is_hot: Double?
-    var at_user:AnyObject?
+    var at_user: User?
     var product: AnyObject?
     var is_official:  Double?
     required init() {}

@@ -19,8 +19,6 @@ class DiscoverSingleController: UIViewController {
         DiscoverHttpHelper.requestDiscoverSingleCategory { (category) in
             self.topDatas = category
         }
-        DiscoverHttpHelper.requestDiscoverHot { (hot) in
-        }
     }
 
     

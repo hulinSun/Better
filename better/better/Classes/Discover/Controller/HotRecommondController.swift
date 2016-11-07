@@ -13,9 +13,12 @@ import UIKit
 class HotRecommondController: UIViewController {
 
     override func viewDidLoad() {
+        
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        DiscoverHttpHelper.requestDiscoverHot { (hot) in
+            
+        }
     }
 
     override func didReceiveMemoryWarning() {
