@@ -19,7 +19,6 @@ class DiscoverSingleController: UIViewController {
         DiscoverHttpHelper.requestDiscoverSingleCategory { (category) in
             self.topDatas = category
         }
-        
         DiscoverHttpHelper.requestDiscoverHot { (hot) in
         }
     }
@@ -42,6 +41,7 @@ class DiscoverSingleController: UIViewController {
         i.delegate = self
         i.dataSource = self
         i.isPagingEnabled = true
+        i.bounces = false
         return i
     }()
     
@@ -149,7 +149,7 @@ extension CollectionProtocol: UICollectionViewDelegate , UICollectionViewDataSou
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        print(scrollView.contentOffset.x)
+        pageControl.currentPage =  Int(CGFloat(scrollView.contentOffset.x) / UIConst.screenWidth + 0.5)
     }
     
 }
