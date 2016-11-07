@@ -38,6 +38,9 @@
 		FEA0CAC71DAF984100BF6766 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA0CAC61DAF984100BF6766 /* ProfileViewController.swift */; };
 		FEB91C291DD05CAE007962BA /* TopCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB91C271DD05CAE007962BA /* TopCategoryCell.swift */; };
 		FEB91C2A1DD05CAE007962BA /* TopCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEB91C281DD05CAE007962BA /* TopCategoryCell.xib */; };
+		FEB91C2C1DD072C0007962BA /* HotRecommondController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB91C2B1DD072C0007962BA /* HotRecommondController.swift */; };
+		FEB91C2F1DD0731C007962BA /* HotRecommondCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB91C2D1DD0731C007962BA /* HotRecommondCell.swift */; };
+		FEB91C301DD0731C007962BA /* HotRecommondCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEB91C2E1DD0731C007962BA /* HotRecommondCell.xib */; };
 		FEBB073D1DC8875800FF4989 /* UIColor+hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBB073C1DC8875800FF4989 /* UIColor+hex.swift */; };
 		FEBB07611DC88ECE00FF4989 /* Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBB073F1DC88ECE00FF4989 /* Constraint.swift */; };
 		FEBB07621DC88ECE00FF4989 /* ConstraintAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBB07401DC88ECE00FF4989 /* ConstraintAttributes.swift */; };
@@ -128,6 +131,9 @@
 		FEA0CAC61DAF984100BF6766 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		FEB91C271DD05CAE007962BA /* TopCategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopCategoryCell.swift; sourceTree = "<group>"; };
 		FEB91C281DD05CAE007962BA /* TopCategoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopCategoryCell.xib; sourceTree = "<group>"; };
+		FEB91C2B1DD072C0007962BA /* HotRecommondController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotRecommondController.swift; sourceTree = "<group>"; };
+		FEB91C2D1DD0731C007962BA /* HotRecommondCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotRecommondCell.swift; sourceTree = "<group>"; };
+		FEB91C2E1DD0731C007962BA /* HotRecommondCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HotRecommondCell.xib; sourceTree = "<group>"; };
 		FEBB073C1DC8875800FF4989 /* UIColor+hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+hex.swift"; sourceTree = "<group>"; };
 		FEBB073F1DC88ECE00FF4989 /* Constraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constraint.swift; sourceTree = "<group>"; };
 		FEBB07401DC88ECE00FF4989 /* ConstraintAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintAttributes.swift; sourceTree = "<group>"; };
@@ -357,6 +363,7 @@
 				FEA0CAC01DAF981000BF6766 /* DiscoverViewController.swift */,
 				FE19FFBA1DD028820090C194 /* DiscoverArticleController.swift */,
 				FE19FFBC1DD028A90090C194 /* DiscoverSingleController.swift */,
+				FEB91C2B1DD072C0007962BA /* HotRecommondController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -387,6 +394,8 @@
 				FEF551E61DC343460044F1D5 /* DiscoverArticleCell.xib */,
 				FEB91C271DD05CAE007962BA /* TopCategoryCell.swift */,
 				FEB91C281DD05CAE007962BA /* TopCategoryCell.xib */,
+				FEB91C2D1DD0731C007962BA /* HotRecommondCell.swift */,
+				FEB91C2E1DD0731C007962BA /* HotRecommondCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -694,6 +703,7 @@
 				FEB91C2A1DD05CAE007962BA /* TopCategoryCell.xib in Resources */,
 				FE63AE101DB07A390047F66E /* MainVCSettings.json in Resources */,
 				FEF551E81DC343460044F1D5 /* DiscoverArticleCell.xib in Resources */,
+				FEB91C301DD0731C007962BA /* HotRecommondCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -793,6 +803,7 @@
 				FEF0B5691DC04939000C632C /* HttpTool.swift in Sources */,
 				FE2DA7AE1DC3321D007347C0 /* DiscoverHttpHelper.swift in Sources */,
 				FEBB07641DC88ECE00FF4989 /* ConstraintConstantTarget.swift in Sources */,
+				FEB91C2F1DD0731C007962BA /* HotRecommondCell.swift in Sources */,
 				FEBB07701DC88ECE00FF4989 /* ConstraintMakerEditable.swift in Sources */,
 				FEBB077C1DC88ECE00FF4989 /* ConstraintViewDSL.swift in Sources */,
 				FEBB07711DC88ECE00FF4989 /* ConstraintMakerExtendable.swift in Sources */,
@@ -818,6 +829,7 @@
 				FEF0B56B1DC05B18000C632C /* HomeHttpHelper.swift in Sources */,
 				FEBB07761DC88ECE00FF4989 /* ConstraintOffsetTarget.swift in Sources */,
 				FEB91C291DD05CAE007962BA /* TopCategoryCell.swift in Sources */,
+				FEB91C2C1DD072C0007962BA /* HotRecommondController.swift in Sources */,
 				FE8522251DB9E07F00C0E2C1 /* BetterRefreshHeader.swift in Sources */,
 				FEBB076E1DC88ECE00FF4989 /* ConstraintLayoutSupportDSL.swift in Sources */,
 				FEFE5C1E1DC2000F00AD5D5E /* WirelessPictureView.swift in Sources */,
