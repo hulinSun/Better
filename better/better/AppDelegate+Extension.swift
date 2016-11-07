@@ -18,7 +18,7 @@ extension AppDelegate{
         window?.backgroundColor = UIColor.white
         
         let tabbar = MainTabbarController()
-        tabbar.view.backgroundColor = UIColor.red
+        tabbar.view.backgroundColor = UIColor.white
         
         window?.rootViewController = tabbar
         window?.makeKeyAndVisible()

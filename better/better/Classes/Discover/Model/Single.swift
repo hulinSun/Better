@@ -11,6 +11,13 @@ import Foundation
 import HandyJSON
 
 
+class SingleProCategoryItem: HandyJSON {
+    var id: String?
+    var name: String?
+    var en_name: String?
+    var pic: String?
+    required init() {}
+}
 
 class SingleProCategory: HandyJSON {
     
@@ -18,23 +25,11 @@ class SingleProCategory: HandyJSON {
     var msg: String?
     var ts: Double?
     var data: SingleProCategoryData?
-    
     required init() {}
     
     class SingleProCategoryData: HandyJSON {
-        
-        class SingleProCategoryItem: HandyJSON {
-            
-            var id: String?
-            var name: String?
-            var en_name: String?
-            var pic: String?
-            required init() {}
-        }
-
         var category_list: [SingleProCategoryItem]?
         var banner: [AnyObject]?
-        
         required init() {}
     }
 }

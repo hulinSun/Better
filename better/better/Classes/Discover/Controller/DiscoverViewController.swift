@@ -26,11 +26,28 @@ class DiscoverViewController: UIViewController {
     }()
 
     
+    fileprivate lazy var articleVC: DiscoverArticleController = {
+        let i = DiscoverArticleController()
+        return i
+    }()
+    
+    fileprivate lazy var singleVC: DiscoverSingleController = {
+        let i = DiscoverSingleController()
+        return i
+    }()
+    
     fileprivate var titleV: DiscoverTitleView!
   
     
     private func setupUI() {
         configNav()
+        
+        // 添加子控制器
+        addChildViewController(articleVC)
+        view.addSubview(articleVC.view)
+        addChildViewController(singleVC)
+        view.addSubview(singleVC.view)
+        singleVC.view.isHidden = true
     }
 }
 
@@ -65,7 +82,11 @@ extension DiscoverViewController{
         v.clickItemback = { [weak self] item in
             switch item {
             case .left: self?.navigationItem.rightBarButtonItem = self?.editItem
+                self?.articleVC.view.isHidden = false
+                self?.singleVC.view.isHidden = true
             case .right: self?.navigationItem.rightBarButtonItem = self?.takePhotoItem
+                self?.singleVC.view.isHidden = false
+                self?.articleVC.view.isHidden = true
             }
         }
         v.width = 100 ; v.height = 44
