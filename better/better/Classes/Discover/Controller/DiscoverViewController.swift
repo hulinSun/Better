@@ -48,6 +48,8 @@ class DiscoverViewController: UIViewController {
         addChildViewController(singleVC)
         view.addSubview(singleVC.view)
         singleVC.view.isHidden = true
+        
+        
     }
 }
 
