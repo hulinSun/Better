@@ -15,6 +15,8 @@ class HomeCell: UITableViewCell {
         didSet{
             iconView.layer.cornerRadius = 15
             iconView.clipsToBounds = true
+            iconView.layer.borderColor = UIColor.white.cgColor
+            iconView.layer.borderWidth = 1
         }
     }
     @IBOutlet weak var smallconView: UIImageView!
@@ -38,7 +40,6 @@ class HomeCell: UITableViewCell {
             }else{
                 smallconView.image = UIImage(named: "home_article_view_dark_icon")
                 subTitleView.text = topic?.views!
-                
             }
         }
     }

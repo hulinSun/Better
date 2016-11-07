@@ -27,57 +27,17 @@ class DiscoverViewController: UIViewController {
 
     
     fileprivate var titleV: DiscoverTitleView!
-    
-    var datas: [Topic]?{
-        didSet{
-            tableView.reloadData()
-        }
-    }
-    
+  
     
     private func setupUI() {
-        
-        view.addSubview(tableView)
-        view.backgroundColor = UIColor.white
-        let v = DiscoverTitleView.discoverTitleView()
-        
-        v.clickItemback = { [weak self] item in
-            switch item {
-                case .left: self?.navigationItem.rightBarButtonItem = self?.editItem
-                case .right: self?.navigationItem.rightBarButtonItem = self?.takePhotoItem
-            }
-        }
-        v.width = 100 ; v.height = 44
-        
-        navigationItem.titleView = v ; titleV = v
-        if let hairl = findHairlineImageViewUnder(view: navigationController!.navigationBar){
-            hairl.isHidden = true
-        }
-        
-        DiscoverHttpHelper.requestDiscoverData { (discover) in
-            self.datas = discover.data?.topic
-        }
-        
         configNav()
-        
-        DiscoverHttpHelper.requestDiscoverSingleCategory { (category) in
-           
-        }
-        
     }
-  
-    fileprivate lazy var tableView: UITableView = {
-        
-        let i = UITableView(frame: CGRect(x: 0, y: 0, width: UIConst.screenWidth, height: UIConst.screenHeight), style: .plain)
-        
-        i.register(UINib.init(nibName: "DiscoverArticleCell", bundle: nil), forCellReuseIdentifier: "DiscoverArticleCell")
-        i.separatorStyle = .none
-        i.delegate = self
-        i.dataSource = self
-        return i
-    }()
+}
+
+// MARK: - configNav
+extension DiscoverViewController{
     
-    func findHairlineImageViewUnder(view: UIView) -> UIImageView? {
+   fileprivate func findHairlineImageViewUnder(view: UIView) -> UIImageView? {
         if view is UIImageView && (view.height <= 1.0) {
             return view as? UIImageView
         }
@@ -90,45 +50,26 @@ class DiscoverViewController: UIViewController {
         return nil
     }
     
-}
-
-
-typealias TableViewProtocol = DiscoverViewController
-
-extension TableViewProtocol : UITableViewDelegate , UITableViewDataSource{
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 152
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "DiscoverArticleCell") as! DiscoverArticleCell
-         cell.topic = datas?[indexPath.row]
-        cell.selectionStyle = .none
-        return cell
-    }
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return datas?.count ?? 0
-    }
-    
-}
-
-// MARK: - configNav
-extension DiscoverViewController{
-    
     /// 初始化导航栏
     fileprivate func configNav() {
         
         navigationItem.rightBarButtonItem = editItem
-        
         let leftItem = UIBarButtonItem.itemWithBack(icon: "discover_article_list_dark_icon", highlightIcon: "discover_article_list_icon", target: self, action: #selector(DiscoverViewController.leftClick))
         navigationItem.leftBarButtonItem = leftItem
+        
+        if let hairl = findHairlineImageViewUnder(view: navigationController!.navigationBar){
+            hairl.isHidden = true
+        }
+        
+        let v = DiscoverTitleView.discoverTitleView()
+        v.clickItemback = { [weak self] item in
+            switch item {
+            case .left: self?.navigationItem.rightBarButtonItem = self?.editItem
+            case .right: self?.navigationItem.rightBarButtonItem = self?.takePhotoItem
+            }
+        }
+        v.width = 100 ; v.height = 44
+        navigationItem.titleView = v ; titleV = v
     }
     
     func edit() {
