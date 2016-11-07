@@ -180,9 +180,7 @@ class WirelessPictureView: UIView , PageControlAlimentProtocol , WirelessPicture
         }
         
         self.collectionView.reloadData()
-        
         if self.autoScroll { beginTimer() }
-
     }
     
     /// 开启定时器
@@ -194,7 +192,6 @@ class WirelessPictureView: UIView , PageControlAlimentProtocol , WirelessPicture
         RunLoop.main.add(t, forMode: .commonModes)
         self.timer = t
     }
-    
     
     /// 停止定时器
      func stopTimer(){

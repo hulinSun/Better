@@ -45,5 +45,4 @@ struct HttpConst {
         "track_deviceid": "18B31DD0-2B1E-49A9-A78A-763C77FD65BD",
         "track_user_id": "2670024",
         "v": "14"]
-    
 }

@@ -48,6 +48,7 @@ class DiscoverViewController: UIViewController {
             }
         }
         v.width = 100 ; v.height = 44
+        
         navigationItem.titleView = v ; titleV = v
         if let hairl = findHairlineImageViewUnder(view: navigationController!.navigationBar){
             hairl.isHidden = true
@@ -58,6 +59,11 @@ class DiscoverViewController: UIViewController {
         }
         
         configNav()
+        
+        DiscoverHttpHelper.requestDiscoverSingleCategory { (category) in
+           
+        }
+        
     }
   
     fileprivate lazy var tableView: UITableView = {

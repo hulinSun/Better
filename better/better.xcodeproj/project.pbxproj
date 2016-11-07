@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		35B04F73FA88D94014F9A101 /* Pods_better.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB14B8F409C13C2E9FA9B62E /* Pods_better.framework */; };
+		FE19FF9B1DD01B540090C194 /* Single.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE19FF9A1DD01B540090C194 /* Single.swift */; };
 		FE238B341DB367D40005C190 /* UINavigationBar+Awesome.m in Sources */ = {isa = PBXBuildFile; fileRef = FE238B331DB367D40005C190 /* UINavigationBar+Awesome.m */; };
 		FE2DA7AE1DC3321D007347C0 /* DiscoverHttpHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2DA7AD1DC3321D007347C0 /* DiscoverHttpHelper.swift */; };
 		FE558CAA1DC2F51C00AC15B3 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE558CA91DC2F51C00AC15B3 /* Theme.swift */; };
@@ -88,6 +89,7 @@
 		B4C7458C0027C12305DE018F /* Pods-better.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-better.release.xcconfig"; path = "Pods/Target Support Files/Pods-better/Pods-better.release.xcconfig"; sourceTree = "<group>"; };
 		BB14B8F409C13C2E9FA9B62E /* Pods_better.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_better.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D96CF921BA0BE72B38A3D872 /* Pods-better.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-better.debug.xcconfig"; path = "Pods/Target Support Files/Pods-better/Pods-better.debug.xcconfig"; sourceTree = "<group>"; };
+		FE19FF9A1DD01B540090C194 /* Single.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Single.swift; sourceTree = "<group>"; };
 		FE238B321DB367D40005C190 /* UINavigationBar+Awesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+Awesome.h"; sourceTree = "<group>"; };
 		FE238B331DB367D40005C190 /* UINavigationBar+Awesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+Awesome.m"; sourceTree = "<group>"; };
 		FE238B871DB3718C0005C190 /* better-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "better-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -353,6 +355,7 @@
 			isa = PBXGroup;
 			children = (
 				FEF0B5781DC0A53E000C632C /* DiscoverModel.swift */,
+				FE19FF9A1DD01B540090C194 /* Single.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -769,6 +772,7 @@
 				FE8522261DB9E07F00C0E2C1 /* UIScrollView+Refresh.swift in Sources */,
 				FEBB076F1DC88ECE00FF4989 /* ConstraintMaker.swift in Sources */,
 				FEBB073D1DC8875800FF4989 /* UIColor+hex.swift in Sources */,
+				FE19FF9B1DD01B540090C194 /* Single.swift in Sources */,
 				FEF0B5751DC08A9B000C632C /* String+Extension.swift in Sources */,
 				FEFE5C1D1DC2000F00AD5D5E /* PictureProtocol.swift in Sources */,
 				FEF0B5611DC047E2000C632C /* UIBarButtonItem+category.swift in Sources */,
