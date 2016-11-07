@@ -36,6 +36,8 @@
 		FEA0CAC31DAF982000BF6766 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA0CAC21DAF982000BF6766 /* HomeViewController.swift */; };
 		FEA0CAC51DAF983500BF6766 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA0CAC41DAF983500BF6766 /* MessageViewController.swift */; };
 		FEA0CAC71DAF984100BF6766 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA0CAC61DAF984100BF6766 /* ProfileViewController.swift */; };
+		FEB91C291DD05CAE007962BA /* TopCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB91C271DD05CAE007962BA /* TopCategoryCell.swift */; };
+		FEB91C2A1DD05CAE007962BA /* TopCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEB91C281DD05CAE007962BA /* TopCategoryCell.xib */; };
 		FEBB073D1DC8875800FF4989 /* UIColor+hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBB073C1DC8875800FF4989 /* UIColor+hex.swift */; };
 		FEBB07611DC88ECE00FF4989 /* Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBB073F1DC88ECE00FF4989 /* Constraint.swift */; };
 		FEBB07621DC88ECE00FF4989 /* ConstraintAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBB07401DC88ECE00FF4989 /* ConstraintAttributes.swift */; };
@@ -124,6 +126,8 @@
 		FEA0CAC21DAF982000BF6766 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		FEA0CAC41DAF983500BF6766 /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		FEA0CAC61DAF984100BF6766 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		FEB91C271DD05CAE007962BA /* TopCategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopCategoryCell.swift; sourceTree = "<group>"; };
+		FEB91C281DD05CAE007962BA /* TopCategoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopCategoryCell.xib; sourceTree = "<group>"; };
 		FEBB073C1DC8875800FF4989 /* UIColor+hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+hex.swift"; sourceTree = "<group>"; };
 		FEBB073F1DC88ECE00FF4989 /* Constraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constraint.swift; sourceTree = "<group>"; };
 		FEBB07401DC88ECE00FF4989 /* ConstraintAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintAttributes.swift; sourceTree = "<group>"; };
@@ -381,6 +385,8 @@
 				FE558CB11DC2FCB900AC15B3 /* DiscoverTitleView.xib */,
 				FEF551E51DC343460044F1D5 /* DiscoverArticleCell.swift */,
 				FEF551E61DC343460044F1D5 /* DiscoverArticleCell.xib */,
+				FEB91C271DD05CAE007962BA /* TopCategoryCell.swift */,
+				FEB91C281DD05CAE007962BA /* TopCategoryCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -685,6 +691,7 @@
 				FE83A4271DAF5987002BB862 /* Assets.xcassets in Resources */,
 				FEBB077E1DC88ECE00FF4989 /* Info.plist in Resources */,
 				FE558CB21DC2FCB900AC15B3 /* DiscoverTitleView.xib in Resources */,
+				FEB91C2A1DD05CAE007962BA /* TopCategoryCell.xib in Resources */,
 				FE63AE101DB07A390047F66E /* MainVCSettings.json in Resources */,
 				FEF551E81DC343460044F1D5 /* DiscoverArticleCell.xib in Resources */,
 			);
@@ -810,6 +817,7 @@
 				FE19FFBD1DD028A90090C194 /* DiscoverSingleController.swift in Sources */,
 				FEF0B56B1DC05B18000C632C /* HomeHttpHelper.swift in Sources */,
 				FEBB07761DC88ECE00FF4989 /* ConstraintOffsetTarget.swift in Sources */,
+				FEB91C291DD05CAE007962BA /* TopCategoryCell.swift in Sources */,
 				FE8522251DB9E07F00C0E2C1 /* BetterRefreshHeader.swift in Sources */,
 				FEBB076E1DC88ECE00FF4989 /* ConstraintLayoutSupportDSL.swift in Sources */,
 				FEFE5C1E1DC2000F00AD5D5E /* WirelessPictureView.swift in Sources */,
