@@ -17,6 +17,10 @@ class DiscoverSingleController: UIViewController {
         setupUI()
         DiscoverHttpHelper.requestDiscoverSingleCategory { (category) in
         }
+        
+        DiscoverHttpHelper.requestDiscoverHot { (hot) in
+            
+        }
     }
 
     fileprivate func setupUI(){

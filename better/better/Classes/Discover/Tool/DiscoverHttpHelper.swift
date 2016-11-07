@@ -40,13 +40,32 @@ class DiscoverHttpHelper: NSObject {
         let realP = NSMutableDictionary.init(dictionary: HttpConst.constParame)
         let parame =  (realP as NSDictionary) as! [String: String]
         
-        /// 方法2  handyJosn 处理
         Alamofire.request( "http://open3.bantangapp.com/community/post/index", method: .get, parameters: parame).responseString { (rsp) in
             if let model = JSONDeserializer<SingleProCategory>.deserializeFrom(json: rsp.result.value){
                 back(model)
             }
         }
     }
+    
+    
+    
+    /// 获取单品页面热门推荐内容
+    ///
+    /// - parameter back: 热门推荐
+    class func requestDiscoverHot(back: @escaping (SingleProdHot) -> Void){
+        
+        let realP = NSMutableDictionary.init(dictionary: HttpConst.constParame)
+        realP["page"] = "0"
+        realP["pagesize"] = "18"
+        
+        let parame =  (realP as NSDictionary) as! [String: String]
+        Alamofire.request( "http://open3.bantangapp.com/community/post/hotRecommend", method: .get, parameters: parame).responseString { (rsp) in
+            if let model = JSONDeserializer<SingleProdHot>.deserializeFrom(json: rsp.result.value){
+                back(model)
+            }
+        }
+    }
+    
     
     
 }
