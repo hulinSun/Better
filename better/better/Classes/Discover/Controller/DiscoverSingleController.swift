@@ -27,6 +27,8 @@ class DiscoverSingleController: UIViewController {
     
     var topDatas: SingleProCategory?{
         didSet{
+            let count = Int((topDatas?.data?.category_list?.count)! / 6) + 1
+            pageControl.numberOfPages = count
             topCollectionView.reloadData()
         }
     }
@@ -40,6 +42,54 @@ class DiscoverSingleController: UIViewController {
         i.delegate = self
         i.dataSource = self
         i.isPagingEnabled = true
+        return i
+    }()
+    
+    
+    fileprivate lazy var pageControl: UIPageControl = {
+        let i = UIPageControl()
+        i.hidesForSinglePage = true
+        i.pageIndicatorTintColor = UIColor.init(hexString: "#e4e4e4")
+        i.currentPageIndicatorTintColor = UIColor.init(hexString: "#fd6363")
+        return i
+    }()
+    
+    fileprivate lazy var topView: UIView = {
+        let i = UIView()
+        
+        // 按钮
+        let btn = UIButton()
+        btn.backgroundColor = UIColor.clear
+        btn.titleLabel?.font = UIFont.systemFont(ofSize: 13)
+        btn.setTitle("分类", for: .normal)
+        btn.setImage(UIImage(named:"descover_categoty_icon"), for: .normal)
+        btn.imageView?.contentMode = .center
+        btn.setTitleColor(UIColor.init(hexString: "#999999"), for: .normal)
+        btn.titleEdgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
+        i.addSubview(btn)
+        i.addSubview(self.topCollectionView)
+        i.addSubview(self.pageControl)
+        
+        // 约束
+        btn.snp.makeConstraints { (make) in
+            make.left.equalToSuperview().offset(8)
+            make.top.equalToSuperview().offset(10)
+            make.width.equalTo(50)
+            make.height.equalTo(20)
+        }
+        self.topCollectionView.snp.makeConstraints { (make) in
+            make.top.equalToSuperview().offset(40)
+            make.left.equalToSuperview().offset(5)
+            make.right.equalToSuperview().offset(-5)
+            make.height.equalTo(290)
+        }
+        
+        self.pageControl.snp.makeConstraints { (make) in
+            make.centerX.equalToSuperview()
+            make.width.equalTo(150)
+            make.bottom.equalToSuperview()
+            make.height.equalTo(30)
+        }
         return i
     }()
     
@@ -63,13 +113,15 @@ class DiscoverSingleController: UIViewController {
     }()
     
     fileprivate func setupUI(){
-        view.backgroundColor = UIColor.white
-        view.addSubview(topCollectionView)
-        topCollectionView.snp.makeConstraints { (make) in
+        
+        view.backgroundColor = UIColor.init(hexString: "f4f4f4")
+        view.addSubview(topView)
+        topView.backgroundColor = UIColor.white
+        topView.snp.makeConstraints { (make) in
             make.top.equalToSuperview().offset(10 + 64)
-            make.left.equalToSuperview().offset(5) // 10
-            make.right.equalToSuperview().offset(-5) // -10
-            make.height.equalTo(290)
+            make.left.equalToSuperview()
+            make.right.equalToSuperview()
+            make.height.equalTo(360)
         }
     }
 }
@@ -77,7 +129,7 @@ class DiscoverSingleController: UIViewController {
 
 typealias CollectionProtocol = DiscoverSingleController
 
-extension CollectionProtocol: UICollectionViewDelegate , UICollectionViewDataSource{
+extension CollectionProtocol: UICollectionViewDelegate , UICollectionViewDataSource , UIScrollViewDelegate{
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -95,4 +147,9 @@ extension CollectionProtocol: UICollectionViewDelegate , UICollectionViewDataSou
         guard let item = topDatas?.data?.category_list?[indexPath.item] else { return }
         print("点击了\(item.name)")
     }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        print(scrollView.contentOffset.x)
+    }
+    
 }
