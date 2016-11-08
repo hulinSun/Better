@@ -40,6 +40,7 @@ class HotTopView: UIView {
         addSubview(zanBtn)
         addSubview(retweetBtn)
         addSubview(moreBtn)
+        addSubview(line)
         
 //        iconView.backgroundColor = .red
 //        nameLabel.backgroundColor = .blue
@@ -92,7 +93,7 @@ class HotTopView: UIView {
         commentBtn.snp.makeConstraints { (make) in
             make.left.equalToSuperview().offset(10)
             make.size.equalTo(CGSize(width: 34, height: 34))
-            make.top.equalTo(picScrollView.snp.bottom).offset(10)
+            make.top.equalTo(picScrollView.snp.bottom).offset(7)
         }
         
         zanBtn.snp.makeConstraints { (make) in
@@ -113,6 +114,13 @@ class HotTopView: UIView {
             make.right.equalToSuperview().offset(-10)
         }
         
+        line.snp.makeConstraints { (make) in
+            make.left.equalToSuperview().offset(10)
+            make.right.equalToSuperview().offset(-10)
+            make.height.equalTo(0.5)
+            make.top.equalTo(moreBtn.snp.bottom).offset(4)
+        }
+        
         imgView1.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
         }
@@ -127,6 +135,13 @@ class HotTopView: UIView {
         let i = UIImageView()
         i.layer.cornerRadius = 17
         i.clipsToBounds = true
+        return i
+    }()
+    
+    fileprivate lazy var line: UIImageView = {
+        let i = UIImageView()
+        i.alpha = 0.7
+        i.image = UIImage(named:"line_article_edit")
         return i
     }()
     
@@ -166,24 +181,28 @@ class HotTopView: UIView {
     /// 评论按钮
     fileprivate lazy var commentBtn: UIButton = {
         let i = UIButton()
+        i.setImage(UIImage(named: "btn_group_comment"), for: .normal)
         return i
     }()
     
     /// 赞按钮
     fileprivate lazy var zanBtn: UIButton = {
         let i = UIButton()
+        i.setImage(UIImage(named: "btn_group_like"), for: .normal)
         return i
     }()
     
     /// 转发按钮
     fileprivate lazy var retweetBtn: UIButton = {
         let i = UIButton()
+        i.setImage(UIImage(named: "btn_topic_share_gray"), for: .normal)
         return i
     }()
     
     /// 更多按钮
     fileprivate lazy var moreBtn: UIButton = {
         let i = UIButton()
+        i.setImage(UIImage(named: "btn_group_more"), for: .normal)
         return i
     }()
     
@@ -204,12 +223,7 @@ class HotTopView: UIView {
     fileprivate lazy var imgView2: UIPageControl = {
         let i = UIPageControl()
         return i
-    }()
-    
-    
-    
-    
-    
+    }()  
 }
 
 

@@ -28,8 +28,9 @@ class HotRecommondCell: UITableViewCell {
     /// 描述
     fileprivate lazy var descLabel: UILabel = {
         let i = UILabel()
+        i.backgroundColor = .white
         i.numberOfLines = 0
-        i.preferredMaxLayoutWidth = UIConst.screenWidth
+        i.preferredMaxLayoutWidth = UIConst.screenWidth - 20
         i.font = UIFont.systemFont(ofSize: 13)
         i.textColor = UIColor.rgb(red: 150, green: 150, blue: 150)
         return i
@@ -62,16 +63,20 @@ class HotRecommondCell: UITableViewCell {
             let attr = NSMutableAttributedString(string:
                 (recommond?.content)!, attributes: [NSFontAttributeName : UIFont.systemFont(ofSize: 13) , NSForegroundColorAttributeName : UIColor.rgb(red: 150, green: 150, blue: 150) , NSParagraphStyleAttributeName: prar])
             descLabel.attributedText = attr
+            
+            commentView.recommond = recommond
         }
     }
     
     
     fileprivate func setupUI(){
         
-        backgroundColor = UIColor.init(hexString: "f4f4f4")
+//        backgroundColor = UIColor.init(hexString: "f4f4f4")
+        backgroundColor = .white
         contentView.addSubview(topView)
         contentView.addSubview(descLabel)
-//        contentView.addSubview(commentView)
+        contentView.addSubview(commentView)
+        commentView.backgroundColor = UIColor.random()
 //        contentView.addSubview(hotInputView)
         topView.backgroundColor = .white
         lay()
@@ -83,20 +88,22 @@ class HotRecommondCell: UITableViewCell {
         
         topView.snp.makeConstraints { (make) in
             make.top.left.right.equalToSuperview()
-            make.height.equalTo(300)
+            make.height.equalTo(295)
         }
         
         descLabel.snp.makeConstraints { (make) in
-            make.left.right.equalToSuperview()
-            make.top.equalTo(topView.snp.bottom)
+            make.left.equalToSuperview().offset(10)
+            make.right.equalToSuperview().offset(-10)
+            make.top.equalTo(topView.snp.bottom).offset(10)
         }
         
-//        commentView.snp.makeConstraints { (make) in
-//            make.top.equalTo(descLabel.snp.bottom).offset(15)
-//            make.left.right.equalToSuperview()
+        commentView.snp.makeConstraints { (make) in
+            make.top.equalTo(descLabel.snp.bottom).offset(15)
+            make.left.right.equalToSuperview()
 //            make.bottom.equalTo((commentView.subviews.last?.snp.bottom)!)
-//        }
-//        
+            make.height.equalTo(120)
+        }
+
 //        hotInputView.snp.makeConstraints { (make) in
 //            make.left.right.equalToSuperview()
 //            make.top.equalTo(commentView.snp.bottom)

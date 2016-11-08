@@ -13,12 +13,17 @@ class HotCommentView: UIView {
     /// 喜欢
     fileprivate lazy var likeBtn: UIButton = {
         let i = UIButton()
+        i.setTitleColor(UIColor.lightGray, for: .normal)
+        i.titleLabel?.font = UIFont.systemFont(ofSize: 13)
         return i
     }()
     
     /// 多少人评论label
     fileprivate lazy var commentCountLabel: UILabel = {
         let i = UILabel()
+        i.text = "评论"
+        i.font = UIFont.systemFont(ofSize: 13)
+        i.textColor = UIColor.rgb(red: 220, green: 220, blue: 220)
         return i
     }()
     
@@ -30,28 +35,37 @@ class HotCommentView: UIView {
     
     var recommond: SinglePrdHotRecommond?{
         didSet{
+            likeBtn.setTitle( (recommond?.dynamic?.likes)! + "人喜欢", for: .normal)
             items.forEach{$0.removeFromSuperview()}
             items.removeAll()
+            
             if let coms = recommond?.comments{
                 for i in 0..<coms.count {
                     // 创建一个label
                     let l = UILabel()
-                    items.append(l)
+                    l.font = UIFont.systemFont(ofSize: 13)
+                    l.textColor = UIColor.rgb(red: 140, green: 140, blue: 140)
                     l.backgroundColor = UIColor.random()
                     l.tag = i
                     l.numberOfLines = 0
                     l.preferredMaxLayoutWidth = UIConst.screenWidth - 20
+                    l.text = coms[i].conent
+                    addSubview(l)
+                    items.append(l)
                     
                     l.snp.makeConstraints({ (make) in
-                        make.left.right.equalToSuperview()
+                        make.left.equalToSuperview().offset(10)
+                        make.right.equalToSuperview().offset(-10)
                         if i == 0 {
-                            make.top.equalToSuperview()
+                            make.top.equalTo(commentCountLabel.snp.bottom).offset(5)
                         }else if i == 1{
                             make.top.equalTo((items.first?.snp.bottom)!)
                         }else if i == 2{
                             make.top.equalTo(items[1].snp.bottom)
                         }
                     })
+                    
+                    setNeedsLayout()
                 }
             }
         }
@@ -61,6 +75,29 @@ class HotCommentView: UIView {
 //        super.init(frame: frame)
 //        setupUI()
 //    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        if let coms = recommond?.comments{
+            for i in 0..<coms.count {
+                // 创建一个label
+                let l = items[i]
+                l.snp.makeConstraints({ (make) in
+                    make.left.equalToSuperview().offset(10)
+                    make.right.equalToSuperview().offset(-10)
+                    if i == 0 {
+                        make.top.equalTo(commentCountLabel.snp.bottom).offset(5)
+                    }else if i == 1{
+                        make.top.equalTo((items.first?.snp.bottom)!)
+                    }else if i == 2{
+                        make.top.equalTo(items[1].snp.bottom)
+                    }
+                })
+            }
+        }
+        
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -76,7 +113,8 @@ class HotCommentView: UIView {
     fileprivate func setupUI(){
         addSubview(likeBtn)
         addSubview(commentCountLabel)
-        
+        likeBtn.backgroundColor = .red
+        commentCountLabel.backgroundColor = .blue
         likeBtn.snp.makeConstraints { (make) in
             make.left.top.equalToSuperview().offset(10)
             make.height.equalTo(20)
