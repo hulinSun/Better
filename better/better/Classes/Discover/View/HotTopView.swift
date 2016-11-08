@@ -135,7 +135,7 @@ class HotTopView: UIView {
         let i = UILabel()
         i.text = "程冠希"
         i.font = UIFont.systemFont(ofSize: 14)
-        i.textColor = UIColor.rgb(red: 150, green: 150, blue: 150)
+        i.textColor = UIColor.init(hexString: "666666")
         return i
     }()
     

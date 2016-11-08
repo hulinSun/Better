@@ -57,18 +57,23 @@ class HotRecommondCell: UITableViewCell {
         didSet{
             lay()
             topView.recommond = recommond
-            descLabel.text = recommond?.content
+            let prar = NSMutableParagraphStyle()
+            prar.lineSpacing = 4
+            let attr = NSMutableAttributedString(string:
+                (recommond?.content)!, attributes: [NSFontAttributeName : UIFont.systemFont(ofSize: 13) , NSForegroundColorAttributeName : UIColor.rgb(red: 150, green: 150, blue: 150) , NSParagraphStyleAttributeName: prar])
+            descLabel.attributedText = attr
         }
     }
     
     
     fileprivate func setupUI(){
         
+        backgroundColor = UIColor.init(hexString: "f4f4f4")
         contentView.addSubview(topView)
         contentView.addSubview(descLabel)
 //        contentView.addSubview(commentView)
 //        contentView.addSubview(hotInputView)
-//        topView.backgroundColor = UIColor.random()
+        topView.backgroundColor = .white
         lay()
     }
     

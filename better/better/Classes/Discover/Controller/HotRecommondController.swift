@@ -61,7 +61,7 @@ typealias HotRecommandTableViewProtocol = HotRecommondController
 extension HotRecommandTableViewProtocol : UITableViewDelegate , UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 300
+        return 500
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
