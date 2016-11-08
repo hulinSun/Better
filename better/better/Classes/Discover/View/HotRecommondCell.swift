@@ -48,6 +48,9 @@ class HotRecommondCell: UITableViewCell {
         let i = UIButton()
         i.setTitleColor(UIColor.lightGray, for: .normal)
         i.titleLabel?.font = UIFont.systemFont(ofSize: 12)
+        i.backgroundColor = UIColor.random()
+        i.setImage(UIImage(named:"community_like"), for: .normal)
+//        i.titleEdgeInsets = UIEdgeInsets(top: 0, left: 6, bottom: 0, right: 0)
         return i
     }()
     
@@ -83,6 +86,12 @@ class HotRecommondCell: UITableViewCell {
                 (recommond?.content)!, attributes: [NSFontAttributeName : UIFont.systemFont(ofSize: 13) , NSForegroundColorAttributeName : UIColor.rgb(red: 150, green: 150, blue: 150) , NSParagraphStyleAttributeName: prar])
             descLabel.attributedText = attr
             likeBtn.setTitle( (recommond?.dynamic?.likes)! + "人喜欢", for: .normal)
+            
+            if let commentCount = recommond?.comments?.count ,commentCount > 0{
+                commentCountLabel.text = "所有" + "\(commentCount)" + "条评论"
+            }else{
+                commentCountLabel.text = "评论"
+            }
             addCommentView()
             setNeedsLayout()
         }
@@ -146,7 +155,7 @@ class HotRecommondCell: UITableViewCell {
             make.left.equalTo(descLabel)
             make.top.equalTo(descLabel.snp.bottom).offset(10)
             make.height.equalTo(20)
-            make.width.lessThanOrEqualTo(100)
+            make.width.lessThanOrEqualTo(180)
         }
         
         commentCountLabel.snp.makeConstraints { (make) in

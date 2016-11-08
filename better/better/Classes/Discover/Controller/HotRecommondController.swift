@@ -16,7 +16,7 @@ class HotRecommondController: UIViewController {
         
         super.viewDidLoad()
         view.backgroundColor = .white
-        
+        title = "热门推荐"
         view.addSubview(tableView)
         
         DiscoverHttpHelper.requestDiscoverHot { (hot) in
