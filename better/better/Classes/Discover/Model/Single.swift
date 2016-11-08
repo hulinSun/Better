@@ -87,7 +87,7 @@ class SinglePrdHotRecommond: HandyJSON {
     var product: [AnyObject]?
     var comments: [SingleProComment]?
     var trace_id: String?
-    var brand_product: [AnyObject]?
+    var brand_product: AnyObject?
     
     required init() {}
 }
