@@ -41,6 +41,7 @@ class HotCommentView: UIView {
             
             if let coms = recommond?.comments{
                 for i in 0..<coms.count {
+                    
                     // 创建一个label
                     let l = UILabel()
                     l.font = UIFont.systemFont(ofSize: 13)
@@ -71,14 +72,19 @@ class HotCommentView: UIView {
         }
     }
     
-//    init(frame: CGRect ,recommond:SinglePrdHotRecommond? ) {
-//        super.init(frame: frame)
-//        setupUI()
-//    }
-    
     override func layoutSubviews() {
         super.layoutSubviews()
         
+        likeBtn.snp.makeConstraints { (make) in
+            make.left.top.equalToSuperview().offset(10)
+            make.height.equalTo(20)
+            make.width.lessThanOrEqualTo(100)
+        }
+        commentCountLabel.snp.makeConstraints { (make) in
+            make.left.height.equalTo(likeBtn)
+            make.top.equalTo(likeBtn.snp.bottom).offset(5)
+            make.width.lessThanOrEqualTo(100)
+        }
         if let coms = recommond?.comments{
             for i in 0..<coms.count {
                 // 创建一个label
@@ -91,6 +97,7 @@ class HotCommentView: UIView {
                     }else if i == 1{
                         make.top.equalTo((items.first?.snp.bottom)!)
                     }else if i == 2{
+                        print("make")
                         make.top.equalTo(items[1].snp.bottom)
                     }
                 })

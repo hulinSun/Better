@@ -56,21 +56,19 @@ class HotRecommondCell: UITableViewCell {
     
     var recommond: SinglePrdHotRecommond?{
         didSet{
-            lay()
             topView.recommond = recommond
             let prar = NSMutableParagraphStyle()
             prar.lineSpacing = 4
             let attr = NSMutableAttributedString(string:
                 (recommond?.content)!, attributes: [NSFontAttributeName : UIFont.systemFont(ofSize: 13) , NSForegroundColorAttributeName : UIColor.rgb(red: 150, green: 150, blue: 150) , NSParagraphStyleAttributeName: prar])
             descLabel.attributedText = attr
-            
             commentView.recommond = recommond
+            setNeedsLayout()
         }
     }
     
     
     fileprivate func setupUI(){
-        
 //        backgroundColor = UIColor.init(hexString: "f4f4f4")
         backgroundColor = .white
         contentView.addSubview(topView)
@@ -100,8 +98,14 @@ class HotRecommondCell: UITableViewCell {
         commentView.snp.makeConstraints { (make) in
             make.top.equalTo(descLabel.snp.bottom).offset(15)
             make.left.right.equalToSuperview()
-//            make.bottom.equalTo((commentView.subviews.last?.snp.bottom)!)
-            make.height.equalTo(120)
+            
+            if let i = commentView.subviews.last{
+                print((i as! UILabel).text)
+                make.bottom.equalTo(i.snp.bottom).offset(0)
+            }
+//            make.height.equalTo(120)
+//        make.bottom.equalTo((commentView.subviews.last?.snp.bottom)!)
+            
         }
 
 //        hotInputView.snp.makeConstraints { (make) in

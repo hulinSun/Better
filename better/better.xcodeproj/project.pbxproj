@@ -397,8 +397,8 @@
 				FEB91C271DD05CAE007962BA /* TopCategoryCell.swift */,
 				FEB91C281DD05CAE007962BA /* TopCategoryCell.xib */,
 				FEB91C3A1DD088D6007962BA /* HotRecommondCell.swift */,
-				FEB91C3C1DD089BB007962BA /* HotTopView.swift */,
 				FE5308BE1DD1823A003A17CD /* HotCommentView.swift */,
+				FEB91C3C1DD089BB007962BA /* HotTopView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
