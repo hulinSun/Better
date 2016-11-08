@@ -38,7 +38,7 @@ class HotRecommondCell: UITableViewCell {
         i.numberOfLines = 0
         i.preferredMaxLayoutWidth = UIConst.screenWidth - 20
         i.font = UIFont.systemFont(ofSize: 13)
-        i.textColor = UIColor.rgb(red: 150, green: 150, blue: 150)
+         i.textColor = UIColor.init(hexString: "666666")
         return i
     }()
     
@@ -47,7 +47,7 @@ class HotRecommondCell: UITableViewCell {
     fileprivate lazy var likeBtn: UIButton = {
         let i = UIButton()
         i.setTitleColor(UIColor.lightGray, for: .normal)
-        i.titleLabel?.font = UIFont.systemFont(ofSize: 13)
+        i.titleLabel?.font = UIFont.systemFont(ofSize: 12)
         return i
     }()
     
@@ -55,8 +55,8 @@ class HotRecommondCell: UITableViewCell {
     fileprivate lazy var commentCountLabel: UILabel = {
         let i = UILabel()
         i.text = "评论"
-        i.font = UIFont.systemFont(ofSize: 13)
-        i.textColor = UIColor.rgb(red: 220, green: 220, blue: 220)
+        i.font = UIFont.systemFont(ofSize: 12)
+        i.textColor = UIColor.rgb(red: 150, green: 150, blue: 150)
         return i
     }()
     
@@ -99,9 +99,9 @@ class HotRecommondCell: UITableViewCell {
             for i in 0..<coms.count {
                 // 创建一个label
                 let l = UILabel()
-                l.font = UIFont.systemFont(ofSize: 13)
-                l.textColor = UIColor.rgb(red: 140, green: 140, blue: 140)
-                l.backgroundColor = UIColor.random()
+                l.font = UIFont.systemFont(ofSize: 12)
+                l.textColor = UIColor.init(hexString: "666666")
+                
                 l.numberOfLines = 0
                 l.preferredMaxLayoutWidth = UIConst.screenWidth - 20
                 l.text = coms[i].conent
@@ -119,9 +119,9 @@ class HotRecommondCell: UITableViewCell {
         contentView.addSubview(likeBtn)
         contentView.addSubview(commentCountLabel)
         contentView.addSubview(commentView)
-        commentView.backgroundColor = UIColor.random()
         topView.backgroundColor = .white
-        
+        hotInputView.backgroundColor = .red
+        contentView.addSubview(hotInputView)
     }
     
     override func layoutSubviews() {
@@ -151,7 +151,7 @@ class HotRecommondCell: UITableViewCell {
         
         commentCountLabel.snp.makeConstraints { (make) in
             make.left.equalTo(likeBtn)
-            make.top.equalTo(likeBtn.snp.bottom).offset(5)
+            make.top.equalTo(likeBtn.snp.bottom)
             make.width.lessThanOrEqualTo(200)
             make.height.equalTo(17)
         }
@@ -165,9 +165,9 @@ class HotRecommondCell: UITableViewCell {
                 if i == 0 {
                     make.top.equalToSuperview().offset(5)
                 }else if i == 1{
-                    make.top.equalTo((items.first?.snp.bottom)!)
+                    make.top.equalTo((items.first?.snp.bottom)!).offset(5)
                 }else if i == 2{
-                    make.top.equalTo(items[1].snp.bottom)
+                    make.top.equalTo(items[1].snp.bottom).offset(5)
                 }
             })
         }
@@ -176,9 +176,14 @@ class HotRecommondCell: UITableViewCell {
             commentView.snp.makeConstraints { (make) in
                 make.left.right.equalToSuperview()
                 make.top.equalTo(commentCountLabel.snp.bottom).offset(10)
-                make.bottom.equalTo((commentView.subviews.last?.snp.bottom)!)
+                make.bottom.equalTo((commentView.subviews.last?.snp.bottom)!).offset(5)
             }
         }
         
+        hotInputView.snp.makeConstraints { (make) in
+            make.left.right.equalToSuperview()
+            make.height.equalTo(54)
+            make.top.equalTo(commentView.snp.bottom)
+        }
     }
 }
