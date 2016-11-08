@@ -30,6 +30,8 @@ class HotRecommondCell: UITableViewCell {
         let i = UILabel()
         i.numberOfLines = 0
         i.preferredMaxLayoutWidth = UIConst.screenWidth
+        i.font = UIFont.systemFont(ofSize: 13)
+        i.textColor = UIColor.rgb(red: 150, green: 150, blue: 150)
         return i
     }()
     
@@ -54,6 +56,8 @@ class HotRecommondCell: UITableViewCell {
     var recommond: SinglePrdHotRecommond?{
         didSet{
             lay()
+            topView.recommond = recommond
+            descLabel.text = recommond?.content
         }
     }
     
@@ -64,7 +68,7 @@ class HotRecommondCell: UITableViewCell {
         contentView.addSubview(descLabel)
 //        contentView.addSubview(commentView)
 //        contentView.addSubview(hotInputView)
-        topView.backgroundColor = UIColor.random()
+//        topView.backgroundColor = UIColor.random()
         lay()
     }
     

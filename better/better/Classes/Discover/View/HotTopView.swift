@@ -16,6 +16,15 @@ class HotTopView: UIView {
         setupUI()
     }
     
+    var recommond: SinglePrdHotRecommond?{
+        didSet{
+           iconView.kf.setImage(with: URL(string: (recommond?.author?.avatar)!))
+            nameLabel.text = recommond?.author?.nickname
+            dateLabel.text = recommond?.create_time
+            imgView1.kf.setImage(with: URL(string: (recommond?.pics?.first?.url)!))
+        }
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -32,16 +41,16 @@ class HotTopView: UIView {
         addSubview(retweetBtn)
         addSubview(moreBtn)
         
-        iconView.backgroundColor = .red
-        nameLabel.backgroundColor = .blue
-        vipView.backgroundColor = .yellow
-        dateLabel.backgroundColor = .green
-        picScrollView.backgroundColor = UIColor.random()
-        pageControll.backgroundColor = UIColor.random()
-        commentBtn.backgroundColor = UIColor.random()
-        moreBtn.backgroundColor = UIColor.random()
-        zanBtn.backgroundColor = UIColor.random()
-        retweetBtn.backgroundColor = UIColor.random()
+//        iconView.backgroundColor = .red
+//        nameLabel.backgroundColor = .blue
+//        vipView.backgroundColor = .yellow
+//        dateLabel.backgroundColor = .green
+//        picScrollView.backgroundColor = UIColor.random()
+//        pageControll.backgroundColor = UIColor.random()
+//        commentBtn.backgroundColor = UIColor.random()
+//        moreBtn.backgroundColor = UIColor.random()
+//        zanBtn.backgroundColor = UIColor.random()
+//        retweetBtn.backgroundColor = UIColor.random()
         
         // 头像
         iconView.snp.makeConstraints { (make) in
@@ -56,7 +65,7 @@ class HotTopView: UIView {
             make.left.equalTo(iconView.snp.right).offset(10)
             make.centerY.equalTo(iconView)
             make.height.equalTo(17)
-            make.width.lessThanOrEqualTo(50)
+            make.width.lessThanOrEqualTo(200)
         }
         
         // vip
@@ -71,7 +80,7 @@ class HotTopView: UIView {
             make.centerY.equalTo(iconView)
             make.width.lessThanOrEqualTo(100)
             make.height.equalTo(16)
-            make.right.equalToSuperview().offset(20)
+            make.right.equalToSuperview().offset(-20)
         }
         
         picScrollView.snp.makeConstraints { (make) in
@@ -104,6 +113,10 @@ class HotTopView: UIView {
             make.right.equalToSuperview().offset(-10)
         }
         
+        imgView1.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+        }
+        
         
     }
     
@@ -112,6 +125,8 @@ class HotTopView: UIView {
     /// 头像
     fileprivate lazy var iconView: UIImageView = {
         let i = UIImageView()
+        i.layer.cornerRadius = 17
+        i.clipsToBounds = true
         return i
     }()
     
@@ -119,6 +134,8 @@ class HotTopView: UIView {
     fileprivate lazy var nameLabel: UILabel = {
         let i = UILabel()
         i.text = "程冠希"
+        i.font = UIFont.systemFont(ofSize: 14)
+        i.textColor = UIColor.rgb(red: 150, green: 150, blue: 150)
         return i
     }()
     
@@ -131,13 +148,18 @@ class HotTopView: UIView {
     /// 日期
     fileprivate lazy var dateLabel: UILabel = {
         let i = UILabel()
-        i.text = "1993.23.34"
+        i.font = UIFont.systemFont(ofSize: 12)
+        i.textColor = UIColor.rgb(red: 220, green: 220, blue: 220)
         return i
     }()
     
     /// 图片的scrollview
     fileprivate lazy var picScrollView: UIScrollView = {
         let i = UIScrollView()
+        i.showsVerticalScrollIndicator = false
+        i.showsHorizontalScrollIndicator = false
+        i.isScrollEnabled = false
+        i.addSubview(self.imgView1)
         return i
     }()
     
@@ -170,6 +192,23 @@ class HotTopView: UIView {
         let i = UIPageControl()
         return i
     }()
+    
+    
+    fileprivate lazy var imgView1: UIImageView = {
+        let i = UIImageView()
+        i.contentMode = .center
+        return i
+    }()
+    
+    
+    fileprivate lazy var imgView2: UIPageControl = {
+        let i = UIPageControl()
+        return i
+    }()
+    
+    
+    
+    
     
 }
 
