@@ -65,8 +65,6 @@ class HotCommentView: UIView {
                             make.top.equalTo(items[1].snp.bottom)
                         }
                     })
-                    
-                    setNeedsLayout()
                 }
             }
         }
