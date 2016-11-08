@@ -9,6 +9,51 @@
 import UIKit
 
 
+
+
+
+class HotInputView: UIView {
+    
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupUI()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    fileprivate lazy var leftIcon: UIImageView = {
+        let i = UIImageView()
+        i.contentMode = .center
+        return i
+    }()
+    
+    fileprivate lazy var rightBg: UIImageView = {
+        let i = UIImageView()
+        return i
+    }()
+    
+    /// 初始化
+    fileprivate func setupUI(){
+        addSubview(leftIcon)
+        addSubview(rightBg)
+        
+        leftIcon.snp.makeConstraints { (make) in
+            make.left.top.bottom.equalToSuperview()
+            make.width.equalTo(30)
+        }
+        
+        rightBg.snp.makeConstraints { (make) in
+            make.right.top.bottom.equalToSuperview()
+            make.left.equalTo(leftIcon.snp.right)
+        }
+    }
+    
+}
+
+
 class HotTopView: UIView {
 
     override init(frame: CGRect) {

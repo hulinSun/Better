@@ -82,17 +82,14 @@ class HotRecommondCell: UITableViewCell {
             let attr = NSMutableAttributedString(string:
                 (recommond?.content)!, attributes: [NSFontAttributeName : UIFont.systemFont(ofSize: 13) , NSForegroundColorAttributeName : UIColor.rgb(red: 150, green: 150, blue: 150) , NSParagraphStyleAttributeName: prar])
             descLabel.attributedText = attr
-            
             likeBtn.setTitle( (recommond?.dynamic?.likes)! + "人喜欢", for: .normal)
             addCommentView()
-            
             setNeedsLayout()
         }
     }
     
     
     fileprivate func addCommentView(){
-        
         if items.isEmpty == false {
             items.forEach{$0.removeFromSuperview()}
             items.removeAll()
@@ -110,18 +107,6 @@ class HotRecommondCell: UITableViewCell {
                 l.text = coms[i].conent
                 commentView.addSubview(l)
                 items.append(l)
-                
-//                l.snp.makeConstraints({ (make) in
-//                    make.left.equalToSuperview().offset(10)
-//                    make.right.equalToSuperview().offset(-10)
-//                    if i == 0 {
-//                        make.top.equalTo(commentCountLabel.snp.bottom).offset(5)
-//                    }else if i == 1{
-//                        make.top.equalTo((items.first?.snp.bottom)!)
-//                    }else if i == 2{
-//                        make.top.equalTo(items[1].snp.bottom)
-//                    }
-//                })
             }
         }
     }
@@ -195,18 +180,5 @@ class HotRecommondCell: UITableViewCell {
             }
         }
         
-        
-        
-//        commentView.snp.makeConstraints { (make) in
-//            make.top.equalTo(descLabel.snp.bottom).offset(15)
-//            make.left.right.equalToSuperview()
-//        }
-
-//        hotInputView.snp.makeConstraints { (make) in
-//            make.left.right.equalToSuperview()
-//            make.top.equalTo(commentView.snp.bottom)
-//            make.height.equalTo(44)
-//        }
-
     }
 }

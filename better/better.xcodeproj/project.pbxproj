@@ -13,7 +13,6 @@
 		FE19FFBD1DD028A90090C194 /* DiscoverSingleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE19FFBC1DD028A90090C194 /* DiscoverSingleController.swift */; };
 		FE238B341DB367D40005C190 /* UINavigationBar+Awesome.m in Sources */ = {isa = PBXBuildFile; fileRef = FE238B331DB367D40005C190 /* UINavigationBar+Awesome.m */; };
 		FE2DA7AE1DC3321D007347C0 /* DiscoverHttpHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2DA7AD1DC3321D007347C0 /* DiscoverHttpHelper.swift */; };
-		FE5308BF1DD1823A003A17CD /* HotCommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5308BE1DD1823A003A17CD /* HotCommentView.swift */; };
 		FE558CAA1DC2F51C00AC15B3 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE558CA91DC2F51C00AC15B3 /* Theme.swift */; };
 		FE558CAC1DC2FA3E00AC15B3 /* UIBarButtonItem+item.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE558CAB1DC2FA3E00AC15B3 /* UIBarButtonItem+item.swift */; };
 		FE558CAE1DC2FC9B00AC15B3 /* DiscoverTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE558CAD1DC2FC9B00AC15B3 /* DiscoverTitleView.swift */; };
@@ -104,7 +103,6 @@
 		FE238B331DB367D40005C190 /* UINavigationBar+Awesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+Awesome.m"; sourceTree = "<group>"; };
 		FE238B871DB3718C0005C190 /* better-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "better-Bridging-Header.h"; sourceTree = "<group>"; };
 		FE2DA7AD1DC3321D007347C0 /* DiscoverHttpHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverHttpHelper.swift; sourceTree = "<group>"; };
-		FE5308BE1DD1823A003A17CD /* HotCommentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotCommentView.swift; sourceTree = "<group>"; };
 		FE558CA91DC2F51C00AC15B3 /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		FE558CAB1DC2FA3E00AC15B3 /* UIBarButtonItem+item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+item.swift"; sourceTree = "<group>"; };
 		FE558CAD1DC2FC9B00AC15B3 /* DiscoverTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverTitleView.swift; sourceTree = "<group>"; };
@@ -397,7 +395,6 @@
 				FEB91C271DD05CAE007962BA /* TopCategoryCell.swift */,
 				FEB91C281DD05CAE007962BA /* TopCategoryCell.xib */,
 				FEB91C3A1DD088D6007962BA /* HotRecommondCell.swift */,
-				FE5308BE1DD1823A003A17CD /* HotCommentView.swift */,
 				FEB91C3C1DD089BB007962BA /* HotTopView.swift */,
 			);
 			path = View;
@@ -818,7 +815,6 @@
 				FEBB076C1DC88ECE00FF4989 /* ConstraintLayoutGuideDSL.swift in Sources */,
 				FEBB07741DC88ECE00FF4989 /* ConstraintMakerRelatable.swift in Sources */,
 				FEBB07721DC88ECE00FF4989 /* ConstraintMakerFinalizable.swift in Sources */,
-				FE5308BF1DD1823A003A17CD /* HotCommentView.swift in Sources */,
 				FEBB07731DC88ECE00FF4989 /* ConstraintMakerPriortizable.swift in Sources */,
 				FE238B341DB367D40005C190 /* UINavigationBar+Awesome.m in Sources */,
 				FEA0CAC51DAF983500BF6766 /* MessageViewController.swift in Sources */,
