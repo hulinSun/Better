@@ -11,7 +11,7 @@ import UIKit
 
 extension UIView {
     
-    var left: CGFloat {
+    var bt_left: CGFloat {
         set {
             var newFrame = frame
             newFrame.origin.x = newValue
@@ -22,7 +22,7 @@ extension UIView {
         }
     }
     
-    var top: CGFloat {
+    var bt_top: CGFloat {
         set {
             var newFrame = frame
             newFrame.origin.y = newValue
@@ -33,7 +33,7 @@ extension UIView {
         }
     }
     
-    var width: CGFloat {
+    var bt_width: CGFloat {
         set {
             var newFrame = frame
             newFrame.size.width = newValue
@@ -44,7 +44,7 @@ extension UIView {
         }
     }
     
-    var height: CGFloat {
+    var bt_height: CGFloat {
         set {
             var newFrame = frame
             newFrame.size.height = newValue
@@ -55,25 +55,25 @@ extension UIView {
         }
     }
     
-    var right: CGFloat {
+    var bt_right: CGFloat {
         set {
             var newFrame = frame
-            newFrame.origin.x = newValue - width
+            newFrame.origin.x = newValue - bt_width
             frame = newFrame
         }
         get {
-            return left + width
+            return bt_left + bt_width
         }
     }
     
-    var bottom: CGFloat {
+    var bt_bottom: CGFloat {
         set {
             var newFrame = frame
-            newFrame.origin.y = newValue - height
+            newFrame.origin.y = newValue - bt_height
             frame = newFrame
         }
         get {
-            return top + height
+            return bt_top + bt_height
         }
     }
 }

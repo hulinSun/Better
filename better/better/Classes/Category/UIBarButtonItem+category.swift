@@ -68,7 +68,7 @@ extension UIBarButtonItem{
         if action != nil{
             btn.addTarget(target, action: Selector(action!), for: .touchUpInside)
         }
-        btn.width = 27; btn.height = 27;
+        btn.bt_width = 27; btn.bt_height = 27;
 //        btn.sizeToFit()
         self.init(customView: btn)
     }

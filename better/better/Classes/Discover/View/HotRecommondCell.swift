@@ -21,7 +21,17 @@ class HotRecommondCell: UITableViewCell {
     
     
     
+    fileprivate lazy var topView: HotTopView = {
+        let i = HotTopView()
+        return i
+    }()
+    
     fileprivate func setupUI(){
-        
+        contentView.addSubview(topView)
+        topView.backgroundColor = UIColor.random()
+        topView.snp.makeConstraints { (make) in
+            make.top.left.right.equalToSuperview()
+            make.height.equalTo(300)
+        }
     }
 }

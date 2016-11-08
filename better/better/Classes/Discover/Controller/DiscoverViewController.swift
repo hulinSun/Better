@@ -57,7 +57,7 @@ class DiscoverViewController: UIViewController {
 extension DiscoverViewController{
     
    fileprivate func findHairlineImageViewUnder(view: UIView) -> UIImageView? {
-        if view is UIImageView && (view.height <= 1.0) {
+        if view is UIImageView && (view.bt_height <= 1.0) {
             return view as? UIImageView
         }
         for subView in view.subviews{
@@ -91,7 +91,7 @@ extension DiscoverViewController{
                 self?.articleVC.view.isHidden = true
             }
         }
-        v.width = 100 ; v.height = 44
+        v.bt_width = 100 ; v.bt_height = 44
         navigationItem.titleView = v ; titleV = v
     }
     

@@ -144,6 +144,9 @@ extension CollectionProtocol: UICollectionViewDelegate , UICollectionViewDataSou
         
         guard let item = topDatas?.data?.category_list?[indexPath.item] else { return }
         print("点击了\(item.name)")
+        
+        let hot = HotRecommondController()
+        navigationController?.pushViewController(hot, animated: true)
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
