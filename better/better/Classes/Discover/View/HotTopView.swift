@@ -81,8 +81,6 @@ class HotInputView: UIView {
 }
 
 
-
-
 protocol HotTopViewProtocol :class {
     func hotTopViewclickZanButton()
     func hotTopViewclickCommentButton()

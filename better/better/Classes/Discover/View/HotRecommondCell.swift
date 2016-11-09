@@ -15,7 +15,10 @@ class HotRecommondCell: UITableViewCell{
         setupUI()
     }
     
-    /// 闭包走一波
+    /// 闭包走一波-> 闭包做回调
+    
+    /// 点击按钮的闭包
+    typealias hotClickClosure = (_ hotCell: HotRecommondCell, _ model: SinglePrdHotRecommond, _ type: HotBntType)-> Void
     
     enum HotBntType {
         case comment
@@ -23,10 +26,6 @@ class HotRecommondCell: UITableViewCell{
         case retweet
         case more
     }
-    
-    
-    /// 点击按钮的闭包
-    typealias hotClickClosure = (_ hotCell: HotRecommondCell, _ model: SinglePrdHotRecommond, _ type: HotBntType)-> Void
     
      var clickClosure: hotClickClosure?
     
@@ -237,19 +236,15 @@ class HotRecommondCell: UITableViewCell{
 extension HotRecommondCell: HotTopViewProtocol{
     
     func hotTopViewclickZanButton(){
-        print("我知道了赞 ")
         clickClosure?(self, recommond!, .zan)
     }
     func hotTopViewclickCommentButton(){
-        print("我知道了品论 ")
         clickClosure?(self, recommond!, .comment)
     }
     func hotTopViewclickMoreButton(){
-        print("我知道了genduo ")
         clickClosure?(self, recommond!, .more)
     }
     func hotTopViewclickRetweetButton(){
-        print("我知道了战法 ")
         clickClosure?(self, recommond!, .retweet)
     }
 }
