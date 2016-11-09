@@ -8,12 +8,27 @@
 
 import UIKit
 
-class HotRecommondCell: UITableViewCell {
+class HotRecommondCell: UITableViewCell{
 
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupUI()
     }
+    
+    /// 闭包走一波
+    
+    enum HotBntType {
+        case comment
+        case zan
+        case retweet
+        case more
+    }
+    
+    
+    /// 点击按钮的闭包
+    typealias hotClickClosure = (_ hotCell: HotRecommondCell, _ model: SinglePrdHotRecommond, _ type: HotBntType)-> Void
+    
+     var clickClosure: hotClickClosure?
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -42,6 +57,12 @@ class HotRecommondCell: UITableViewCell {
         return i
     }()
     
+    /// 底部留白线
+    fileprivate lazy var gapLine: UIView = {
+        let i = UIView()
+        i.backgroundColor = UIColor.init(hexString: "f4f4f4")
+        return i
+    }()
     
     /// 喜欢
     fileprivate lazy var likeBtn: UIButton = {
@@ -63,12 +84,11 @@ class HotRecommondCell: UITableViewCell {
         return i
     }()
     
-    
+    /// 留言数组
     fileprivate lazy var items: [UILabel] = {
         let i = Array<UILabel>()
         return i
     }()
-    
     
     /// 输入框
     fileprivate lazy var hotInputView: HotInputView = {
@@ -97,9 +117,7 @@ class HotRecommondCell: UITableViewCell {
         }
     }
     
-    
     fileprivate func addCommentView(){
-//        commentView.backgroundColor = UIColor.random()
         if items.isEmpty == false {
             items.forEach{$0.removeFromSuperview()}
             items.removeAll()
@@ -107,10 +125,8 @@ class HotRecommondCell: UITableViewCell {
         
         if let coms = recommond?.comments{
             for i in 0..<coms.count {
-                // 创建一个label
                 let l = UILabel()
                 l.numberOfLines = 0
-//                l.backgroundColor = UIColor.random()
                 l.preferredMaxLayoutWidth = UIConst.screenWidth - 20
                 let com = coms[i]
                 let str = com.nickname! + ": " + com.conent!
@@ -126,16 +142,16 @@ class HotRecommondCell: UITableViewCell {
     }
     
     fileprivate func setupUI(){
-//        backgroundColor = UIColor.init(hexString: "f4f4f4")
         backgroundColor = .white
         contentView.addSubview(topView)
+        topView.delegate = self
         contentView.addSubview(descLabel)
         contentView.addSubview(likeBtn)
         contentView.addSubview(commentCountLabel)
         contentView.addSubview(commentView)
         topView.backgroundColor = .white
-        hotInputView.backgroundColor = UIColor.random()
         contentView.addSubview(hotInputView)
+        contentView.addSubview(gapLine)
     }
     
     override func layoutSubviews() {
@@ -203,5 +219,37 @@ class HotRecommondCell: UITableViewCell {
                 make.top.equalTo(commentCountLabel.snp.bottom).priority(249)
             }
         }
+        
+        gapLine.snp.makeConstraints { (make) in
+            make.left.right.equalToSuperview()
+            make.height.equalTo(10)
+            make.top.equalTo(hotInputView.snp.bottom)
+        }
+    }
+    
+    deinit {
+        print("dealloc")
+    }
+    
+}
+
+
+extension HotRecommondCell: HotTopViewProtocol{
+    
+    func hotTopViewclickZanButton(){
+        print("我知道了赞 ")
+        clickClosure?(self, recommond!, .zan)
+    }
+    func hotTopViewclickCommentButton(){
+        print("我知道了品论 ")
+        clickClosure?(self, recommond!, .comment)
+    }
+    func hotTopViewclickMoreButton(){
+        print("我知道了genduo ")
+        clickClosure?(self, recommond!, .more)
+    }
+    func hotTopViewclickRetweetButton(){
+        print("我知道了战法 ")
+        clickClosure?(self, recommond!, .retweet)
     }
 }

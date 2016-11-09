@@ -81,6 +81,11 @@ extension HotRecommandTableViewProtocol : UITableViewDelegate , UITableViewDataS
         let cell = tableView.dequeueReusableCell(withIdentifier: "HotRecommondCell") as! HotRecommondCell
         cell.recommond = hotModel?.data?[indexPath.row]
         cell.selectionStyle = .none
+        
+        /// 点击事件回调
+        cell.clickClosure = {(hotcell, model,type) in
+            print(type)
+        }
         return cell
     }
     
@@ -91,43 +96,5 @@ extension HotRecommandTableViewProtocol : UITableViewDelegate , UITableViewDataS
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return hotModel?.data?.count ?? 0
     }
-    
 }
 
-
-/**
- *
- view.subviews.forEach{$0.removeFromSuperview()}
- 
- let v = UIView()
- v.backgroundColor = .red
- view.addSubview(v)
- 
- for i in 0..<items.count {
- let l = UILabel()
- v.addSubview(l)
- l.numberOfLines = 0
- l.backgroundColor = UIColor.random()
- l.preferredMaxLayoutWidth = 300
- l.text = items[i]
- 
- l.snp.makeConstraints({ (make) in
- make.left.right.equalToSuperview()
- if i == 0 {
- make.top.equalToSuperview().offset(10)
- }else if i == 1{
- make.top.equalTo((v.subviews.first?.snp.bottom)!).offset(10)
- }else if i == 2{
- make.top.equalTo(v.subviews[1].snp.bottom).offset(10)
- }
- })
- }
- 
- v.snp.makeConstraints { (make) in
- make.center.equalToSuperview()
- make.width.equalTo(300)
- guard let last = v.subviews.last else{ fatalError("init(coder:) has not been implemented")}
- make.bottom.equalTo(last.snp.bottom).offset(10)
- }
- 
- */

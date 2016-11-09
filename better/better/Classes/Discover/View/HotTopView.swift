@@ -9,9 +9,6 @@
 import UIKit
 
 
-
-
-
 class HotInputView: UIView {
     
     
@@ -20,18 +17,36 @@ class HotInputView: UIView {
         setupUI()
     }
     
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
     fileprivate lazy var leftIcon: UIImageView = {
         let i = UIImageView()
-        i.contentMode = .center
+        i.layer.cornerRadius = 15
+        i.clipsToBounds = true
+        i.image = UIImage(named: "center_wishbox_empty")
         return i
     }()
     
-    fileprivate lazy var rightBg: UIImageView = {
+    fileprivate lazy var line: UIImageView = {
         let i = UIImageView()
+        i.alpha = 0.7
+        i.image = UIImage(named:"line_article_edit")
+        return i
+    }()
+    
+    fileprivate lazy var rightBg: UIButton = {
+        let i = UIButton()
+        var im = UIImage(named: "bg_comment_text_field")?.resizableImage(withCapInsets: UIEdgeInsetsMake(10, 30, 10, 30), resizingMode: .stretch)
+        i.setBackgroundImage(im, for: .normal)
+        i.setBackgroundImage(im, for: .highlighted)
+        i.setTitle("我来说两句", for: .normal)
+        i.titleLabel?.font = UIFont.systemFont(ofSize: 12)
+        i.contentHorizontalAlignment = .left
+        i.titleEdgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
+        i.setTitleColor(UIColor.lightGray, for: .normal)
         return i
     }()
     
@@ -39,20 +54,41 @@ class HotInputView: UIView {
     fileprivate func setupUI(){
         addSubview(leftIcon)
         addSubview(rightBg)
+        addSubview(line)
+        
+        line.snp.makeConstraints { (make) in
+            make.left.equalToSuperview().offset(10)
+            make.right.equalToSuperview().offset(-10)
+            make.height.equalTo(0.5)
+            make.top.equalToSuperview().offset(1)
+        }
         
         leftIcon.snp.makeConstraints { (make) in
-            make.left.top.bottom.equalToSuperview()
-            make.width.equalTo(30)
+            make.left.equalToSuperview().offset(10)
+            make.width.height.equalTo(30)
+            make.top.equalToSuperview().offset(12)
+            
         }
         
         rightBg.snp.makeConstraints { (make) in
-            make.right.top.bottom.equalToSuperview()
-            make.left.equalTo(leftIcon.snp.right)
+            make.top.equalToSuperview().offset(10)
+            make.bottom.equalToSuperview().offset(-10)
+            make.right.equalToSuperview().offset(-10)
+            make.left.equalTo(leftIcon.snp.right).offset(10)
         }
     }
     
 }
 
+
+
+
+protocol HotTopViewProtocol :class {
+    func hotTopViewclickZanButton()
+    func hotTopViewclickCommentButton()
+    func hotTopViewclickMoreButton()
+    func hotTopViewclickRetweetButton()
+}
 
 class HotTopView: UIView {
 
@@ -60,6 +96,8 @@ class HotTopView: UIView {
         super.init(frame: frame)
         setupUI()
     }
+    
+    weak var delegate: HotTopViewProtocol?
     
     var recommond: SinglePrdHotRecommond?{
         didSet{
@@ -227,6 +265,7 @@ class HotTopView: UIView {
     fileprivate lazy var commentBtn: UIButton = {
         let i = UIButton()
         i.setImage(UIImage(named: "btn_group_comment"), for: .normal)
+        i.addTarget(self, action: #selector(comment), for: .touchUpInside)
         return i
     }()
     
@@ -234,6 +273,7 @@ class HotTopView: UIView {
     fileprivate lazy var zanBtn: UIButton = {
         let i = UIButton()
         i.setImage(UIImage(named: "btn_group_like"), for: .normal)
+        i.addTarget(self, action: #selector(zan), for: .touchUpInside)
         return i
     }()
     
@@ -241,6 +281,7 @@ class HotTopView: UIView {
     fileprivate lazy var retweetBtn: UIButton = {
         let i = UIButton()
         i.setImage(UIImage(named: "btn_topic_share_gray"), for: .normal)
+        i.addTarget(self, action: #selector(retweet), for: .touchUpInside)
         return i
     }()
     
@@ -248,6 +289,7 @@ class HotTopView: UIView {
     fileprivate lazy var moreBtn: UIButton = {
         let i = UIButton()
         i.setImage(UIImage(named: "btn_group_more"), for: .normal)
+        i.addTarget(self, action: #selector(more), for: .touchUpInside)
         return i
     }()
     
@@ -256,7 +298,6 @@ class HotTopView: UIView {
         let i = UIPageControl()
         return i
     }()
-    
     
     fileprivate lazy var imgView1: UIImageView = {
         let i = UIImageView()
@@ -268,7 +309,23 @@ class HotTopView: UIView {
     fileprivate lazy var imgView2: UIPageControl = {
         let i = UIPageControl()
         return i
-    }()  
+    }()
+    
+    func zan() {
+        delegate?.hotTopViewclickZanButton()
+    }
+    
+    func comment() {
+        delegate?.hotTopViewclickCommentButton()
+    }
+    
+    func more() {
+        delegate?.hotTopViewclickMoreButton()
+    }
+    
+    func retweet() {
+        delegate?.hotTopViewclickRetweetButton()
+    }
 }
 
 
