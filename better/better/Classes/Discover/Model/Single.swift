@@ -100,7 +100,7 @@ class SinglePrdHotRecommond: HandyJSON {
                     return h
                 }).reduce(0, +) + 5
             }
-            return 295 + (content?.size(fontSize: 13, maxWidth: UIConst.screenWidth - 20).height)! + 77  + commentH + 54
+            return 330 + (content?.size(fontSize: 13, maxWidth: UIConst.screenWidth - 20).height)! + 77  + commentH + 54
         }
     }
     required init() {}

@@ -168,7 +168,7 @@ class HotTopView: UIView {
         picScrollView.snp.makeConstraints { (make) in
             make.left.right.equalToSuperview()
             make.top.equalToSuperview().offset(54)
-            make.height.equalTo(190)
+            make.height.equalTo(225)
         }
         
         commentBtn.snp.makeConstraints { (make) in

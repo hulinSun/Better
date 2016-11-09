@@ -162,7 +162,7 @@ class HotRecommondCell: UITableViewCell{
         
         topView.snp.makeConstraints { (make) in
             make.top.left.right.equalToSuperview()
-            make.height.equalTo(295)
+            make.height.equalTo(330)
         }
         
         descLabel.snp.makeConstraints { (make) in
