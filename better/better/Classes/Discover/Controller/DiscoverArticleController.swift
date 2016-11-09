@@ -35,8 +35,6 @@ class DiscoverArticleController: UIViewController {
     fileprivate func setupUI(){
         view.addSubview(tableView)
         view.backgroundColor = UIColor.white
-        
-        
         DiscoverHttpHelper.requestDiscoverData { (discover) in
             self.datas = discover.data?.topic
         }

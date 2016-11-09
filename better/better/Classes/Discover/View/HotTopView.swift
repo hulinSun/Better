@@ -67,7 +67,6 @@ class HotInputView: UIView {
             make.left.equalToSuperview().offset(10)
             make.width.height.equalTo(30)
             make.top.equalToSuperview().offset(12)
-            
         }
         
         rightBg.snp.makeConstraints { (make) in
@@ -77,7 +76,6 @@ class HotInputView: UIView {
             make.left.equalTo(leftIcon.snp.right).offset(10)
         }
     }
-    
 }
 
 
@@ -143,8 +141,6 @@ class HotTopView: UIView {
             make.top.equalTo(10)
             make.size.equalTo(CGSize(width: 34, height: 34))
         }
-        
-        
         // 昵称
         nameLabel.snp.makeConstraints { (make) in
             make.left.equalTo(iconView.snp.right).offset(10)
@@ -152,14 +148,12 @@ class HotTopView: UIView {
             make.height.equalTo(17)
             make.width.lessThanOrEqualTo(200)
         }
-        
         // vip
         vipView.snp.makeConstraints { (make) in
             make.centerY.equalTo(iconView)
             make.left.equalTo(nameLabel.snp.right).offset(10)
             make.size.equalTo(CGSize(width: 16, height: 16))
         }
-        
         /// 日期
         dateLabel.snp.makeConstraints { (make) in
             make.centerY.equalTo(iconView)
@@ -167,49 +161,40 @@ class HotTopView: UIView {
             make.height.equalTo(16)
             make.right.equalToSuperview().offset(-20)
         }
-        
         picScrollView.snp.makeConstraints { (make) in
             make.left.right.equalToSuperview()
             make.top.equalToSuperview().offset(54)
             make.height.equalTo(225)
         }
-        
         commentBtn.snp.makeConstraints { (make) in
             make.left.equalToSuperview().offset(10)
             make.size.equalTo(CGSize(width: 34, height: 34))
             make.top.equalTo(picScrollView.snp.bottom).offset(7)
         }
-        
         zanBtn.snp.makeConstraints { (make) in
             make.size.equalTo(commentBtn)
             make.centerY.equalTo(commentBtn)
             make.left.equalTo(commentBtn.snp.right).offset(10)
         }
-        
         retweetBtn.snp.makeConstraints { (make) in
             make.size.equalTo(commentBtn)
             make.centerY.equalTo(commentBtn)
             make.left.equalTo(zanBtn.snp.right).offset(10)
         }
-        
         moreBtn.snp.makeConstraints { (make) in
             make.size.equalTo(commentBtn)
             make.centerY.equalTo(commentBtn)
             make.right.equalToSuperview().offset(-10)
         }
-        
         line.snp.makeConstraints { (make) in
             make.left.equalToSuperview().offset(10)
             make.right.equalToSuperview().offset(-10)
             make.height.equalTo(0.5)
             make.top.equalTo(moreBtn.snp.bottom).offset(4)
         }
-        
         imgView1.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
         }
-        
-        
     }
     
     //MARL: - 懒加载
