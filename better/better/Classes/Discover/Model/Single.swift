@@ -89,6 +89,20 @@ class SinglePrdHotRecommond: HandyJSON {
     var trace_id: String?
     var brand_product: AnyObject?
     
+    
+    var cellHeight: CGFloat{
+        get{
+            var commentH: CGFloat = 0
+            if let coms = comments {
+                 commentH = coms.map({ (com) -> CGFloat in
+                    let str = com.nickname! + ": " + com.conent!
+                    let h = str.size(fontSize: 12, maxWidth: UIConst.screenWidth - 20).height + 5
+                    return h
+                }).reduce(0, +) + 5
+            }
+            return 295 + (content?.size(fontSize: 13, maxWidth: UIConst.screenWidth - 20).height)! + 77  + commentH + 54
+        }
+    }
     required init() {}
 }
 

@@ -32,6 +32,11 @@ class HotRecommondController: UIViewController {
     }
     
     
+    fileprivate lazy var rowCache: [String: CGFloat] = {
+        let i = [String: CGFloat]()
+        return i
+    }()
+    
     fileprivate lazy var items: [String] = {
         let i = ["I want you leather dirty kiss in thleather dirty kiss in the scene" , "会更明白什么温柔还没跟你牵着手过荒芜的也许你会陪我看细水长流也许你会陪我看细水么温柔还没么温柔还没么温柔还没长流沙丘" , "You know that I want you And you know that I need you 你知道我要你 你知道我离不开你"];
         return i
@@ -61,7 +66,15 @@ typealias HotRecommandTableViewProtocol = HotRecommondController
 extension HotRecommandTableViewProtocol : UITableViewDelegate , UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UIConst.screenHeight * 1.2
+        
+        let model = hotModel?.data?[indexPath.row]
+        if let h = rowCache[(model?.id)!]{
+            return h
+        }else{
+            let cal = model?.cellHeight
+            rowCache[(model?.id)!] = cal
+            return cal!
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

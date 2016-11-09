@@ -57,7 +57,7 @@ class HotRecommondCell: UITableViewCell {
     /// 多少人评论label
     fileprivate lazy var commentCountLabel: UILabel = {
         let i = UILabel()
-        i.text = "评论"
+        i.text = "快去评论一个吧"
         i.font = UIFont.systemFont(ofSize: 12)
         i.textColor = UIColor.rgb(red: 150, green: 150, blue: 150)
         return i
@@ -81,7 +81,7 @@ class HotRecommondCell: UITableViewCell {
         didSet{
             topView.recommond = recommond
             let prar = NSMutableParagraphStyle()
-            prar.lineSpacing = 4
+//            prar.lineSpacing = 4
             let attr = NSMutableAttributedString(string:
                 (recommond?.content)!, attributes: [NSFontAttributeName : UIFont.systemFont(ofSize: 13) , NSForegroundColorAttributeName : UIColor.rgb(red: 150, green: 150, blue: 150) , NSParagraphStyleAttributeName: prar])
             descLabel.attributedText = attr
@@ -99,6 +99,7 @@ class HotRecommondCell: UITableViewCell {
     
     
     fileprivate func addCommentView(){
+//        commentView.backgroundColor = UIColor.random()
         if items.isEmpty == false {
             items.forEach{$0.removeFromSuperview()}
             items.removeAll()
@@ -108,12 +109,16 @@ class HotRecommondCell: UITableViewCell {
             for i in 0..<coms.count {
                 // 创建一个label
                 let l = UILabel()
-                l.font = UIFont.systemFont(ofSize: 12)
-                l.textColor = UIColor.init(hexString: "666666")
-                
                 l.numberOfLines = 0
+//                l.backgroundColor = UIColor.random()
                 l.preferredMaxLayoutWidth = UIConst.screenWidth - 20
-                l.text = coms[i].conent
+                let com = coms[i]
+                let str = com.nickname! + ": " + com.conent!
+                let attr = NSMutableAttributedString(string: str, attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 12), NSForegroundColorAttributeName:UIColor.rgb(red: 109, green: 109, blue: 109)])
+                let range = (str as NSString).range(of: (com.nickname! + ": "))
+                
+                attr.addAttributes([NSForegroundColorAttributeName:UIColor.rgb(red: 91, green: 159, blue: 189)], range: range)
+                l.attributedText = attr
                 commentView.addSubview(l)
                 items.append(l)
             }
@@ -185,16 +190,17 @@ class HotRecommondCell: UITableViewCell {
             commentView.snp.makeConstraints { (make) in
                 make.left.right.equalToSuperview()
                 make.top.equalTo(commentCountLabel.snp.bottom).offset(10)
-                make.bottom.equalTo((commentView.subviews.last?.snp.bottom)!).offset(5)
+                make.bottom.equalTo((commentView.subviews.last?.snp.bottom)!).offset(5).priority(751)
             }
         }
+        
         hotInputView.snp.makeConstraints { (make) in
             make.left.right.equalToSuperview()
             make.height.equalTo(54)
             if(recommond?.comments?.count)! > 0{
-                make.top.equalTo(commentView.snp.bottom)
+                make.top.equalTo(commentView.snp.bottom).priority(751)
             }else{
-                make.top.equalTo(commentCountLabel.snp.bottom)
+                make.top.equalTo(commentCountLabel.snp.bottom).priority(249)
             }
         }
     }
