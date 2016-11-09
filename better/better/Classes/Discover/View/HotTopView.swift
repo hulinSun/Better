@@ -101,7 +101,10 @@ class HotTopView: UIView {
         didSet{
            iconView.kf.setImage(with: URL(string: (recommond?.author?.avatar)!))
             nameLabel.text = recommond?.author?.nickname
-            dateLabel.text = recommond?.create_time
+            let d = NSDate(timeIntervalSince1970: ((recommond?.create_time)! as NSString).doubleValue)
+            let fmt = DateFormatter()
+            fmt.dateFormat = "MM-dd HH:mm"
+            dateLabel.text = fmt.string(from: d as Date)
             imgView1.kf.setImage(with: URL(string: (recommond?.pics?.first?.url)!))
         }
     }
