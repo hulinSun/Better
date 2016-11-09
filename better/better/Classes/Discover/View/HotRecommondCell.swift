@@ -48,9 +48,9 @@ class HotRecommondCell: UITableViewCell {
         let i = UIButton()
         i.setTitleColor(UIColor.lightGray, for: .normal)
         i.titleLabel?.font = UIFont.systemFont(ofSize: 12)
-        i.backgroundColor = UIColor.random()
         i.setImage(UIImage(named:"community_like"), for: .normal)
-//        i.titleEdgeInsets = UIEdgeInsets(top: 0, left: 6, bottom: 0, right: 0)
+        i.titleEdgeInsets = UIEdgeInsets(top: 0, left: 4, bottom: 0, right: 0)
+        i.contentHorizontalAlignment = .left
         return i
     }()
     
@@ -129,7 +129,7 @@ class HotRecommondCell: UITableViewCell {
         contentView.addSubview(commentCountLabel)
         contentView.addSubview(commentView)
         topView.backgroundColor = .white
-        hotInputView.backgroundColor = .red
+        hotInputView.backgroundColor = UIColor.random()
         contentView.addSubview(hotInputView)
     }
     
@@ -155,7 +155,7 @@ class HotRecommondCell: UITableViewCell {
             make.left.equalTo(descLabel)
             make.top.equalTo(descLabel.snp.bottom).offset(10)
             make.height.equalTo(20)
-            make.width.lessThanOrEqualTo(180)
+            make.width.equalTo(150)
         }
         
         commentCountLabel.snp.makeConstraints { (make) in
@@ -188,11 +188,14 @@ class HotRecommondCell: UITableViewCell {
                 make.bottom.equalTo((commentView.subviews.last?.snp.bottom)!).offset(5)
             }
         }
-        
         hotInputView.snp.makeConstraints { (make) in
             make.left.right.equalToSuperview()
             make.height.equalTo(54)
-            make.top.equalTo(commentView.snp.bottom)
+            if(recommond?.comments?.count)! > 0{
+                make.top.equalTo(commentView.snp.bottom)
+            }else{
+                make.top.equalTo(commentCountLabel.snp.bottom)
+            }
         }
     }
 }
