@@ -23,6 +23,8 @@ struct UIConst {
     static let screenWidth = UIScreen.main.bounds.width
     /// 屏幕高度
     static let screenHeight = UIScreen.main.bounds.height
+    /// 宽高比
+    static let screenScale = UIScreen.main.scale
     
     /// nav 高度
     static let navHeight = 64.0

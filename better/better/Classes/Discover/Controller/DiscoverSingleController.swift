@@ -112,6 +112,8 @@ class DiscoverSingleController: UIViewController {
     
     fileprivate func setupUI(){
         
+        
+            
         view.backgroundColor = UIColor.init(hexString: "f4f4f4")
         view.addSubview(topView)
         topView.backgroundColor = UIColor.white
