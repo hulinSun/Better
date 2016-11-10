@@ -237,7 +237,9 @@ extension HotRecommondCell: HotTopViewProtocol{
     
     func hotTopViewclickZanButton(){
         clickClosure?(self, recommond!, .zan)
+        
     }
+    
     func hotTopViewclickCommentButton(){
         clickClosure?(self, recommond!, .comment)
     }
