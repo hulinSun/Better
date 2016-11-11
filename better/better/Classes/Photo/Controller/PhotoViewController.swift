@@ -207,6 +207,12 @@ extension PhotoViewCollectionProtocol: UICollectionViewDelegate , UICollectionVi
         
         cell.indexPath = indexPath
         cell.clickClosure = { (cell , idx) in
+            
+            if idx.item == 0{
+                // 去照相
+                return
+            }
+            
             // 在这里做单选 还是 多选的 操作
             if true { // 默认单选s
                 cell.isChoosed = true
