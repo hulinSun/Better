@@ -10,7 +10,6 @@ import UIKit
 import Photos
 
 struct GridModel {
-    
     var isCamera: Bool = false
     var indexPath: IndexPath
     var isSelected: Bool = false
@@ -35,10 +34,9 @@ class PhotoViewController: UIViewController {
     
     fileprivate lazy var navView: UIView = {
         let i = UIView()
-        i.backgroundColor = UIColor.red.withAlphaComponent(0.7)
+        i.backgroundColor = UIColor.rgb(red: 242, green: 75, blue: 78)
         return i
     }()
-    
     
     fileprivate lazy var titleView: PhotoTitleView = {
         let i = PhotoTitleView()
@@ -56,6 +54,13 @@ class PhotoViewController: UIViewController {
         return i
     }()
     
+    
+    fileprivate lazy var listView: UIView = {
+        let i = UIView()
+        i.backgroundColor = UIColor.lightGray
+        i.isHidden = true
+        return i
+    }()
     
     fileprivate lazy var leftBtn: UIButton = {
         let i = UIButton()
@@ -93,14 +98,36 @@ class PhotoViewController: UIViewController {
         return i
     }()
     
-    
-    
     /// 点击按钮
     func titleClick(){
         
+        view.addSubview(listView)
+        view.bringSubview(toFront: navView)
+        listView.snp.makeConstraints { (make) in
+            make.left.right.equalToSuperview()
+            make.height.equalTo(300)
+            make.bottom.equalTo(view.snp.top)
+        }
+        
         titleView.isEnabled = false
-        UIView.animate(withDuration: 0.25, animations: { 
-            
+        titleView.isSelected = !titleView.isSelected
+        listView.isHidden = false
+        
+        if titleView.isSelected {
+            print("按钮选中 ---箭头向上")
+            UIView.animate(withDuration: 0.25, animations: {
+                self.listView.transform = CGAffineTransform.init(translationX: 0, y: 364)
+            })
+        }else{
+            print("按钮没中 ---箭头向下")
+            UIView.animate(withDuration: 0.25, animations: {
+                self.listView.transform = CGAffineTransform.identity
+            }) { (com) in
+                self.listView.isHidden = true
+            }
+        }
+        
+        UIView.animate(withDuration: 0.25, animations: {
             self.titleView.imageView?.transform = (self.titleView.imageView?.transform.rotated(by: CGFloat.pi))!
             }) { (comp) in
                 self.titleView.isEnabled = true
@@ -110,6 +137,7 @@ class PhotoViewController: UIViewController {
     func right() {
         dismiss(animated: true)
     }
+    
     func left()  {
         dismiss(animated: true)
     }
@@ -119,7 +147,6 @@ class PhotoViewController: UIViewController {
     }
     
     func setupUI()  {
-        
         navView.addSubview(leftBtn)
         navView.addSubview(rightBtn)
         navView.addSubview(titleView)
@@ -127,6 +154,7 @@ class PhotoViewController: UIViewController {
         view.addSubview(navView)
         view.backgroundColor = UIColor.white
         view.addSubview(collectionView)
+        
         leftBtn.snp.makeConstraints { (make) in
             make.left.equalToSuperview().offset(15)
             make.centerY.equalToSuperview().offset(10)
@@ -185,7 +213,6 @@ class PhotoViewController: UIViewController {
         }
     }
 
-    
     func getImages(collection: PHAssetCollection) {
         // 图片
         let result = PHAsset.fetchAssets(in: collection, options: nil)
@@ -223,10 +250,7 @@ class PhotoViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
 }
-
-
 
 
 typealias PhotoViewCollectionProtocol = PhotoViewController

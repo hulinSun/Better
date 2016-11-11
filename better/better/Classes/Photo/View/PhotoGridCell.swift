@@ -21,8 +21,6 @@ class PhotoTitleView: UIButton {
         imageView?.contentMode = .center
     }
     
-    
-    
     override var intrinsicContentSize: CGSize
         {
         let su = super.intrinsicContentSize
