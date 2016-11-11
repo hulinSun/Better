@@ -33,6 +33,32 @@ class PhotoViewController: UIViewController {
     }()
     
     
+    fileprivate lazy var navView: UIView = {
+        let i = UIView()
+        i.backgroundColor = UIColor.red.withAlphaComponent(0.7)
+        return i
+    }()
+    
+    
+    fileprivate lazy var rightBtn: UIButton = {
+        let i = UIButton()
+        i.setTitle("确定", for: .normal)
+        i.titleLabel?.font = UIFont.systemFont(ofSize: 14)
+        i.setTitleColor(.white, for: .normal)
+        i.addTarget(self, action: #selector(right), for: .touchUpInside)
+        return i
+    }()
+    
+    
+    fileprivate lazy var leftBtn: UIButton = {
+        let i = UIButton()
+        i.setTitle("取消", for: .normal)
+        i.titleLabel?.font = UIFont.systemFont(ofSize: 14)
+        i.setTitleColor(.white, for: .normal)
+        i.addTarget(self, action: #selector(left), for: .touchUpInside)
+        return i
+    }()
+    
     fileprivate lazy var collectionView: UICollectionView = {
         let i = UICollectionView(frame: .zero, collectionViewLayout: self.photoLayout)
         i.showsVerticalScrollIndicator = false
@@ -60,19 +86,46 @@ class PhotoViewController: UIViewController {
         return i
     }()
     
-    func hony()  {
+    func right()  {
         dismiss(animated: true)
+    }
+    func left()  {
+        dismiss(animated: true)
+    }
+    
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle{
+        return .lightContent
     }
     
     func setupUI()  {
         
-        if let hair = UINavigationBar.getLine(view:(navigationController?.navigationBar)!){ hair.isHidden = true }
+//        if let hair = UINavigationBar.getLine(view:(navigationController?.navigationBar)!){ hair.isHidden = true
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "Hony", style: .plain, target: self, action: #selector(hony))
+        
+        navView.addSubview(leftBtn)
+        navView.addSubview(rightBtn)
+        view.addSubview(navView)
         view.backgroundColor = UIColor.white
         view.addSubview(collectionView)
+        leftBtn.snp.makeConstraints { (make) in
+            make.left.equalToSuperview().offset(15)
+            make.centerY.equalToSuperview().offset(10)
+        }
+        
+        rightBtn.snp.makeConstraints { (make) in
+            make.right.equalToSuperview().offset(-15)
+            make.top.equalTo(leftBtn)
+
+        }
+        navView.snp.makeConstraints { (make) in
+            make.left.right.top.equalToSuperview()
+            make.height.equalTo(UIConst.navHeight)
+        }
+        
         collectionView.snp.makeConstraints { (make) in
-            make.edges.equalToSuperview()
+            make.right.left.bottom.equalToSuperview()
+            make.top.equalTo(navView.snp.bottom)
         }
     }
     func getCollection() {

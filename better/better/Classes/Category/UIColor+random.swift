@@ -59,47 +59,6 @@ public extension UIColor {
     
     public class var kz: UIColor { return UIColor.white }
     
-    public func green(_ green: CGFloat) -> UIColor {
-        assert(green >= 0 && green <= 255)
-        let newKz = self._kz
-        newKz.kz_green = green
-        self._kz = newKz
-        return UIColor.init(newKz: self._kz)
-    }
-    
-    public func red(_ red: CGFloat) -> UIColor {
-        assert(red >= 0 && red <= 255)
-        let newKz = self._kz
-        newKz.kz_red = red
-        self._kz = newKz
-        return UIColor.init(newKz: self._kz)
-    }
-    
-    public func blue(_ blue: CGFloat) -> UIColor {
-        assert(blue >= 0 && blue <= 255)
-        let newKz = self._kz
-        newKz.kz_blue = blue
-        self._kz = newKz
-        return UIColor.init(newKz: self._kz)
-    }
-    
-    public func alpha(_ alpha: CGFloat) -> UIColor {
-        assert(alpha >= 0 && alpha <= 1)
-        let newKz = self._kz
-        newKz.kz_alpha = alpha
-        self._kz = newKz
-        return UIColor.init(newKz: self._kz)
-    }
-    
-    public func hex(_ hex: Int) -> UIColor?{
-        assert(hex >= 0x000000 && hex <= 0xffffff)
-        let newKz = self._kz
-        newKz.kz_red = CGFloat((hex >> 16) & 0xff)
-        newKz.kz_green = CGFloat((hex >> 8) & 0xff)
-        newKz.kz_blue = CGFloat(hex & 0xff)
-        self._kz = newKz
-        return UIColor.init(newKz: self._kz)
-    }
     
     public class func rgb(red: CGFloat, green: CGFloat, blue: CGFloat)-> UIColor{
         return UIColor(red: red / 255.0, green: green / 255.0, blue: blue / 255.0, alpha: 1)

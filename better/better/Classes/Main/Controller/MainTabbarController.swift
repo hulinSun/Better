@@ -44,8 +44,7 @@ class MainTabbarController: UITabBarController {
     func photoClick() {
         print("点击了按钮")
         let photoVC = PhotoViewController()
-        let nav = MainNavigationController(rootViewController : photoVC)
-        selectedViewController?.present(nav, animated: true) // Swift 3 改变，可以省略后面的闭包 option 等参数
+        selectedViewController?.present(photoVC, animated: true) // Swift 3 改变，可以省略后面的闭包 option 等参数
     }
     
     // MARK:- 懒加载
