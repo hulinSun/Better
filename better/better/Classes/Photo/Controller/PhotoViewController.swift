@@ -106,13 +106,15 @@ class PhotoViewController: UIViewController {
 
         print(collection.localizedTitle)
         if collection.localizedTitle == "Camera Roll"{
+            let opt = PHImageRequestOptions()
+            opt.deliveryMode = .highQualityFormat
             
             if result.count > 0{
                 print("title = \(collection.localizedTitle) , count = \(result.count)")
                 
                 result.enumerateObjects ({ (asset, idx, stop) in
                     // 获取图片
-                    PHImageManager.default().requestImage(for: asset, targetSize:PhotoViewController.tgSize, contentMode: .default, options: nil, resultHandler: { (img, dict) in
+                    PHImageManager.default().requestImage(for: asset, targetSize:PhotoViewController.tgSize, contentMode: .default, options: opt, resultHandler: { (img, dict) in
                         if let i = img{
                             self.images.append(i)
                         }
