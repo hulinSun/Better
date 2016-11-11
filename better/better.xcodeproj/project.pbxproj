@@ -12,6 +12,7 @@
 		FE19FFBB1DD028820090C194 /* DiscoverArticleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE19FFBA1DD028820090C194 /* DiscoverArticleController.swift */; };
 		FE19FFBD1DD028A90090C194 /* DiscoverSingleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE19FFBC1DD028A90090C194 /* DiscoverSingleController.swift */; };
 		FE238B341DB367D40005C190 /* UINavigationBar+Awesome.m in Sources */ = {isa = PBXBuildFile; fileRef = FE238B331DB367D40005C190 /* UINavigationBar+Awesome.m */; };
+		FE2A2D281DD55C7F00136E4A /* UINavigationBar+line.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2A2D271DD55C7F00136E4A /* UINavigationBar+line.swift */; };
 		FE2DA7AE1DC3321D007347C0 /* DiscoverHttpHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2DA7AD1DC3321D007347C0 /* DiscoverHttpHelper.swift */; };
 		FE4AA4101DD4746B001D88C6 /* PhotoGridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4AA40F1DD4746B001D88C6 /* PhotoGridCell.swift */; };
 		FE558CAA1DC2F51C00AC15B3 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE558CA91DC2F51C00AC15B3 /* Theme.swift */; };
@@ -103,6 +104,7 @@
 		FE238B321DB367D40005C190 /* UINavigationBar+Awesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+Awesome.h"; sourceTree = "<group>"; };
 		FE238B331DB367D40005C190 /* UINavigationBar+Awesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+Awesome.m"; sourceTree = "<group>"; };
 		FE238B871DB3718C0005C190 /* better-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "better-Bridging-Header.h"; sourceTree = "<group>"; };
+		FE2A2D271DD55C7F00136E4A /* UINavigationBar+line.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+line.swift"; sourceTree = "<group>"; };
 		FE2DA7AD1DC3321D007347C0 /* DiscoverHttpHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverHttpHelper.swift; sourceTree = "<group>"; };
 		FE4AA40F1DD4746B001D88C6 /* PhotoGridCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoGridCell.swift; sourceTree = "<group>"; };
 		FE558CA91DC2F51C00AC15B3 /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
@@ -345,6 +347,7 @@
 				FEBB073C1DC8875800FF4989 /* UIColor+hex.swift */,
 				FEF0B5761DC08BD7000C632C /* GCD+Extension.swift */,
 				FE558CAB1DC2FA3E00AC15B3 /* UIBarButtonItem+item.swift */,
+				FE2A2D271DD55C7F00136E4A /* UINavigationBar+line.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -820,6 +823,7 @@
 				FEBB07741DC88ECE00FF4989 /* ConstraintMakerRelatable.swift in Sources */,
 				FEBB07721DC88ECE00FF4989 /* ConstraintMakerFinalizable.swift in Sources */,
 				FEBB07731DC88ECE00FF4989 /* ConstraintMakerPriortizable.swift in Sources */,
+				FE2A2D281DD55C7F00136E4A /* UINavigationBar+line.swift in Sources */,
 				FE238B341DB367D40005C190 /* UINavigationBar+Awesome.m in Sources */,
 				FEA0CAC51DAF983500BF6766 /* MessageViewController.swift in Sources */,
 				FEBB07781DC88ECE00FF4989 /* ConstraintRelatableTarget.swift in Sources */,

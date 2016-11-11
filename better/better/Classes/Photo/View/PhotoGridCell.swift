@@ -13,6 +13,8 @@ class PhotoGridCell: UICollectionViewCell {
     
     fileprivate lazy var imgView: UIImageView = {
         let i = UIImageView()
+        i.layer.cornerRadius = 3
+        i.clipsToBounds = true
         i.contentMode = .scaleAspectFill
         i.clipsToBounds = true
         return i
@@ -29,9 +31,11 @@ class PhotoGridCell: UICollectionViewCell {
     }
     
     private func setupUI() {
+        backgroundColor = .white
         contentView.addSubview(imgView)
         imgView.snp.makeConstraints { (make) in
-            make.edges.equalToSuperview()
+            make.top.left.equalToSuperview().offset(2.5)
+            make.bottom.right.equalToSuperview().offset(-2.5)
         }
     }
     required init?(coder aDecoder: NSCoder) {

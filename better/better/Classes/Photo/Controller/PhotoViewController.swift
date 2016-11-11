@@ -24,6 +24,7 @@ class PhotoViewController: UIViewController {
         i.showsHorizontalScrollIndicator = false
         i.delegate = self
         i.dataSource = self
+        i.contentInset = UIEdgeInsets(top: 7.5, left: 2.5, bottom: 0, right: 2.5)
         i.register(PhotoGridCell.self, forCellWithReuseIdentifier: "PhotoGridCell")
         i.backgroundColor = .white
         return i
@@ -39,11 +40,13 @@ class PhotoViewController: UIViewController {
 //    //NSLog(@"This is @%fx scale device", scale);
 //    AssetGridThumbnailSize = CGSizeMake(layout.itemSize.width * scale, layout.itemSize.height * scale);
 //
-    static let tgSize: CGSize = CGSize(width: (UIConst.screenWidth / 3) * (UIConst.screenScale), height: (UIConst.screenWidth / 3) * (UIConst.screenScale))
+    
+    
+    static let tgSize: CGSize = CGSize(width: ((UIConst.screenWidth - 5) / 3.0) * (UIConst.screenScale), height: ((UIConst.screenWidth - 5 ) / 3.0) * (UIConst.screenScale))
     
     fileprivate lazy var photoLayout: UICollectionViewFlowLayout = {
         let i = UICollectionViewFlowLayout()
-        i.itemSize = CGSize(width: UIConst.screenWidth / 3, height: UIConst.screenWidth / 3)
+        i.itemSize = CGSize(width: (UIConst.screenWidth - 5) / 3.0, height: (UIConst.screenWidth - 5) / 3.0)
         i.minimumInteritemSpacing = 0
         i.minimumLineSpacing = 0
         return i
@@ -54,6 +57,8 @@ class PhotoViewController: UIViewController {
     }
     
     func setupUI()  {
+        
+        if let hair = UINavigationBar.getLine(view:(navigationController?.navigationBar)!){ hair.isHidden = true }
         
         navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "Hony", style: .plain, target: self, action: #selector(hony))
         view.backgroundColor = UIColor.white
@@ -188,7 +193,6 @@ extension PhotoViewCollectionProtocol: UICollectionViewDelegate , UICollectionVi
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoGridCell", for: indexPath) as! PhotoGridCell
-        cell.backgroundColor = UIColor.random()
         cell.img = images[indexPath.item]
         return cell
     }
