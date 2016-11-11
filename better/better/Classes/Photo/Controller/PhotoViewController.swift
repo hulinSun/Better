@@ -35,13 +35,6 @@ class PhotoViewController: UIViewController {
         return i
     }()
     
-    
-//    CGFloat scale = [UIScreen mainScreen].scale;
-//    //NSLog(@"This is @%fx scale device", scale);
-//    AssetGridThumbnailSize = CGSizeMake(layout.itemSize.width * scale, layout.itemSize.height * scale);
-//
-    
-    
     static let tgSize: CGSize = CGSize(width: ((UIConst.screenWidth - 5) / 3.0) * (UIConst.screenScale), height: ((UIConst.screenWidth - 5 ) / 3.0) * (UIConst.screenScale))
     
     fileprivate lazy var photoLayout: UICollectionViewFlowLayout = {
@@ -148,7 +141,6 @@ class PhotoViewController: UIViewController {
     
     func other() {
         
-        
         /**
          let group = DispatchGroup()
          let queue = DispatchQueue(label: "myBackgroundQueue")
@@ -188,12 +180,17 @@ typealias PhotoViewCollectionProtocol = PhotoViewController
 extension PhotoViewCollectionProtocol: UICollectionViewDelegate , UICollectionViewDataSource{
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return images.count > 0 ? images.count : 0
+        return images.count > 0 ? images.count + 1 : 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoGridCell", for: indexPath) as! PhotoGridCell
-        cell.img = images[indexPath.item]
+        if indexPath.item == 0{
+            cell.isCamera = true
+        }else{
+            cell.img = images[indexPath.item - 1]
+            cell.isCamera = false
+        }
         return cell
     }
 }

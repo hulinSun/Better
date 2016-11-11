@@ -20,6 +20,17 @@ class PhotoGridCell: UICollectionViewCell {
         return i
     }()
     
+    var isCamera: Bool = false{
+        didSet{
+            if isCamera == true {
+                imgView.image = UIImage(named: "BoAssetsCamera")
+            }else{
+              imgView.image = img
+            }
+        }
+    }
+    
+    
     var img: UIImage?{
         didSet{
             imgView.image = img
