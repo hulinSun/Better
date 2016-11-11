@@ -66,9 +66,41 @@ class PhotoGridCell: UICollectionViewCell {
     
     
     /// 这里点击了图片，collection 的点击代理方法不走了。因为方法在这里相应了。没有往下个响应者传下。所以这里需要通过代理或者闭包传出去
-    func tapImage() {
+    func tapImage( recon: UITapGestureRecognizer) {
+        let clickPoint = recon.location(in: recon.view)
+        tapAnimate(point: clickPoint)
+        
         clickClosure?(self, indexPath!)
     }
+    
+    private func tapAnimate(point: CGPoint){
+        
+        let clickLayer = CALayer()
+        clickLayer.backgroundColor = UIColor.white.cgColor
+        clickLayer.masksToBounds = true
+        clickLayer.cornerRadius = 3
+        clickLayer.frame = CGRect(x: 0, y: 0, width: 6, height: 6)
+        clickLayer.position = point
+        clickLayer.opacity = 0.3
+        clickLayer.name = "clickLayer"
+        imgView.layer.addSublayer(clickLayer)
+        
+        let zoom = CABasicAnimation.init(keyPath: "transform.scale")
+        zoom.toValue = 38.0
+        zoom.duration = 0.4
+        
+        let fadeout = CABasicAnimation.init(keyPath: "opacity")
+        fadeout.toValue = 0.0
+        fadeout.duration = 0.4
+        
+        let group = CAAnimationGroup()
+        group.duration = 0.4
+        group.animations = [zoom, fadeout]
+        group.fillMode = kCAFillModeForwards
+        group.isRemovedOnCompletion = false
+        clickLayer.add(group, forKey: "animationKey")
+    }
+    
     
     private func setupUI() {
         backgroundColor = .white
@@ -83,7 +115,8 @@ class PhotoGridCell: UICollectionViewCell {
             make.size.equalTo(CGSize(width: 25, height: 25))
             make.bottom.right.equalToSuperview().offset(-5)
         }
-        let tap = UITapGestureRecognizer(target: self, action: #selector(tapImage))
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(tapImage(recon:)))
         imgView.addGestureRecognizer(tap)
     }
     required init?(coder aDecoder: NSCoder) {

@@ -93,15 +93,11 @@ class PhotoViewController: UIViewController {
         dismiss(animated: true)
     }
     
-    
     override var preferredStatusBarStyle: UIStatusBarStyle{
         return .lightContent
     }
     
     func setupUI()  {
-        
-//        if let hair = UINavigationBar.getLine(view:(navigationController?.navigationBar)!){ hair.isHidden = true
-        
         
         navView.addSubview(leftBtn)
         navView.addSubview(rightBtn)
@@ -116,8 +112,8 @@ class PhotoViewController: UIViewController {
         rightBtn.snp.makeConstraints { (make) in
             make.right.equalToSuperview().offset(-15)
             make.top.equalTo(leftBtn)
-
         }
+        
         navView.snp.makeConstraints { (make) in
             make.left.right.top.equalToSuperview()
             make.height.equalTo(UIConst.navHeight)
@@ -128,6 +124,7 @@ class PhotoViewController: UIViewController {
             make.top.equalTo(navView.snp.bottom)
         }
     }
+    
     func getCollection() {
         // 判断授权状态
         PHPhotoLibrary.requestAuthorization { (status) in
@@ -161,7 +158,6 @@ class PhotoViewController: UIViewController {
 
     
     func getImages(collection: PHAssetCollection) {
-        
         // 图片
         let result = PHAsset.fetchAssets(in: collection, options: nil)
         
@@ -203,37 +199,6 @@ class PhotoViewController: UIViewController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         dismiss(animated: true)
-    }
-
-
-    
-    func other() {
-        
-        /**
-         let group = DispatchGroup()
-         let queue = DispatchQueue(label: "myBackgroundQueue")
-         queue.async(group:group) {
-         print("background working")
-         }
-         */
-//            let group = DispatchGroup()
-//            group.enter()
-//            group.leave()
-//            group.notify(queue: DispatchQueue.main, execute: {
-//
-//            })
-        let collects =  PHAssetCollection.fetchAssetCollections(with: .album, subtype: .albumRegular, options: nil)
-        /// 这里为什么不能用尾闭包的写法/。否则会报错
-        collects.enumerateObjects ({ (collection, start, stop) in
-            // 相册--> 图片
-            let imageColls = PHAsset.fetchAssets(in: collection, options: nil)
-            imageColls.enumerateObjects({ (asset, start, stop) in
-                print(asset)
-                PHImageManager.default().requestImage(for: asset, targetSize: CGSize(width: 100, height: 100), contentMode: .aspectFill, options: nil, resultHandler: { (image, dict) in
-                    print("image = \(image) ")
-                })
-            })
-        })
     }
 }
 
