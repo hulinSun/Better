@@ -40,6 +40,13 @@ class PhotoViewController: UIViewController {
     }()
     
     
+    fileprivate lazy var titleView: PhotoTitleView = {
+        let i = PhotoTitleView()
+        i.setTitle("哈哈信息", for: .normal)
+        i.addTarget(self, action: #selector(titleClick), for: .touchUpInside)
+        return i
+    }()
+
     fileprivate lazy var rightBtn: UIButton = {
         let i = UIButton()
         i.setTitle("确定", for: .normal)
@@ -86,7 +93,21 @@ class PhotoViewController: UIViewController {
         return i
     }()
     
-    func right()  {
+    
+    
+    /// 点击按钮
+    func titleClick(){
+        
+        titleView.isEnabled = false
+        UIView.animate(withDuration: 0.25, animations: { 
+            
+            self.titleView.imageView?.transform = (self.titleView.imageView?.transform.rotated(by: CGFloat.pi))!
+            }) { (comp) in
+                self.titleView.isEnabled = true
+        }
+    }
+    
+    func right() {
         dismiss(animated: true)
     }
     func left()  {
@@ -101,6 +122,8 @@ class PhotoViewController: UIViewController {
         
         navView.addSubview(leftBtn)
         navView.addSubview(rightBtn)
+        navView.addSubview(titleView)
+        
         view.addSubview(navView)
         view.backgroundColor = UIColor.white
         view.addSubview(collectionView)
@@ -112,6 +135,12 @@ class PhotoViewController: UIViewController {
         rightBtn.snp.makeConstraints { (make) in
             make.right.equalToSuperview().offset(-15)
             make.top.equalTo(leftBtn)
+        }
+        
+        titleView.snp.makeConstraints { (make) in
+            make.centerY.equalTo(leftBtn)
+            make.centerX.equalToSuperview()
+            make.width.lessThanOrEqualTo(200)
         }
         
         navView.snp.makeConstraints { (make) in
@@ -195,11 +224,6 @@ class PhotoViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesBegan(touches, with: event)
-        dismiss(animated: true)
-    }
 }
 
 

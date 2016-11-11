@@ -8,6 +8,40 @@
 
 import UIKit
 
+
+class PhotoTitleView: UIButton {
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setImage(UIImage(named: "BoSelectGroup_tip"), for: .normal)
+        setImage(UIImage(named: "BoSelectGroup_tip"), for: .highlighted)
+        adjustsImageWhenHighlighted = true
+        titleLabel?.font = UIFont.boldSystemFont(ofSize: 15)
+        titleLabel?.textAlignment = .center
+        imageView?.contentMode = .center
+    }
+    
+    
+    
+    override var intrinsicContentSize: CGSize
+        {
+        let su = super.intrinsicContentSize
+        return CGSize(width: su.width + 15, height: su.height)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func titleRect(forContentRect contentRect: CGRect) -> CGRect {
+        return CGRect(x: 0, y: 0, width: contentRect.size.width - 18, height: contentRect.height)
+    }
+    
+    override func imageRect(forContentRect contentRect: CGRect) -> CGRect {
+        return CGRect(x: contentRect.width  - 18, y: 0, width: 8, height: contentRect.height)
+    }
+}
+
 class PhotoGridCell: UICollectionViewCell {
     
     typealias GridCellClickImageClosure = (_ cell: PhotoGridCell, _ indexPath: IndexPath)-> Void
@@ -16,7 +50,7 @@ class PhotoGridCell: UICollectionViewCell {
     
     fileprivate lazy var imgView: UIImageView = {
         let i = UIImageView()
-        i.layer.cornerRadius = 3
+        i.layer.cornerRadius = 2
         i.clipsToBounds = true
         i.contentMode = .scaleAspectFill
         i.clipsToBounds = true
