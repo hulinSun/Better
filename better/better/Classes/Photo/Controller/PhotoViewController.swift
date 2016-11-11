@@ -9,6 +9,14 @@
 import UIKit
 import Photos
 
+struct GridModel {
+    
+    var isCamera: Bool = false
+    var indexPath: IndexPath
+    var isSelected: Bool = false
+    var image: UIImage
+}
+
 class PhotoViewController: UIViewController {
 
     override func viewDidLoad() {
@@ -16,6 +24,13 @@ class PhotoViewController: UIViewController {
         setupUI()
         getCollection()
     }
+    
+    var choosedCell: PhotoGridCell?
+    
+    fileprivate lazy var mutiChoosedIndex: [IndexPath] = {
+        let i = [IndexPath]()
+        return i
+    }()
     
     
     fileprivate lazy var collectionView: UICollectionView = {
@@ -148,15 +163,12 @@ class PhotoViewController: UIViewController {
          print("background working")
          }
          */
-        //            let group = DispatchGroup()
-        //            group.enter()
-        //            group.leave()
-        //            group.notify(queue: DispatchQueue.main, execute: {
-        //
-        //            })
-        //
-        
-        
+//            let group = DispatchGroup()
+//            group.enter()
+//            group.leave()
+//            group.notify(queue: DispatchQueue.main, execute: {
+//
+//            })
         let collects =  PHAssetCollection.fetchAssetCollections(with: .album, subtype: .albumRegular, options: nil)
         /// 这里为什么不能用尾闭包的写法/。否则会报错
         collects.enumerateObjects ({ (collection, start, stop) in
@@ -184,6 +196,7 @@ extension PhotoViewCollectionProtocol: UICollectionViewDelegate , UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoGridCell", for: indexPath) as! PhotoGridCell
         if indexPath.item == 0{
             cell.isCamera = true
@@ -191,6 +204,40 @@ extension PhotoViewCollectionProtocol: UICollectionViewDelegate , UICollectionVi
             cell.img = images[indexPath.item - 1]
             cell.isCamera = false
         }
+        
+        cell.indexPath = indexPath
+        cell.clickClosure = { (cell , idx) in
+            // 在这里做单选 还是 多选的 操作
+            if true { // 默认单选s
+                cell.isChoosed = true
+                self.choosedCell?.isChoosed = false
+                self.choosedCell = cell
+            }else{ // 多选
+                let res = self.checkInChoosed(indexPath: idx)
+                if(self.mutiChoosedIndex.count > 2) && (res.0 == false){ // 点的不是之前选的
+                    print("最多选三张")
+                    return
+                }
+                cell.isChoosed = !cell.isChoosed
+                if res.0 == true{ // 在数组中
+                    self.mutiChoosedIndex.remove(at: res.1)
+                }else{
+                    self.mutiChoosedIndex.append(idx)
+                }
+                print(self.mutiChoosedIndex)
+            }
+        }
         return cell
+    }
+    
+    /// 判断传过来的idx 是否在数组中
+    private func checkInChoosed(indexPath: IndexPath)-> (Bool,Int){
+        var res = (false,0)
+        for (idx, item) in mutiChoosedIndex.enumerated(){
+            if indexPath.item == item.item {
+                res = (true, idx)
+            }
+        }
+        return res
     }
 }
