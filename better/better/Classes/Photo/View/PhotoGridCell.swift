@@ -100,13 +100,12 @@ class PhotoGridCell: UICollectionViewCell {
     /// 这里点击了图片，collection 的点击代理方法不走了。因为方法在这里相应了。没有往下个响应者传下。所以这里需要通过代理或者闭包传出去
     func tapImage( recon: UITapGestureRecognizer) {
         let clickPoint = recon.location(in: recon.view)
-        tapAnimate(point: clickPoint)
-        
         clickClosure?(self, indexPath!)
+        tapAnimate(point: clickPoint)
     }
     
     private func tapAnimate(point: CGPoint){
-        
+        if indexPath?.item == 0 { return }
         let clickLayer = CALayer()
         clickLayer.backgroundColor = UIColor.white.cgColor
         clickLayer.masksToBounds = true

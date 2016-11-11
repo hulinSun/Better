@@ -9,20 +9,34 @@
 import UIKit
 import Photos
 
-struct GridModel {
-    var isCamera: Bool = false
-    var indexPath: IndexPath
-    var isSelected: Bool = false
-    var image: UIImage
+struct PhotoGroupItem {
+    var count: Int /// 个数
+    var firstImg: UIImage /// 第一张图片
+    var images: [UIImage] /// 这一组的所有图片
+    var name: String /// 相册名
+    
 }
 
 class PhotoViewController: UIViewController {
 
+    static let tgSize: CGSize = CGSize(width: ((UIConst.screenWidth - 5) / 3.0) * (UIConst.screenScale), height: ((UIConst.screenWidth - 5 ) / 3.0) * (UIConst.screenScale))
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         getCollection()
     }
+    
+    fileprivate lazy var images: [UIImage] = {
+        let i = [UIImage]()
+        return i
+    }()
+    
+    /// tableview 的数据源
+    fileprivate lazy var tableViewDatas: [PhotoGroupItem] = {
+        let i = [PhotoGroupItem]()
+        return i
+    }()
     
     var choosedCell: PhotoGridCell?
     
@@ -30,7 +44,6 @@ class PhotoViewController: UIViewController {
         let i = [IndexPath]()
         return i
     }()
-    
     
     fileprivate lazy var navView: UIView = {
         let i = UIView()
@@ -53,7 +66,6 @@ class PhotoViewController: UIViewController {
         i.addTarget(self, action: #selector(right), for: .touchUpInside)
         return i
     }()
-    
     
     fileprivate lazy var listView: UIView = {
         let i = UIView()
@@ -83,12 +95,6 @@ class PhotoViewController: UIViewController {
         return i
     }()
     
-    fileprivate lazy var images: [UIImage] = {
-        let i = [UIImage]()
-        return i
-    }()
-    
-    static let tgSize: CGSize = CGSize(width: ((UIConst.screenWidth - 5) / 3.0) * (UIConst.screenScale), height: ((UIConst.screenWidth - 5 ) / 3.0) * (UIConst.screenScale))
     
     fileprivate lazy var photoLayout: UICollectionViewFlowLayout = {
         let i = UICollectionViewFlowLayout()
@@ -100,7 +106,6 @@ class PhotoViewController: UIViewController {
     
     /// 点击按钮
     func titleClick(){
-        
         view.addSubview(listView)
         view.bringSubview(toFront: navView)
         listView.snp.makeConstraints { (make) in
@@ -114,12 +119,10 @@ class PhotoViewController: UIViewController {
         listView.isHidden = false
         
         if titleView.isSelected {
-            print("按钮选中 ---箭头向上")
             UIView.animate(withDuration: 0.25, animations: {
                 self.listView.transform = CGAffineTransform.init(translationX: 0, y: 364)
             })
         }else{
-            print("按钮没中 ---箭头向下")
             UIView.animate(withDuration: 0.25, animations: {
                 self.listView.transform = CGAffineTransform.identity
             }) { (com) in
@@ -192,12 +195,11 @@ class PhotoViewController: UIViewController {
             
             // 能来到这里肯定已经授权了
             DispatchQueue.main.async { // 开启子线程来获取
-                print("x = \(Thread.current)")
                 // album 自定义的相册如微博 QQ等
                 let albumCollections = PHAssetCollection.fetchAssetCollections(with: .album, subtype: .albumRegular, options: nil)
                 
                 albumCollections.enumerateObjects({ (collection, _, _) in
-//                    print("ablum = \(collection.localizedTitle)")
+//                    print("自定义的相册 = \(collection.localizedTitle)")
                     self.getImages(collection: collection)
                 })
                 
@@ -205,39 +207,45 @@ class PhotoViewController: UIViewController {
                 let smartAlbumCollection = PHAssetCollection.fetchAssetCollections(with: .smartAlbum, subtype: .albumRegular, options: nil)
                 
                 smartAlbumCollection.enumerateObjects({ (collection, _, _) in
-//                    print("smartAlbum = \(collection.localizedTitle)")
+//                    print("系统自带的相册 = \(collection.localizedTitle)")
                     self.getImages(collection: collection)
                 })
-                print("albumCollections = \(albumCollections.count) ,smartAlbumCollection = \(smartAlbumCollection.count)")
+                print("自定义的相册个数 = \(albumCollections.count) ,系统自带的相册个数 = \(smartAlbumCollection.count)")
             }
         }
     }
 
     func getImages(collection: PHAssetCollection) {
+        
+        // 相册个数 ，名称 这组的相片  第一张缩略图
+        
         // 图片
         let result = PHAsset.fetchAssets(in: collection, options: nil)
-        
-        // 自定义的相册即使没有图片 也要、 系统的相册没有图片就剔除掉
-//        if collection.assetCollectionType == .album{
-//            print("自定义 =\(collection.localizedTitle)")
-//        }
 
+        print("相册的名字 =\(collection.localizedTitle) 个数 = \(result.count)")
+        // 自定义的相册即使没有图片 也要、 系统的相册没有图片就剔除掉
+        
         print(collection.localizedTitle)
+        
         if collection.localizedTitle == "Camera Roll"{
             let opt = PHImageRequestOptions()
             opt.deliveryMode = .highQualityFormat
-            
             if result.count > 0{
                 print("title = \(collection.localizedTitle) , count = \(result.count)")
-                
+                var arr = [UIImage]()
                 result.enumerateObjects ({ (asset, idx, stop) in
+                    print("----------")
                     // 获取图片
                     PHImageManager.default().requestImage(for: asset, targetSize:PhotoViewController.tgSize, contentMode: .default, options: opt, resultHandler: { (img, dict) in
                         if let i = img{
                             self.images.append(i)
+                            arr.append(i)
+                            print(i.size)
                         }
                     })
+                    print("+=====")
                 })
+                let item = PhotoGroupItem(count: result.count, firstImg: arr.first!, images: arr, name: collection.localizedTitle!)
             }
             
             DispatchQueue.main.after(delay: 3, execute: {
@@ -251,7 +259,6 @@ class PhotoViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
 }
-
 
 typealias PhotoViewCollectionProtocol = PhotoViewController
 
@@ -273,14 +280,13 @@ extension PhotoViewCollectionProtocol: UICollectionViewDelegate , UICollectionVi
         
         cell.indexPath = indexPath
         cell.clickClosure = { (cell , idx) in
-            
             if idx.item == 0{
                 // 去照相
                 return
             }
             
             // 在这里做单选 还是 多选的 操作
-            if true { // 默认单选s
+            if false { // 默认单选s
                 cell.isChoosed = true
                 self.choosedCell?.isChoosed = false
                 self.choosedCell = cell
