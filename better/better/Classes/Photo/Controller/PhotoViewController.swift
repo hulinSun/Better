@@ -19,6 +19,7 @@ struct PhotoGroupItem {
 
 class PhotoViewController: UIViewController {
 
+    var item: PhotoGroupItem?
     static let tgSize: CGSize = CGSize(width: ((UIConst.screenWidth - 5) / 3.0) * (UIConst.screenScale), height: ((UIConst.screenWidth - 5 ) / 3.0) * (UIConst.screenScale))
     
     override func viewDidLoad() {
@@ -245,12 +246,15 @@ class PhotoViewController: UIViewController {
                     })
                     print("+=====")
                 })
-                let item = PhotoGroupItem(count: result.count, firstImg: arr.first!, images: arr, name: collection.localizedTitle!)
             }
+            
+            
             
             DispatchQueue.main.after(delay: 3, execute: {
                 // 刷新
                 self.collectionView.reloadData()
+                self.item = PhotoGroupItem(count: result.count, firstImg: self.images.first!, images: self.images, name: collection.localizedTitle!)
+                print(self.item)
             })
         }
     }
