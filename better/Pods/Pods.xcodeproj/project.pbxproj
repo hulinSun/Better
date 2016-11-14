@@ -761,22 +761,22 @@
 				LastUpgradeCheck = 0700;
 				TargetAttributes = {
 					1DE93A359FA21F91DFBE81309E851A4A = {
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0810;
 					};
 					79C040AFDDCE1BCBF6D8B5EB0B85887F = {
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0810;
 					};
 					C5CBCAA97E951CC882334464FBDF983D = {
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0810;
 					};
 					DE3F1B8ECF90FDCE852C052C6F02BE68 = {
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0810;
 					};
 					EDC8C822B90B1E666923ED38F77A2204 = {
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0810;
 					};
 					FBD082A0D35F7917EAB9DD9D3CCA9976 = {
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0810;
 					};
 				};
 			};

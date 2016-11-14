@@ -3,23 +3,23 @@ PODS:
   - AlamofireObjectMapper (4.0.0):
     - Alamofire (~> 4.0)
     - ObjectMapper (~> 2.0)
-  - HandyJSON (1.1.0)
-  - Kingfisher (3.1.4)
-  - ObjectMapper (2.2.0)
+  - HandyJSON (1.2.1)
+  - Kingfisher (3.2.1)
+  - ObjectMapper (2.2.1)
 
 DEPENDENCIES:
   - Alamofire (~> 4.0)
   - AlamofireObjectMapper (~> 4.0)
-  - HandyJSON (~> 1.1.0)
+  - HandyJSON (~> 1.2.1)
   - Kingfisher (~> 3.0)
 
 SPEC CHECKSUMS:
   Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
   AlamofireObjectMapper: 9faa3ce5a240efda1b209009a2d6e1e949227abc
-  HandyJSON: c19dba750f1a8c238c4f47f40b1b5e3efaef7e34
-  Kingfisher: 6c67e3e57f2d81a9cfdfa25052cd86f33ceac9bb
-  ObjectMapper: 4060d739febae11ab0c6af8d786f98667c82e1bd
+  HandyJSON: c20190bca46cc6e7fb87073df63ecbe90770a7b0
+  Kingfisher: 64ef28c6d3d6f344e3ae2d7f5c9da80439505d99
+  ObjectMapper: 41e43e1a89f8060ef5ea5d04ba852e269a621d68
 
-PODFILE CHECKSUM: b7aedc69914b8947a1b4f5f9c703a4b8bc866f77
+PODFILE CHECKSUM: 740521e63214907a7abd6ddf6786d95f86a5cd15
 
 COCOAPODS: 1.0.1
