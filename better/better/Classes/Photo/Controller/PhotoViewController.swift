@@ -226,7 +226,7 @@ class PhotoViewController: UIViewController {
         print("相册的名字 =\(collection.localizedTitle) 个数 = \(result.count)")
         // 自定义的相册即使没有图片 也要、 系统的相册没有图片就剔除掉
         
-        print(collection.localizedTitle)
+        print(collection.localizedTitle ?? "nil")
         
         if collection.localizedTitle == "Camera Roll"{
             let opt = PHImageRequestOptions()
