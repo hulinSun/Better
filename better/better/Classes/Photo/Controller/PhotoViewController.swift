@@ -236,6 +236,7 @@ class PhotoViewController: UIViewController {
                 var arr = [UIImage]()
                 result.enumerateObjects ({ (asset, idx, stop) in
                     print("----------")
+                    
                     // 获取图片
                     PHImageManager.default().requestImage(for: asset, targetSize:PhotoViewController.tgSize, contentMode: .default, options: opt, resultHandler: { (img, dict) in
                         if let i = img{
