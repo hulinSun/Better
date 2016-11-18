@@ -9,18 +9,33 @@
 import UIKit
 import Photos
 
-struct PhotoGroupItem {
+class PhotoGroupItem: CustomStringConvertible {
     var count: Int /// 个数
-    var firstImg: UIImage /// 第一张图片
-    var images: [UIImage] /// 这一组的所有图片
+    var firstImg: PHAsset? /// 第一张图片
+    var result: PHFetchResult<PHAsset>? /// 这一组的所有图片
     var name: String /// 相册名
     
+    var description: String{
+        return "name is \(self.name) count = \(self.count)  firstimg =\(self.firstImg) "
+    }
+    
+    init(count: Int, firstImg: PHAsset?, result: PHFetchResult<PHAsset>?, name: String) {
+        self.count = count
+        self.firstImg = firstImg
+        self.result = result
+        self.name = name
+    }
 }
 
 class PhotoViewController: UIViewController {
 
     var item: PhotoGroupItem?
     static let tgSize: CGSize = CGSize(width: ((UIConst.screenWidth - 5) / 3.0) * (UIConst.screenScale), height: ((UIConst.screenWidth - 5 ) / 3.0) * (UIConst.screenScale))
+    
+    fileprivate lazy var photoCollections: [PHFetchResult<PHAssetCollection>] = {
+    let i = [PHFetchResult<PHAssetCollection>]()
+        return i
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -95,7 +110,6 @@ class PhotoViewController: UIViewController {
         i.backgroundColor = .white
         return i
     }()
-    
     
     fileprivate lazy var photoLayout: UICollectionViewFlowLayout = {
         let i = UICollectionViewFlowLayout()
@@ -187,6 +201,7 @@ class PhotoViewController: UIViewController {
     }
     
     func getCollection() {
+        
         // 判断授权状态
         PHPhotoLibrary.requestAuthorization { (status) in
             if status != .authorized{
@@ -195,23 +210,29 @@ class PhotoViewController: UIViewController {
             }
             
             // 能来到这里肯定已经授权了
-            DispatchQueue.main.async { // 开启子线程来获取
-                // album 自定义的相册如微博 QQ等
-                let albumCollections = PHAssetCollection.fetchAssetCollections(with: .album, subtype: .albumRegular, options: nil)
-                
-                albumCollections.enumerateObjects({ (collection, _, _) in
-//                    print("自定义的相册 = \(collection.localizedTitle)")
-                    self.getImages(collection: collection)
+            // album 自定义的相册如微博 QQ等
+            let albumCollections = PHAssetCollection.fetchAssetCollections(with: .album, subtype: .albumRegular, options: nil)
+            
+            // smartAlbum 系统自带的相册。最近删除，最近添加等
+            let smartAlbumCollection = PHAssetCollection.fetchAssetCollections(with: .smartAlbum, subtype: .albumRegular, options: nil)
+            
+            self.photoCollections.append(albumCollections)
+            self.photoCollections.append(smartAlbumCollection)
+            for (_ , obj) in self.photoCollections.enumerated(){
+                obj.enumerateObjects({ (collection, _, _) in
+                    
+                    let result = PHAsset.fetchAssets(in: collection, options: nil)
+                    if collection.assetCollectionType == .album { // album 自定义相册
+                        let item = PhotoGroupItem(count: result.count, firstImg: result.firstObject, result: result, name: collection.localizedTitle!)
+                        self.tableViewDatas.append(item)
+                        
+                    }else if collection.assetCollectionType == .smartAlbum { // smart album 系统自带的相册
+                        if result.count > 0{ // 过滤掉没有图片的
+                            let item = PhotoGroupItem(count: result.count, firstImg: result.firstObject, result: result, name: collection.localizedTitle!)
+                            self.tableViewDatas.append(item)
+                        }
+                    }
                 })
-                
-                // smartAlbum 系统自带的相册。最近删除，最近添加等
-                let smartAlbumCollection = PHAssetCollection.fetchAssetCollections(with: .smartAlbum, subtype: .albumRegular, options: nil)
-                
-                smartAlbumCollection.enumerateObjects({ (collection, _, _) in
-//                    print("系统自带的相册 = \(collection.localizedTitle)")
-                    self.getImages(collection: collection)
-                })
-                print("自定义的相册个数 = \(albumCollections.count) ,系统自带的相册个数 = \(smartAlbumCollection.count)")
             }
         }
     }
@@ -219,11 +240,10 @@ class PhotoViewController: UIViewController {
     func getImages(collection: PHAssetCollection) {
         
         // 相册个数 ，名称 这组的相片  第一张缩略图
-        
         // 图片
         let result = PHAsset.fetchAssets(in: collection, options: nil)
 
-        print("相册的名字 =\(collection.localizedTitle) 个数 = \(result.count)")
+//        print("相册的名字 =\(collection.localizedTitle) 个数 = \(result.count)")
         // 自定义的相册即使没有图片 也要、 系统的相册没有图片就剔除掉
         
         print(collection.localizedTitle ?? "nil")
@@ -235,8 +255,6 @@ class PhotoViewController: UIViewController {
                 print("title = \(collection.localizedTitle) , count = \(result.count)")
                 var arr = [UIImage]()
                 result.enumerateObjects ({ (asset, idx, stop) in
-                    print("----------")
-                    
                     // 获取图片
                     PHImageManager.default().requestImage(for: asset, targetSize:PhotoViewController.tgSize, contentMode: .default, options: opt, resultHandler: { (img, dict) in
                         if let i = img{
@@ -245,17 +263,13 @@ class PhotoViewController: UIViewController {
                             print(i.size)
                         }
                     })
-                    print("+=====")
                 })
             }
-            
             
             
             DispatchQueue.main.after(delay: 3, execute: {
                 // 刷新
                 self.collectionView.reloadData()
-                self.item = PhotoGroupItem(count: result.count, firstImg: self.images.first!, images: self.images, name: collection.localizedTitle!)
-                print(self.item)
             })
         }
     }
@@ -323,4 +337,22 @@ extension PhotoViewCollectionProtocol: UICollectionViewDelegate , UICollectionVi
         }
         return res
     }
+}
+
+
+
+
+func other(){
+    /**
+    let group = DispatchGroup()
+    for i in 0..<self.photoCollections.count{
+        let collections = self.photoCollections[i]
+        group.enter()
+        collections.enumerateObjects({ (collection, _, _) in
+            self.getImages(collection: collection)
+        })
+    }
+    group.notify(queue: DispatchQueue.main, execute: {
+        print("回调成功了")
+    }) */
 }
