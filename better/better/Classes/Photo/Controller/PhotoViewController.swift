@@ -25,6 +25,7 @@ class PhotoGroupItem: CustomStringConvertible {
         self.result = result
         self.name = name
     }
+//    self.dynamicType.description().componentsSeparatedByString(".").last!
 }
 
 class PhotoViewController: UIViewController {
@@ -58,6 +59,11 @@ class PhotoViewController: UIViewController {
     
     fileprivate lazy var mutiChoosedIndex: [IndexPath] = {
         let i = [IndexPath]()
+        return i
+    }()
+    
+    fileprivate lazy var tableView: GroupTableView = {
+        let i = GroupTableView.init(frame: .zero, style: .plain)
         return i
     }()
     
@@ -164,7 +170,11 @@ class PhotoViewController: UIViewController {
         return .lightContent
     }
     
+    deinit {
+        print("照片控制器被释放了")
+    }
     func setupUI()  {
+        
         navView.addSubview(leftBtn)
         navView.addSubview(rightBtn)
         navView.addSubview(titleView)
@@ -218,6 +228,7 @@ class PhotoViewController: UIViewController {
             
             self.photoCollections.append(albumCollections)
             self.photoCollections.append(smartAlbumCollection)
+            
             for (_ , obj) in self.photoCollections.enumerated(){
                 obj.enumerateObjects({ (collection, _, _) in
                     
@@ -234,6 +245,13 @@ class PhotoViewController: UIViewController {
                     }
                 })
             }
+            
+            self.listView.addSubview(self.tableView)
+            self.tableView.snp.makeConstraints({ (make) in
+                make.edges.equalToSuperview()
+            })
+            self.tableView.datas = self.tableViewDatas
+            print(self.tableViewDatas)
         }
     }
 
@@ -265,7 +283,6 @@ class PhotoViewController: UIViewController {
                     })
                 })
             }
-            
             
             DispatchQueue.main.after(delay: 3, execute: {
                 // 刷新
