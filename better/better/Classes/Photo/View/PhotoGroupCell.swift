@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Photos
 
 class PhotoGroupCell: UITableViewCell {
 
@@ -14,6 +15,16 @@ class PhotoGroupCell: UITableViewCell {
         didSet{
             let count = (item?.count)!
             nameLabel.text = (item?.name)! + " ("+"\(count)"+")张"
+          
+            if let firstImage = item?.firstImg{
+                let opt = PHImageRequestOptions()
+                opt.deliveryMode = .highQualityFormat
+                PHCachingImageManager.default().requestImage(for: firstImage, targetSize: CGSize(width: 54, height: 54), contentMode: .default, options: opt, resultHandler: { (img , info) in
+                    self.iconView.image = img
+                })
+            }else{
+                self.iconView.backgroundColor = UIColor.random()
+            }
         }
     }
     

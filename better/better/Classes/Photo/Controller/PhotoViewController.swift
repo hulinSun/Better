@@ -25,14 +25,33 @@ class PhotoGroupItem: CustomStringConvertible {
         self.result = result
         self.name = name
     }
-//    self.dynamicType.description().componentsSeparatedByString(".").last!
 }
 
-class PhotoViewController: UIViewController {
 
-    var item: PhotoGroupItem?
-    static let tgSize: CGSize = CGSize(width: ((UIConst.screenWidth - 5) / 3.0) * (UIConst.screenScale), height: ((UIConst.screenWidth - 5 ) / 3.0) * (UIConst.screenScale))
+class GridItem {
     
+    var choosed: Bool = false
+    var asset: PHAsset?
+    var isCarmea: Bool = false
+    
+    init(choosed: Bool, asset: PHAsset?, isCarmea: Bool) {
+        self.choosed = choosed
+        self.asset = asset
+        self.isCarmea = isCarmea
+    }
+}
+
+
+
+class PhotoViewController: UIViewController {
+    
+    var gridItems:[GridItem] = [GridItem](){
+        didSet{
+            collectionView.reloadData()
+        }
+    }
+    
+
     fileprivate lazy var photoCollections: [PHFetchResult<PHAssetCollection>] = {
     let i = [PHFetchResult<PHAssetCollection>]()
         return i
@@ -43,11 +62,6 @@ class PhotoViewController: UIViewController {
         setupUI()
         getCollection()
     }
-    
-    fileprivate lazy var images: [UIImage] = {
-        let i = [UIImage]()
-        return i
-    }()
     
     /// tableview 的数据源
     fileprivate lazy var tableViewDatas: [PhotoGroupItem] = {
@@ -247,6 +261,10 @@ class PhotoViewController: UIViewController {
             }
             
             self.listView.addSubview(self.tableView)
+            self.tableView.clickClosure = { (tableview, indexPath, item) in
+                self.configCollectionData(item: item)
+            }
+            
             self.tableView.snp.makeConstraints({ (make) in
                 make.edges.equalToSuperview()
             })
@@ -255,40 +273,20 @@ class PhotoViewController: UIViewController {
         }
     }
 
-    func getImages(collection: PHAssetCollection) {
-        
-        // 相册个数 ，名称 这组的相片  第一张缩略图
-        // 图片
-        let result = PHAsset.fetchAssets(in: collection, options: nil)
-
-//        print("相册的名字 =\(collection.localizedTitle) 个数 = \(result.count)")
-        // 自定义的相册即使没有图片 也要、 系统的相册没有图片就剔除掉
-        
-        print(collection.localizedTitle ?? "nil")
-        
-        if collection.localizedTitle == "Camera Roll"{
-            let opt = PHImageRequestOptions()
-            opt.deliveryMode = .highQualityFormat
-            if result.count > 0{
-                print("title = \(collection.localizedTitle) , count = \(result.count)")
-                var arr = [UIImage]()
-                result.enumerateObjects ({ (asset, idx, stop) in
-                    // 获取图片
-                    PHImageManager.default().requestImage(for: asset, targetSize:PhotoViewController.tgSize, contentMode: .default, options: opt, resultHandler: { (img, dict) in
-                        if let i = img{
-                            self.images.append(i)
-                            arr.append(i)
-                            print(i.size)
-                        }
-                    })
-                })
-            }
-            
-            DispatchQueue.main.after(delay: 3, execute: {
-                // 刷新
-                self.collectionView.reloadData()
+    
+    func configCollectionData(item: PhotoGroupItem)  {
+        if let result = item.result{
+            var temp = [GridItem]()
+            result.enumerateObjects({ (asset, idx, stop) in
+                let item = GridItem(choosed: false, asset: asset, isCarmea: false)
+                temp.append(item)
             })
+//            let cameraItem = GridItem(choosed: false, asset: nil, isCarmea: true)
+//            temp.insert(cameraItem, at: 0)
+            gridItems = temp
         }
+        
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -301,18 +299,13 @@ typealias PhotoViewCollectionProtocol = PhotoViewController
 extension PhotoViewCollectionProtocol: UICollectionViewDelegate , UICollectionViewDataSource{
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return images.count > 0 ? images.count + 1 : 0
+        return gridItems.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoGridCell", for: indexPath) as! PhotoGridCell
-        if indexPath.item == 0{
-            cell.isCamera = true
-        }else{
-            cell.img = images[indexPath.item - 1]
-            cell.isCamera = false
-        }
+        cell.item = gridItems[indexPath.item]
         
         cell.indexPath = indexPath
         cell.clickClosure = { (cell , idx) in
@@ -323,8 +316,8 @@ extension PhotoViewCollectionProtocol: UICollectionViewDelegate , UICollectionVi
             
             // 在这里做单选 还是 多选的 操作
             if false { // 默认单选s
-                cell.isChoosed = true
-                self.choosedCell?.isChoosed = false
+//                cell.isChoosed = true
+//                self.choosedCell?.isChoosed = false
                 self.choosedCell = cell
             }else{ // 多选
                 let res = self.checkInChoosed(indexPath: idx)
@@ -332,7 +325,7 @@ extension PhotoViewCollectionProtocol: UICollectionViewDelegate , UICollectionVi
                     print("最多选三张")
                     return
                 }
-                cell.isChoosed = !cell.isChoosed
+//                cell.isChoosed = !cell.isChoosed
                 if res.0 == true{ // 在数组中
                     self.mutiChoosedIndex.remove(at: res.1)
                 }else{
@@ -358,18 +351,39 @@ extension PhotoViewCollectionProtocol: UICollectionViewDelegate , UICollectionVi
 
 
 
-
-func other(){
-    /**
-    let group = DispatchGroup()
-    for i in 0..<self.photoCollections.count{
-        let collections = self.photoCollections[i]
-        group.enter()
-        collections.enumerateObjects({ (collection, _, _) in
-            self.getImages(collection: collection)
+/**
+func getImages(collection: PHAssetCollection) {
+    
+    // 相册个数 ，名称 这组的相片  第一张缩略图
+    // 图片
+    let result = PHAsset.fetchAssets(in: collection, options: nil)
+    
+    //        print("相册的名字 =\(collection.localizedTitle) 个数 = \(result.count)")
+    // 自定义的相册即使没有图片 也要、 系统的相册没有图片就剔除掉
+    
+    print(collection.localizedTitle ?? "nil")
+    
+    if collection.localizedTitle == "Camera Roll"{
+        let opt = PHImageRequestOptions()
+        opt.deliveryMode = .highQualityFormat
+        if result.count > 0{
+            print("title = \(collection.localizedTitle) , count = \(result.count)")
+            var arr = [UIImage]()
+            result.enumerateObjects ({ (asset, idx, stop) in
+                // 获取图片
+                PHImageManager.default().requestImage(for: asset, targetSize:PhotoViewController.tgSize, contentMode: .default, options: opt, resultHandler: { (img, dict) in
+                    if let i = img{
+                        //                            self.images.append(i)
+                        arr.append(i)
+                        print(i.size)
+                    }
+                })
+            })
+        }
+        
+        DispatchQueue.main.after(delay: 3, execute: {
+            // 刷新
+            self.collectionView.reloadData()
         })
     }
-    group.notify(queue: DispatchQueue.main, execute: {
-        print("回调成功了")
-    }) */
-}
+} */

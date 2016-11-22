@@ -6,6 +6,7 @@
 //  Copyright © 2016年 Hony. All rights reserved.
 //
 
+import Photos
 import UIKit
 
 
@@ -42,6 +43,15 @@ class PhotoTitleView: UIButton {
 
 class PhotoGridCell: UICollectionViewCell {
     
+    
+    static let tgSize: CGSize = CGSize(width: ((UIConst.screenWidth - 5) / 3.0) * (UIConst.screenScale), height: ((UIConst.screenWidth - 5 ) / 3.0) * (UIConst.screenScale))
+    
+    
+    fileprivate lazy var opt: PHImageRequestOptions = {
+        let i = PHImageRequestOptions()
+        i.deliveryMode = .highQualityFormat
+        return i
+    }()
     typealias GridCellClickImageClosure = (_ cell: PhotoGridCell, _ indexPath: IndexPath)-> Void
     
     var clickClosure: GridCellClickImageClosure?
@@ -63,34 +73,31 @@ class PhotoGridCell: UICollectionViewCell {
         return i
     }()
     
-    /// 是否被选中
-    var isChoosed: Bool = false{
+    var item: GridItem?{
         didSet{
-            if isChoosed == true {
+            if (item?.isCarmea)! == true{
                 iconView.isHidden = false
             }else{
                 iconView.isHidden = true
             }
-        }
-    }
-    
-    var isCamera: Bool = false{
-        didSet{
-            if isCamera == true {
+            
+            if item?.isCarmea == true{
                 imgView.image = UIImage(named: "BoAssetsCamera")
             }else{
-              imgView.image = img
+//                imgView.image = img
+            }
+            
+            if let aset = item?.asset{
+                PHCachingImageManager.default().requestImage(for: aset, targetSize: PhotoGridCell.tgSize, contentMode: .default, options: opt, resultHandler: { (img , info) in
+                    
+                    self.imgView.image = img
+                })
             }
         }
     }
     
     var indexPath: IndexPath?
     
-    var img: UIImage?{
-        didSet{
-            imgView.image = img
-        }
-    }
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()
