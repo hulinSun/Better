@@ -145,7 +145,7 @@ class PhotoViewController: UIViewController {
         view.bringSubview(toFront: navView)
         listView.snp.makeConstraints { (make) in
             make.left.right.equalToSuperview()
-            make.height.equalTo(300)
+            make.height.equalTo(320)
             make.bottom.equalTo(view.snp.top)
         }
         
@@ -155,7 +155,7 @@ class PhotoViewController: UIViewController {
         
         if titleView.isSelected {
             UIView.animate(withDuration: 0.25, animations: {
-                self.listView.transform = CGAffineTransform.init(translationX: 0, y: 364)
+                self.listView.transform = CGAffineTransform.init(translationX: 0, y: 384)
             })
         }else{
             UIView.animate(withDuration: 0.25, animations: {
@@ -245,12 +245,10 @@ class PhotoViewController: UIViewController {
             
             for (_ , obj) in self.photoCollections.enumerated(){
                 obj.enumerateObjects({ (collection, _, _) in
-                    
                     let result = PHAsset.fetchAssets(in: collection, options: nil)
                     if collection.assetCollectionType == .album { // album 自定义相册
                         let item = PhotoGroupItem(count: result.count, firstImg: result.firstObject, result: result, name: collection.localizedTitle!)
                         self.tableViewDatas.append(item)
-                        
                     }else if collection.assetCollectionType == .smartAlbum { // smart album 系统自带的相册
                         if result.count > 0{ // 过滤掉没有图片的
                             let item = PhotoGroupItem(count: result.count, firstImg: result.firstObject, result: result, name: collection.localizedTitle!)
@@ -259,19 +257,27 @@ class PhotoViewController: UIViewController {
                     }
                 })
             }
-            
             self.listView.addSubview(self.tableView)
             self.tableView.clickClosure = { (tableview, indexPath, item) in
                 self.titleClick()
                 self.configCollectionData(item: item)
                 self.titleView.setTitle(item.name, for: .normal)
             }
-            
             self.tableView.snp.makeConstraints({ (make) in
                 make.edges.equalToSuperview()
             })
+            
             self.tableView.datas = self.tableViewDatas
-            print(self.tableViewDatas)
+//            if let camealItem = self.tableViewDatas.filter({ (item) -> Bool in
+//                return item.name == "Camera Roll"
+//            }).first{
+//                print(camealItem)
+//                self.configCollectionData(item: camealItem)
+//            }
+            if let firstItem = self.tableViewDatas.first{
+                self.configCollectionData(item: firstItem)
+                self.titleView.setTitle(firstItem.name, for: .normal)
+            }
         }
     }
 
@@ -287,8 +293,6 @@ class PhotoViewController: UIViewController {
 //            temp.insert(cameraItem, at: 0)
             gridItems = temp
         }
-        
-        
     }
     
     override func didReceiveMemoryWarning() {
