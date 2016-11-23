@@ -234,7 +234,6 @@ class PhotoViewController: UIViewController {
                 return
             }
             
-            // 能来到这里肯定已经授权了
             // album 自定义的相册如微博 QQ等
             let albumCollections = PHAssetCollection.fetchAssetCollections(with: .album, subtype: .albumRegular, options: nil)
             
@@ -321,7 +320,7 @@ extension PhotoViewCollectionProtocol: UICollectionViewDelegate , UICollectionVi
             let itemModel = self.gridItems[idx.item]
             let choosedItem = self.choosedCell?.item
             // 在这里做单选 还是 多选的 操作
-            if false { // 默认单选s
+            if 2 > 1 { // 默认单选s
                 itemModel.choosed = true
                 choosedItem?.choosed = false
                 cell.item = itemModel
@@ -329,9 +328,9 @@ extension PhotoViewCollectionProtocol: UICollectionViewDelegate , UICollectionVi
                 self.choosedCell = cell
             }else{ // 多选
                 let res = self.checkInChoosed(indexPath: idx)
-                if(self.mutiChoosedIndex.count > 2) && (res.0 == false){ // 点的不是之前选的
-                    print("最多选三张")
-                    return
+                if(self.mutiChoosedIndex.count > 2) && (res.0 == false){
+                    // 点的不是之前选的
+                    print("最多选三张"); return
                 }
                 itemModel.choosed = !itemModel.choosed
                 cell.item = itemModel
