@@ -262,7 +262,9 @@ class PhotoViewController: UIViewController {
             
             self.listView.addSubview(self.tableView)
             self.tableView.clickClosure = { (tableview, indexPath, item) in
+                self.titleClick()
                 self.configCollectionData(item: item)
+                self.titleView.setTitle(item.name, for: .normal)
             }
             
             self.tableView.snp.makeConstraints({ (make) in
