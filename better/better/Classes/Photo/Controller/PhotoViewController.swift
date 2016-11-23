@@ -70,7 +70,8 @@ class PhotoViewController: UIViewController {
         return i
     }()
     
-    var choosedCell: PhotoGridCell?
+    /// 单选情况下 选中的item
+    var choonsedItem: GridItem?
     
     fileprivate lazy var mutiChoosedIndex: [IndexPath] = {
         let i = [IndexPath]()
@@ -139,6 +140,8 @@ class PhotoViewController: UIViewController {
         i.minimumLineSpacing = 0
         return i
     }()
+    
+    var lastItem: GridItem?
     
     /// 点击按钮
     func titleClick(){
@@ -233,7 +236,6 @@ class PhotoViewController: UIViewController {
                 print("用户没有授权。想办法搞一搞事情")
                 return
             }
-            
             // album 自定义的相册如微博 QQ等
             let albumCollections = PHAssetCollection.fetchAssetCollections(with: .album, subtype: .albumRegular, options: nil)
             
@@ -316,31 +318,7 @@ extension PhotoViewCollectionProtocol: UICollectionViewDelegate , UICollectionVi
         cell.item = model
         
         cell.clickClosure = { (cell , idx) in
-            if idx.item == 0{ return }// 去照相
-            let itemModel = self.gridItems[idx.item]
-            let choosedItem = self.choosedCell?.item
-            // 在这里做单选 还是 多选的 操作
-            if 2 > 1 { // 默认单选s
-                itemModel.choosed = true
-                choosedItem?.choosed = false
-                cell.item = itemModel
-                self.choosedCell?.item = choosedItem
-                self.choosedCell = cell
-            }else{ // 多选
-                let res = self.checkInChoosed(indexPath: idx)
-                if(self.mutiChoosedIndex.count > 2) && (res.0 == false){
-                    // 点的不是之前选的
-                    print("最多选三张"); return
-                }
-                itemModel.choosed = !itemModel.choosed
-                cell.item = itemModel
-                if res.0 == true{ // 在数组中
-                    self.mutiChoosedIndex.remove(at: res.1)
-                }else{
-                    self.mutiChoosedIndex.append(idx)
-                }
-                print(self.mutiChoosedIndex)
-            }
+            self.cellClickDeal(cell: cell, idx: idx)
         }
         return cell
     }
@@ -354,6 +332,38 @@ extension PhotoViewCollectionProtocol: UICollectionViewDelegate , UICollectionVi
             }
         }
         return res
+    }
+    
+    /// 处理cell 的点击
+    func cellClickDeal(cell: PhotoGridCell, idx: IndexPath)  {
+        if idx.item == 0{ return }// 去照相
+        let itemModel = self.gridItems[idx.item]
+        // 在这里做单选 还是 多选的 操作
+        if 2 > 1 { // 默认单选
+            itemModel.choosed = !itemModel.choosed
+            self.lastItem?.choosed = !(self.lastItem?.choosed)!
+            cell.item = itemModel
+            if self.lastItem != nil{
+                if let lastCell = collectionView.cellForItem(at: (self.lastItem?.indexPath)!) as? PhotoGridCell{
+                    lastCell.item =  self.lastItem
+                }
+            }
+            self.lastItem = itemModel
+        }else{ // 多选
+            let res = self.checkInChoosed(indexPath: idx)
+            if(self.mutiChoosedIndex.count > 2) && (res.0 == false){
+                // 点的不是之前选的
+                print("最多选三张"); return
+            }
+            itemModel.choosed = !itemModel.choosed
+            cell.item = itemModel
+            if res.0 == true{ // 在数组中
+                self.mutiChoosedIndex.remove(at: res.1)
+            }else{
+                self.mutiChoosedIndex.append(idx)
+            }
+            print(self.mutiChoosedIndex)
+        }
     }
 }
 
