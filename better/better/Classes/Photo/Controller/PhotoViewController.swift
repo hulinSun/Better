@@ -33,6 +33,7 @@ class GridItem {
     var choosed: Bool = false
     var asset: PHAsset?
     var isCarmea: Bool = false
+    var indexPath: IndexPath?
     
     init(choosed: Bool, asset: PHAsset?, isCarmea: Bool) {
         self.choosed = choosed
@@ -289,8 +290,8 @@ class PhotoViewController: UIViewController {
                 let item = GridItem(choosed: false, asset: asset, isCarmea: false)
                 temp.append(item)
             })
-//            let cameraItem = GridItem(choosed: false, asset: nil, isCarmea: true)
-//            temp.insert(cameraItem, at: 0)
+            let cameraItem = GridItem(choosed: false, asset: nil, isCarmea: true)
+            temp.insert(cameraItem, at: 0)
             gridItems = temp
         }
     }
@@ -311,19 +312,20 @@ extension PhotoViewCollectionProtocol: UICollectionViewDelegate , UICollectionVi
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoGridCell", for: indexPath) as! PhotoGridCell
-        cell.item = gridItems[indexPath.item]
+        let model = gridItems[indexPath.item]
+        model.indexPath = indexPath
+        cell.item = model
         
-        cell.indexPath = indexPath
         cell.clickClosure = { (cell , idx) in
-            if idx.item == 0{
-                // 去照相
-                return
-            }
-            
+            if idx.item == 0{ return }// 去照相
+            let itemModel = self.gridItems[idx.item]
+            let choosedItem = self.choosedCell?.item
             // 在这里做单选 还是 多选的 操作
             if false { // 默认单选s
-//                cell.isChoosed = true
-//                self.choosedCell?.isChoosed = false
+                itemModel.choosed = true
+                choosedItem?.choosed = false
+                cell.item = itemModel
+                self.choosedCell?.item = choosedItem
                 self.choosedCell = cell
             }else{ // 多选
                 let res = self.checkInChoosed(indexPath: idx)
@@ -331,7 +333,8 @@ extension PhotoViewCollectionProtocol: UICollectionViewDelegate , UICollectionVi
                     print("最多选三张")
                     return
                 }
-//                cell.isChoosed = !cell.isChoosed
+                itemModel.choosed = !itemModel.choosed
+                cell.item = itemModel
                 if res.0 == true{ // 在数组中
                     self.mutiChoosedIndex.remove(at: res.1)
                 }else{
@@ -355,41 +358,3 @@ extension PhotoViewCollectionProtocol: UICollectionViewDelegate , UICollectionVi
     }
 }
 
-
-
-/**
-func getImages(collection: PHAssetCollection) {
-    
-    // 相册个数 ，名称 这组的相片  第一张缩略图
-    // 图片
-    let result = PHAsset.fetchAssets(in: collection, options: nil)
-    
-    //        print("相册的名字 =\(collection.localizedTitle) 个数 = \(result.count)")
-    // 自定义的相册即使没有图片 也要、 系统的相册没有图片就剔除掉
-    
-    print(collection.localizedTitle ?? "nil")
-    
-    if collection.localizedTitle == "Camera Roll"{
-        let opt = PHImageRequestOptions()
-        opt.deliveryMode = .highQualityFormat
-        if result.count > 0{
-            print("title = \(collection.localizedTitle) , count = \(result.count)")
-            var arr = [UIImage]()
-            result.enumerateObjects ({ (asset, idx, stop) in
-                // 获取图片
-                PHImageManager.default().requestImage(for: asset, targetSize:PhotoViewController.tgSize, contentMode: .default, options: opt, resultHandler: { (img, dict) in
-                    if let i = img{
-                        //                            self.images.append(i)
-                        arr.append(i)
-                        print(i.size)
-                    }
-                })
-            })
-        }
-        
-        DispatchQueue.main.after(delay: 3, execute: {
-            // 刷新
-            self.collectionView.reloadData()
-        })
-    }
-} */
