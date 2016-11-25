@@ -14,8 +14,8 @@ class PhotoTitleView: UIButton {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setImage(UIImage(named: "BoSelectGroup_tip"), for: .normal)
-        setImage(UIImage(named: "BoSelectGroup_tip"), for: .highlighted)
+        setImage(UIImage(named: "btn_brand_product_arrow_down"), for: .normal)
+        setImage(UIImage(named: "btn_brand_product_arrow_down"), for: .highlighted)
         adjustsImageWhenHighlighted = true
         titleLabel?.font = UIFont.boldSystemFont(ofSize: 15)
         titleLabel?.textAlignment = .center
