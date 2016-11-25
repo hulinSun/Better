@@ -20,6 +20,8 @@ class PhotoTitleView: UIButton {
         titleLabel?.font = UIFont.boldSystemFont(ofSize: 15)
         titleLabel?.textAlignment = .center
         imageView?.contentMode = .center
+        setTitleColor(UIColor.rgb(red: 100, green: 100, blue: 100), for: .normal)
+        
     }
     
     override var intrinsicContentSize: CGSize

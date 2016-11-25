@@ -82,12 +82,6 @@ class PhotoViewController: UIViewController {
         return i
     }()
     
-    fileprivate lazy var navView: UIView = {
-        let i = UIView()
-        i.backgroundColor = UIColor.rgb(red: 242, green: 75, blue: 78)
-        return i
-    }()
-    
     fileprivate lazy var titleView: PhotoTitleView = {
         let i = PhotoTitleView()
         i.setTitle("哈哈信息", for: .normal)
@@ -95,15 +89,6 @@ class PhotoViewController: UIViewController {
         return i
     }()
 
-    fileprivate lazy var rightBtn: UIButton = {
-        let i = UIButton()
-        i.setTitle("确定", for: .normal)
-        i.titleLabel?.font = UIFont.systemFont(ofSize: 14)
-        i.setTitleColor(.white, for: .normal)
-        i.addTarget(self, action: #selector(right), for: .touchUpInside)
-        return i
-    }()
-    
     fileprivate lazy var listView: UIView = {
         let i = UIView()
         i.backgroundColor = UIColor.lightGray
@@ -115,7 +100,7 @@ class PhotoViewController: UIViewController {
         let i = UIButton()
         i.setTitle("取消", for: .normal)
         i.titleLabel?.font = UIFont.systemFont(ofSize: 14)
-        i.setTitleColor(.white, for: .normal)
+        i.setTitleColor( UIColor.rgb(red: 100, green: 100, blue: 100), for: .normal)
         i.addTarget(self, action: #selector(left), for: .touchUpInside)
         return i
     }()
@@ -144,9 +129,8 @@ class PhotoViewController: UIViewController {
     
     /// 点击按钮
     func titleClick(){
-//        if collectionView.isDecelerating{return}
+        
         view.addSubview(listView)
-        view.bringSubview(toFront: navView)
         listView.snp.makeConstraints { (make) in
             make.left.right.equalToSuperview()
             make.height.equalTo(320)
@@ -176,9 +160,6 @@ class PhotoViewController: UIViewController {
         }
     }
     
-    func right() {
-        dismiss(animated: true)
-    }
     
     func left()  {
         dismiss(animated: true)
@@ -193,38 +174,26 @@ class PhotoViewController: UIViewController {
     }
     func setupUI()  {
         
-        navView.addSubview(leftBtn)
-        navView.addSubview(rightBtn)
-        navView.addSubview(titleView)
+        if let line = UINavigationBar.getLine(view: (navigationController?.navigationBar)!){
+            line.isHidden = true
+        }
         
-        view.addSubview(navView)
+        leftBtn.bt_width = 36
+        leftBtn.bt_height = 20
+        let leftItem = UIBarButtonItem.init(customView: leftBtn)
+        navigationItem.leftBarButtonItem = leftItem
+        navigationItem.titleView = titleView
         view.backgroundColor = UIColor.white
         view.addSubview(collectionView)
-        
-        leftBtn.snp.makeConstraints { (make) in
-            make.left.equalToSuperview().offset(15)
-            make.centerY.equalToSuperview().offset(10)
-        }
-        
-        rightBtn.snp.makeConstraints { (make) in
-            make.right.equalToSuperview().offset(-15)
-            make.top.equalTo(leftBtn)
-        }
-        
         titleView.snp.makeConstraints { (make) in
-            make.centerY.equalTo(leftBtn)
-            make.centerX.equalToSuperview()
-            make.width.lessThanOrEqualTo(200)
-        }
-        
-        navView.snp.makeConstraints { (make) in
-            make.left.right.top.equalToSuperview()
-            make.height.equalTo(UIConst.navHeight)
+            make.center.equalToSuperview()
+            make.width.lessThanOrEqualTo(250)
+            make.height.equalTo(40)
         }
         
         collectionView.snp.makeConstraints { (make) in
             make.right.left.bottom.equalToSuperview()
-            make.top.equalTo(navView.snp.bottom)
+            make.top.equalToSuperview()
         }
 
     }
@@ -307,11 +276,6 @@ typealias PhotoViewCollectionProtocol = PhotoViewController
 
 extension PhotoViewCollectionProtocol: UICollectionViewDelegate , UICollectionViewDataSource, UIScrollViewDelegate{
 
-//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        if self.titleView.isSelected{
-//            self.titleClick()
-//        }
-//    }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return gridItems.count
     }
