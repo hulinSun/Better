@@ -307,7 +307,11 @@ extension PhotoViewCollectionProtocol: UICollectionViewDelegate , UICollectionVi
     func cellClickDeal(cell: PhotoGridCell, idx: IndexPath)  {
         
         let edit = PhotoEditController()
-        navigationController?.pushViewController(edit, animated: true)
+//        navigationController?.pushViewController(edit, animated: true)
+        let im = self.gridItems[idx.item]
+        // 4288 2848
+        print((im.asset?.pixelWidth)!)
+        print((im.asset?.pixelHeight)!)
         return
         if self.titleView.isSelected{
             self.titleClick()
