@@ -1,6 +1,1463 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workspace
    version = "1.0">
+   <Group
+      location = "group:framework"
+      name = "framework">
+      <FileRef
+         location = "group:compile-LinuxGL.sh">
+      </FileRef>
+      <FileRef
+         location = "group:compile-LinuxRPi.sh">
+      </FileRef>
+      <FileRef
+         location = "group:GPUImage-iOS.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:GPUImage-Mac.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:LinuxCompilationGenerator.sh">
+      </FileRef>
+      <FileRef
+         location = "group:Package.swift">
+      </FileRef>
+      <Group
+         location = "group:Packages"
+         name = "Packages">
+         <Group
+            location = "group:CFreeGLUT"
+            name = "CFreeGLUT">
+            <FileRef
+               location = "group:module.modulemap">
+            </FileRef>
+            <FileRef
+               location = "group:Package.swift">
+            </FileRef>
+            <FileRef
+               location = "group:README.md">
+            </FileRef>
+         </Group>
+         <Group
+            location = "group:COpenGL"
+            name = "COpenGL">
+            <FileRef
+               location = "group:module.modulemap">
+            </FileRef>
+            <FileRef
+               location = "group:Package.swift">
+            </FileRef>
+            <FileRef
+               location = "group:proto.h">
+            </FileRef>
+         </Group>
+         <Group
+            location = "group:COpenGLES"
+            name = "COpenGLES">
+            <FileRef
+               location = "group:module.modulemap">
+            </FileRef>
+            <FileRef
+               location = "group:Package.swift">
+            </FileRef>
+         </Group>
+         <Group
+            location = "group:CVideo4Linux"
+            name = "CVideo4Linux">
+            <FileRef
+               location = "group:module.modulemap">
+            </FileRef>
+            <FileRef
+               location = "group:Package.swift">
+            </FileRef>
+            <FileRef
+               location = "group:stubs.h">
+            </FileRef>
+         </Group>
+         <Group
+            location = "group:CVideoCore"
+            name = "CVideoCore">
+            <FileRef
+               location = "group:module.modulemap">
+            </FileRef>
+            <FileRef
+               location = "group:Package.swift">
+            </FileRef>
+         </Group>
+      </Group>
+      <Group
+         location = "group:Source"
+         name = "Source">
+         <FileRef
+            location = "group:BasicOperation.swift">
+         </FileRef>
+         <FileRef
+            location = "group:CameraConversion.swift">
+         </FileRef>
+         <FileRef
+            location = "group:Color.swift">
+         </FileRef>
+         <FileRef
+            location = "group:FillMode.swift">
+         </FileRef>
+         <FileRef
+            location = "group:Framebuffer.swift">
+         </FileRef>
+         <FileRef
+            location = "group:FramebufferCache.swift">
+         </FileRef>
+         <FileRef
+            location = "group:ImageGenerator.swift">
+         </FileRef>
+         <FileRef
+            location = "group:ImageOrientation.swift">
+         </FileRef>
+         <Group
+            location = "group:iOS"
+            name = "iOS">
+            <FileRef
+               location = "group:Camera.swift">
+            </FileRef>
+            <FileRef
+               location = "group:GPUImage.h">
+            </FileRef>
+            <FileRef
+               location = "group:Info.plist">
+            </FileRef>
+            <FileRef
+               location = "group:MovieInput.swift">
+            </FileRef>
+            <FileRef
+               location = "group:MovieOutput.swift">
+            </FileRef>
+            <FileRef
+               location = "group:OpenGLContext.swift">
+            </FileRef>
+            <FileRef
+               location = "group:PictureInput.swift">
+            </FileRef>
+            <FileRef
+               location = "group:PictureOutput.swift">
+            </FileRef>
+            <FileRef
+               location = "group:RenderView.swift">
+            </FileRef>
+         </Group>
+         <Group
+            location = "group:Linux"
+            name = "Linux">
+            <FileRef
+               location = "group:GLUTRenderWindow.swift">
+            </FileRef>
+            <FileRef
+               location = "group:OpenGLContext-RPi.swift">
+            </FileRef>
+            <FileRef
+               location = "group:OpenGLContext.swift">
+            </FileRef>
+            <FileRef
+               location = "group:RPiRenderWindow.swift">
+            </FileRef>
+            <FileRef
+               location = "group:V4LCamera.swift">
+            </FileRef>
+            <FileRef
+               location = "group:v4lfuncs.c">
+            </FileRef>
+            <FileRef
+               location = "group:v4lfuncs.h">
+            </FileRef>
+         </Group>
+         <Group
+            location = "group:Mac"
+            name = "Mac">
+            <FileRef
+               location = "group:Camera.swift">
+            </FileRef>
+            <FileRef
+               location = "group:GPUImage-Mac.h">
+            </FileRef>
+            <FileRef
+               location = "group:Info.plist">
+            </FileRef>
+            <FileRef
+               location = "group:MovieInput.swift">
+            </FileRef>
+            <FileRef
+               location = "group:MovieOutput.swift">
+            </FileRef>
+            <FileRef
+               location = "group:OpenGLContext.swift">
+            </FileRef>
+            <FileRef
+               location = "group:PictureInput.swift">
+            </FileRef>
+            <FileRef
+               location = "group:PictureOutput.swift">
+            </FileRef>
+            <FileRef
+               location = "group:RenderView.swift">
+            </FileRef>
+         </Group>
+         <FileRef
+            location = "group:Matrix.swift">
+         </FileRef>
+         <FileRef
+            location = "group:OpenGLContext_Shared.swift">
+         </FileRef>
+         <FileRef
+            location = "group:OpenGLRendering.swift">
+         </FileRef>
+         <FileRef
+            location = "group:OperationGroup.swift">
+         </FileRef>
+         <Group
+            location = "group:Operations"
+            name = "Operations">
+            <FileRef
+               location = "group:AdaptiveThreshold.swift">
+            </FileRef>
+            <FileRef
+               location = "group:AddBlend.swift">
+            </FileRef>
+            <FileRef
+               location = "group:AlphaBlend.swift">
+            </FileRef>
+            <FileRef
+               location = "group:AmatorkaFilter.swift">
+            </FileRef>
+            <FileRef
+               location = "group:AverageColorExtractor.swift">
+            </FileRef>
+            <FileRef
+               location = "group:AverageLuminanceExtractor.swift">
+            </FileRef>
+            <FileRef
+               location = "group:AverageLuminanceThreshold.swift">
+            </FileRef>
+            <FileRef
+               location = "group:BilateralBlur.swift">
+            </FileRef>
+            <FileRef
+               location = "group:BoxBlur.swift">
+            </FileRef>
+            <FileRef
+               location = "group:BrightnessAdjustment.swift">
+            </FileRef>
+            <FileRef
+               location = "group:BulgeDistortion.swift">
+            </FileRef>
+            <FileRef
+               location = "group:CannyEdgeDetection.swift">
+            </FileRef>
+            <FileRef
+               location = "group:CGAColorspaceFilter.swift">
+            </FileRef>
+            <FileRef
+               location = "group:ChromaKeyBlend.swift">
+            </FileRef>
+            <FileRef
+               location = "group:ChromaKeying.swift">
+            </FileRef>
+            <FileRef
+               location = "group:CircleGenerator.swift">
+            </FileRef>
+            <FileRef
+               location = "group:ClosingFilter.swift">
+            </FileRef>
+            <FileRef
+               location = "group:ColorBlend.swift">
+            </FileRef>
+            <FileRef
+               location = "group:ColorBurnBlend.swift">
+            </FileRef>
+            <FileRef
+               location = "group:ColorDodgeBlend.swift">
+            </FileRef>
+            <FileRef
+               location = "group:ColorInversion.swift">
+            </FileRef>
+            <FileRef
+               location = "group:ColorLocalBinaryPattern.swift">
+            </FileRef>
+            <FileRef
+               location = "group:ColorMatrixFilter.swift">
+            </FileRef>
+            <FileRef
+               location = "group:ColourFASTFeatureDetection.swift">
+            </FileRef>
+            <FileRef
+               location = "group:ContrastAdjustment.swift">
+            </FileRef>
+            <FileRef
+               location = "group:Convolution3x3.swift">
+            </FileRef>
+            <FileRef
+               location = "group:Crop.swift">
+            </FileRef>
+            <FileRef
+               location = "group:CrosshairGenerator.swift">
+            </FileRef>
+            <FileRef
+               location = "group:Crosshatch.swift">
+            </FileRef>
+            <FileRef
+               location = "group:DarkenBlend.swift">
+            </FileRef>
+            <FileRef
+               location = "group:DifferenceBlend.swift">
+            </FileRef>
+            <FileRef
+               location = "group:Dilation.swift">
+            </FileRef>
+            <FileRef
+               location = "group:DissolveBlend.swift">
+            </FileRef>
+            <FileRef
+               location = "group:DivideBlend.swift">
+            </FileRef>
+            <FileRef
+               location = "group:EmbossFilter.swift">
+            </FileRef>
+            <FileRef
+               location = "group:Erosion.swift">
+            </FileRef>
+            <FileRef
+               location = "group:ExclusionBlend.swift">
+            </FileRef>
+            <FileRef
+               location = "group:ExposureAdjustment.swift">
+            </FileRef>
+            <FileRef
+               location = "group:FalseColor.swift">
+            </FileRef>
+            <FileRef
+               location = "group:GammaAdjustment.swift">
+            </FileRef>
+            <FileRef
+               location = "group:GaussianBlur.swift">
+            </FileRef>
+            <FileRef
+               location = "group:GlassSphereRefraction.swift">
+            </FileRef>
+            <FileRef
+               location = "group:Halftone.swift">
+            </FileRef>
+            <FileRef
+               location = "group:HardLightBlend.swift">
+            </FileRef>
+            <FileRef
+               location = "group:HarrisCornerDetector.swift">
+            </FileRef>
+            <FileRef
+               location = "group:Haze.swift">
+            </FileRef>
+            <FileRef
+               location = "group:HighlightAndShadowTint.swift">
+            </FileRef>
+            <FileRef
+               location = "group:HighlightsAndShadows.swift">
+            </FileRef>
+            <FileRef
+               location = "group:HighPassFilter.swift">
+            </FileRef>
+            <FileRef
+               location = "group:Histogram.swift">
+            </FileRef>
+            <FileRef
+               location = "group:HistogramDisplay.swift">
+            </FileRef>
+            <FileRef
+               location = "group:HistogramEqualization.swift">
+            </FileRef>
+            <FileRef
+               location = "group:HueAdjustment.swift">
+            </FileRef>
+            <FileRef
+               location = "group:HueBlend.swift">
+            </FileRef>
+            <FileRef
+               location = "group:ImageBuffer.swift">
+            </FileRef>
+            <FileRef
+               location = "group:iOSBlur.swift">
+            </FileRef>
+            <FileRef
+               location = "group:KuwaharaFilter.swift">
+            </FileRef>
+            <FileRef
+               location = "group:KuwaharaRadius3Filter.swift">
+            </FileRef>
+            <FileRef
+               location = "group:LanczosResampling.swift">
+            </FileRef>
+            <FileRef
+               location = "group:Laplacian.swift">
+            </FileRef>
+            <FileRef
+               location = "group:LevelsAdjustment.swift">
+            </FileRef>
+            <FileRef
+               location = "group:LightenBlend.swift">
+            </FileRef>
+            <FileRef
+               location = "group:LinearBurnBlend.swift">
+            </FileRef>
+            <FileRef
+               location = "group:LineGenerator.swift">
+            </FileRef>
+            <FileRef
+               location = "group:LocalBinaryPattern.swift">
+            </FileRef>
+            <FileRef
+               location = "group:LookupFilter.swift">
+            </FileRef>
+            <Group
+               location = "group:LookupImages"
+               name = "LookupImages">
+               <FileRef
+                  location = "group:lookup.png">
+               </FileRef>
+               <FileRef
+                  location = "group:lookup_amatorka.png">
+               </FileRef>
+               <FileRef
+                  location = "group:lookup_miss_etikate.png">
+               </FileRef>
+               <FileRef
+                  location = "group:lookup_soft_elegance_1.png">
+               </FileRef>
+               <FileRef
+                  location = "group:lookup_soft_elegance_2.png">
+               </FileRef>
+            </Group>
+            <FileRef
+               location = "group:LowPassFilter.swift">
+            </FileRef>
+            <FileRef
+               location = "group:Luminance.swift">
+            </FileRef>
+            <FileRef
+               location = "group:LuminanceRangeReduction.swift">
+            </FileRef>
+            <FileRef
+               location = "group:LuminanceThreshold.swift">
+            </FileRef>
+            <FileRef
+               location = "group:LuminosityBlend.swift">
+            </FileRef>
+            <FileRef
+               location = "group:MedianFilter.swift">
+            </FileRef>
+            <FileRef
+               location = "group:MissEtikateFilter.swift">
+            </FileRef>
+            <FileRef
+               location = "group:MonochromeFilter.swift">
+            </FileRef>
+            <FileRef
+               location = "group:MotionBlur.swift">
+            </FileRef>
+            <FileRef
+               location = "group:MotionDetector.swift">
+            </FileRef>
+            <FileRef
+               location = "group:MultiplyBlend.swift">
+            </FileRef>
+            <FileRef
+               location = "group:NobleCornerDetector.swift">
+            </FileRef>
+            <FileRef
+               location = "group:NormalBlend.swift">
+            </FileRef>
+            <FileRef
+               location = "group:OpacityAdjustment.swift">
+            </FileRef>
+            <FileRef
+               location = "group:OpeningFilter.swift">
+            </FileRef>
+            <FileRef
+               location = "group:OverlayBlend.swift">
+            </FileRef>
+            <FileRef
+               location = "group:PinchDistortion.swift">
+            </FileRef>
+            <FileRef
+               location = "group:Pixellate.swift">
+            </FileRef>
+            <FileRef
+               location = "group:PolarPixellate.swift">
+            </FileRef>
+            <FileRef
+               location = "group:PolkaDot.swift">
+            </FileRef>
+            <FileRef
+               location = "group:Posterize.swift">
+            </FileRef>
+            <FileRef
+               location = "group:PrewittEdgeDetection.swift">
+            </FileRef>
+            <FileRef
+               location = "group:RGBAdjustmentFilter.swift">
+            </FileRef>
+            <FileRef
+               location = "group:SaturationAdjustment.swift">
+            </FileRef>
+            <FileRef
+               location = "group:SaturationBlend.swift">
+            </FileRef>
+            <FileRef
+               location = "group:ScreenBlend.swift">
+            </FileRef>
+            <FileRef
+               location = "group:SepiaToneFilter.swift">
+            </FileRef>
+            <Group
+               location = "group:Shaders"
+               name = "Shaders">
+               <FileRef
+                  location = "group:AdaptiveThreshold_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:AdaptiveThreshold_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:AddBlend_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:AddBlend_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:AlphaBlend_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:AlphaBlend_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:AlphaTest_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:AlphaTest_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:AverageColor.vsh">
+               </FileRef>
+               <FileRef
+                  location = "group:AverageColor_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:AverageColor_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:AverageLuminance_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:AverageLuminance_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:BilateralBlur.vsh">
+               </FileRef>
+               <FileRef
+                  location = "group:BilateralBlur_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:BilateralBlur_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:Brightness_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:Brightness_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:BulgeDistortion_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:BulgeDistortion_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:CGAColorspace_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:CGAColorspace_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:ChromaKey_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:ChromaKey_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:ChromaKeyBlend_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:ChromaKeyBlend_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:Circle.vsh">
+               </FileRef>
+               <FileRef
+                  location = "group:Circle_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:Circle_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:ColorBlend_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:ColorBlend_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:ColorBurnBlend_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:ColorBurnBlend_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:ColorDodgeBlend_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:ColorDodgeBlend_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:ColorInvert_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:ColorInvert_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:ColorLocalBinaryPattern_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:ColorLocalBinaryPattern_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:ColorMatrix_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:ColorMatrix_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:ColorSwizzling_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:ColorSwizzling_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:ColourFASTDecriptor.vsh">
+               </FileRef>
+               <FileRef
+                  location = "group:ColourFASTDecriptor_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:ColourFASTDecriptor_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:Contrast_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:Contrast_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:ConvertedShaders_GL.swift">
+               </FileRef>
+               <FileRef
+                  location = "group:ConvertedShaders_GLES.swift">
+               </FileRef>
+               <FileRef
+                  location = "group:Convolution3x3_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:Convolution3x3_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:Crosshair.vsh">
+               </FileRef>
+               <FileRef
+                  location = "group:Crosshair_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:Crosshair_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:Crosshatch_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:Crosshatch_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:DarkenBlend_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:DarkenBlend_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:DifferenceBlend_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:DifferenceBlend_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:Dilation1_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:Dilation1_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:Dilation2_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:Dilation2_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:Dilation3_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:Dilation3_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:Dilation4_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:Dilation4_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:DirectionalNonMaximumSuppression_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:DirectionalNonMaximumSuppression_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:DirectionalSobelEdgeDetection_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:DirectionalSobelEdgeDetection_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:DissolveBlend_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:DissolveBlend_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:DivideBlend_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:DivideBlend_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:Erosion1_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:Erosion1_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:Erosion2_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:Erosion2_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:Erosion3_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:Erosion3_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:Erosion4_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:Erosion4_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:ErosionDilation1.vsh">
+               </FileRef>
+               <FileRef
+                  location = "group:ErosionDilation2.vsh">
+               </FileRef>
+               <FileRef
+                  location = "group:ErosionDilation3.vsh">
+               </FileRef>
+               <FileRef
+                  location = "group:ErosionDilation4.vsh">
+               </FileRef>
+               <FileRef
+                  location = "group:ExclusionBlend_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:ExclusionBlend_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:Exposure_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:Exposure_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:FalseColor_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:FalseColor_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:FiveInput.vsh">
+               </FileRef>
+               <FileRef
+                  location = "group:FourInput.vsh">
+               </FileRef>
+               <FileRef
+                  location = "group:Gamma_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:Gamma_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:GlassSphere_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:GlassSphere_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:Halftone_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:Halftone_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:HardLightBlend_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:HardLightBlend_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:HarrisCornerDetector_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:HarrisCornerDetector_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:Haze_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:Haze_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:HighlightShadow_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:HighlightShadow_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:HighlightShadowTint_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:HighlightShadowTint_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:HistogramAccumulation_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:HistogramAccumulation_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:HistogramBlueSampling.vsh">
+               </FileRef>
+               <FileRef
+                  location = "group:HistogramDisplay.vsh">
+               </FileRef>
+               <FileRef
+                  location = "group:HistogramDisplay_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:HistogramDisplay_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:HistogramEqualizationBlue_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:HistogramEqualizationBlue_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:HistogramEqualizationGreen_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:HistogramEqualizationGreen_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:HistogramEqualizationLuminance_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:HistogramEqualizationLuminance_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:HistogramEqualizationRed_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:HistogramEqualizationRed_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:HistogramEqualizationRGB_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:HistogramEqualizationRGB_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:HistogramGreenSampling.vsh">
+               </FileRef>
+               <FileRef
+                  location = "group:HistogramLuminanceSampling.vsh">
+               </FileRef>
+               <FileRef
+                  location = "group:HistogramRedSampling.vsh">
+               </FileRef>
+               <FileRef
+                  location = "group:Hue_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:Hue_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:HueBlend_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:HueBlend_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:Kuwahara_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:Kuwahara_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:KuwaharaRadius3_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:KuwaharaRadius3_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:LanczosResampling.vsh">
+               </FileRef>
+               <FileRef
+                  location = "group:LanczosResampling_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:LanczosResampling_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:Laplacian_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:Laplacian_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:Levels_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:Levels_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:LightenBlend_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:LightenBlend_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:Line.vsh">
+               </FileRef>
+               <FileRef
+                  location = "group:Line_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:Line_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:LinearBurnBlend_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:LinearBurnBlend_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:LocalBinaryPattern_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:LocalBinaryPattern_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:Lookup_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:Lookup_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:Luminance_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:Luminance_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:LuminanceRange_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:LuminanceRange_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:LuminanceThreshold_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:LuminanceThreshold_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:LuminosityBlend_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:LuminosityBlend_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:Median_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:Median_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:Monochrome_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:Monochrome_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:MotionBlur.vsh">
+               </FileRef>
+               <FileRef
+                  location = "group:MotionBlur_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:MotionBlur_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:MotionComparison_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:MotionComparison_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:MultiplyBlend_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:MultiplyBlend_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:NearbyTexelSampling.vsh">
+               </FileRef>
+               <FileRef
+                  location = "group:NobleCornerDetector_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:NobleCornerDetector_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:NormalBlend_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:NormalBlend_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:OneInput.vsh">
+               </FileRef>
+               <FileRef
+                  location = "group:Opacity_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:Opacity_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:OverlayBlend_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:OverlayBlend_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:Passthrough_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:Passthrough_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:PinchDistortion_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:PinchDistortion_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:Pixellate_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:Pixellate_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:PolarPixellate_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:PolarPixellate_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:PolkaDot_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:PolkaDot_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:Posterize_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:Posterize_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:PrewittEdgeDetection_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:PrewittEdgeDetection_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:RGBAdjustment_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:RGBAdjustment_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:Saturation_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:Saturation_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:SaturationBlend_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:SaturationBlend_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:ScreenBlend_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:ScreenBlend_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:ShaderConverter.sh">
+               </FileRef>
+               <FileRef
+                  location = "group:Sharpen.vsh">
+               </FileRef>
+               <FileRef
+                  location = "group:Sharpen_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:Sharpen_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:ShiTomasiFeatureDetector_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:ShiTomasiFeatureDetector_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:Sketch_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:Sketch_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:SobelEdgeDetection_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:SobelEdgeDetection_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:SoftLightBlend_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:SoftLightBlend_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:Solarize_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:Solarize_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:SourceOverBlend_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:SourceOverBlend_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:SphereRefraction_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:SphereRefraction_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:StretchDistortion_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:StretchDistortion_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:SubtractBlend_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:SubtractBlend_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:Swirl_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:Swirl_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:ThreeInput.vsh">
+               </FileRef>
+               <FileRef
+                  location = "group:ThresholdEdgeDetection_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:ThresholdEdgeDetection_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:ThresholdedNonMaximumSuppression_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:ThresholdedNonMaximumSuppression_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:ThresholdSketch_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:ThresholdSketch_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:TiltShift_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:TiltShift_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:Toon_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:Toon_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:Transform.vsh">
+               </FileRef>
+               <FileRef
+                  location = "group:TwoInput.vsh">
+               </FileRef>
+               <FileRef
+                  location = "group:UnsharpMask_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:UnsharpMask_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:Vibrance_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:Vibrance_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:Vignette_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:Vignette_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:WeakPixelInclusion_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:WeakPixelInclusion_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:WhiteBalance_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:WhiteBalance_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:XYDerivative_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:XYDerivative_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:YUVConversionFullRange_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:YUVConversionFullRange_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:YUVConversionFullRangeUVPlanar_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:YUVConversionFullRangeUVPlanar_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:YUVConversionVideoRange_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:YUVConversionVideoRange_GLES.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:ZoomBlur_GL.fsh">
+               </FileRef>
+               <FileRef
+                  location = "group:ZoomBlur_GLES.fsh">
+               </FileRef>
+            </Group>
+            <FileRef
+               location = "group:Sharpen.swift">
+            </FileRef>
+            <FileRef
+               location = "group:ShiTomasiFeatureDetector.swift">
+            </FileRef>
+            <FileRef
+               location = "group:SingleComponentGaussianBlur.swift">
+            </FileRef>
+            <FileRef
+               location = "group:SketchFilter.swift">
+            </FileRef>
+            <FileRef
+               location = "group:SmoothToonFilter.swift">
+            </FileRef>
+            <FileRef
+               location = "group:SobelEdgeDetection.swift">
+            </FileRef>
+            <FileRef
+               location = "group:SoftElegance.swift">
+            </FileRef>
+            <FileRef
+               location = "group:SoftLightBlend.swift">
+            </FileRef>
+            <FileRef
+               location = "group:Solarize.swift">
+            </FileRef>
+            <FileRef
+               location = "group:SolidColorGenerator.swift">
+            </FileRef>
+            <FileRef
+               location = "group:SourceOverBlend.swift">
+            </FileRef>
+            <FileRef
+               location = "group:SphereRefraction.swift">
+            </FileRef>
+            <FileRef
+               location = "group:StretchDistortion.swift">
+            </FileRef>
+            <FileRef
+               location = "group:SubtractBlend.swift">
+            </FileRef>
+            <FileRef
+               location = "group:SwirlDistortion.swift">
+            </FileRef>
+            <FileRef
+               location = "group:ThresholdSketch.swift">
+            </FileRef>
+            <FileRef
+               location = "group:ThresholdSobelEdgeDetection.swift">
+            </FileRef>
+            <FileRef
+               location = "group:TiltShift.swift">
+            </FileRef>
+            <FileRef
+               location = "group:ToonFilter.swift">
+            </FileRef>
+            <FileRef
+               location = "group:TransformOperation.swift">
+            </FileRef>
+            <FileRef
+               location = "group:UnsharpMask.swift">
+            </FileRef>
+            <FileRef
+               location = "group:Vibrance.swift">
+            </FileRef>
+            <FileRef
+               location = "group:Vignette.swift">
+            </FileRef>
+            <FileRef
+               location = "group:WhiteBalance.swift">
+            </FileRef>
+            <FileRef
+               location = "group:ZoomBlur.swift">
+            </FileRef>
+         </Group>
+         <FileRef
+            location = "group:Pipeline.swift">
+         </FileRef>
+         <FileRef
+            location = "group:Position.swift">
+         </FileRef>
+         <FileRef
+            location = "group:RawDataInput.swift">
+         </FileRef>
+         <FileRef
+            location = "group:RawDataOutput.swift">
+         </FileRef>
+         <FileRef
+            location = "group:SerialDispatch.swift">
+         </FileRef>
+         <FileRef
+            location = "group:ShaderProgram.swift">
+         </FileRef>
+         <FileRef
+            location = "group:ShaderUniformSettings.swift">
+         </FileRef>
+         <FileRef
+            location = "group:Size.swift">
+         </FileRef>
+         <FileRef
+            location = "group:TextureInput.swift">
+         </FileRef>
+         <FileRef
+            location = "group:TextureOutput.swift">
+         </FileRef>
+         <FileRef
+            location = "group:TextureSamplingOperation.swift">
+         </FileRef>
+         <FileRef
+            location = "group:Timestamp.swift">
+         </FileRef>
+         <FileRef
+            location = "group:TwoStageOperation.swift">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:Tests"
+         name = "Tests">
+         <Group
+            location = "group:iOS"
+            name = "iOS">
+            <FileRef
+               location = "group:GPUImageTests.swift">
+            </FileRef>
+            <FileRef
+               location = "group:Info.plist">
+            </FileRef>
+         </Group>
+         <Group
+            location = "group:Mac"
+            name = "Mac">
+            <FileRef
+               location = "group:Info.plist">
+            </FileRef>
+         </Group>
+         <FileRef
+            location = "group:Pipeline_Tests.swift">
+         </FileRef>
+         <FileRef
+            location = "group:ShaderProgram_Tests.swift">
+         </FileRef>
+      </Group>
+   </Group>
    <FileRef
       location = "group:better.xcodeproj">
    </FileRef>

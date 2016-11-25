@@ -29,6 +29,7 @@
 		FE8522251DB9E07F00C0E2C1 /* BetterRefreshHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8522221DB9E07F00C0E2C1 /* BetterRefreshHeader.swift */; };
 		FE8522261DB9E07F00C0E2C1 /* UIScrollView+Refresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8522231DB9E07F00C0E2C1 /* UIScrollView+Refresh.swift */; };
 		FE8522291DB9E0B000C0E2C1 /* CAShapeLayer+AnimateText.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8522281DB9E0B000C0E2C1 /* CAShapeLayer+AnimateText.m */; };
+		FE889D621DE8134F00D3D0CA /* GPUImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE889D611DE8134F00D3D0CA /* GPUImage.framework */; };
 		FE96E2021DCB285100D28F0B /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE96E2001DCB285100D28F0B /* HomeCell.swift */; };
 		FE96E2031DCB285100D28F0B /* HomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE96E2011DCB285100D28F0B /* HomeCell.xib */; };
 		FEA0CAB91DAF959100BF6766 /* AppDelegate+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA0CAB81DAF959100BF6766 /* AppDelegate+Extension.swift */; };
@@ -127,6 +128,7 @@
 		FE8522231DB9E07F00C0E2C1 /* UIScrollView+Refresh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Refresh.swift"; sourceTree = "<group>"; };
 		FE8522271DB9E0B000C0E2C1 /* CAShapeLayer+AnimateText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CAShapeLayer+AnimateText.h"; sourceTree = "<group>"; };
 		FE8522281DB9E0B000C0E2C1 /* CAShapeLayer+AnimateText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CAShapeLayer+AnimateText.m"; sourceTree = "<group>"; };
+		FE889D611DE8134F00D3D0CA /* GPUImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GPUImage.framework; path = "../../../Library/Developer/Xcode/DerivedData/better-bklqnxerlmxkntdcamjqgjisnyfl/Build/Products/Debug-iphoneos/GPUImage.framework"; sourceTree = "<group>"; };
 		FE96E2001DCB285100D28F0B /* HomeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
 		FE96E2011DCB285100D28F0B /* HomeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeCell.xib; sourceTree = "<group>"; };
 		FEA0CAB81DAF959100BF6766 /* AppDelegate+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Extension.swift"; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE889D621DE8134F00D3D0CA /* GPUImage.framework in Frameworks */,
 				35B04F73FA88D94014F9A101 /* Pods_better.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -211,6 +214,7 @@
 		7105E070FE917B58FC0037E7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FE889D611DE8134F00D3D0CA /* GPUImage.framework */,
 				BB14B8F409C13C2E9FA9B62E /* Pods_better.framework */,
 			);
 			name = Frameworks;
