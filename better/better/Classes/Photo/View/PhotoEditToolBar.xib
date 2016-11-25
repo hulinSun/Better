@@ -18,6 +18,9 @@
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UG8-6l-xaA">
                     <rect key="frame" x="152" y="76" width="46" height="30"/>
                     <state key="normal" title="Button"/>
+                    <connections>
+                        <action selector="retate:" destination="iN0-l3-epB" eventType="touchUpInside" id="TmR-vw-2bb"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kmo-LP-1Xw">
                     <rect key="frame" x="284" y="76" width="46" height="30"/>
@@ -25,7 +28,12 @@
                         <constraint firstAttribute="width" constant="46" id="Ipy-NB-71k"/>
                         <constraint firstAttribute="height" constant="30" id="Wdq-Xf-yOh"/>
                     </constraints>
-                    <state key="normal" title="Button"/>
+                    <state key="normal" title="下一步">
+                        <color key="titleColor" red="0.65098039215686276" green="0.22745098039215686" blue="0.22745098039215686" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="next:" destination="iN0-l3-epB" eventType="touchUpInside" id="eH0-C8-BtH"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WXb-EK-d4r">
                     <rect key="frame" x="20" y="76" width="46" height="30"/>
@@ -33,7 +41,12 @@
                         <constraint firstAttribute="width" constant="46" id="J7S-Jn-lV2"/>
                         <constraint firstAttribute="height" constant="30" id="hH8-Uu-m4o"/>
                     </constraints>
-                    <state key="normal" title="Button"/>
+                    <state key="normal" title="取消">
+                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="cancle:" destination="iN0-l3-epB" eventType="touchUpInside" id="YUG-xO-Rg6"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

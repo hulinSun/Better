@@ -11,6 +11,7 @@
 		FE19FF9B1DD01B540090C194 /* Single.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE19FF9A1DD01B540090C194 /* Single.swift */; };
 		FE19FFBB1DD028820090C194 /* DiscoverArticleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE19FFBA1DD028820090C194 /* DiscoverArticleController.swift */; };
 		FE19FFBD1DD028A90090C194 /* DiscoverSingleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE19FFBC1DD028A90090C194 /* DiscoverSingleController.swift */; };
+		FE1DC7C11DE836CE005A4676 /* ImageCaptureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE1DC7C01DE836CE005A4676 /* ImageCaptureView.swift */; };
 		FE238B341DB367D40005C190 /* UINavigationBar+Awesome.m in Sources */ = {isa = PBXBuildFile; fileRef = FE238B331DB367D40005C190 /* UINavigationBar+Awesome.m */; };
 		FE2A2D281DD55C7F00136E4A /* UINavigationBar+line.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2A2D271DD55C7F00136E4A /* UINavigationBar+line.swift */; };
 		FE2DA7AE1DC3321D007347C0 /* DiscoverHttpHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2DA7AD1DC3321D007347C0 /* DiscoverHttpHelper.swift */; };
@@ -125,6 +126,7 @@
 		FE19FF9A1DD01B540090C194 /* Single.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Single.swift; sourceTree = "<group>"; };
 		FE19FFBA1DD028820090C194 /* DiscoverArticleController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverArticleController.swift; sourceTree = "<group>"; };
 		FE19FFBC1DD028A90090C194 /* DiscoverSingleController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverSingleController.swift; sourceTree = "<group>"; };
+		FE1DC7C01DE836CE005A4676 /* ImageCaptureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCaptureView.swift; sourceTree = "<group>"; };
 		FE238B321DB367D40005C190 /* UINavigationBar+Awesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+Awesome.h"; sourceTree = "<group>"; };
 		FE238B331DB367D40005C190 /* UINavigationBar+Awesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+Awesome.m"; sourceTree = "<group>"; };
 		FE238B871DB3718C0005C190 /* better-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "better-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -313,6 +315,7 @@
 				FEC326011DE429B70091FC05 /* GroupTableView.swift */,
 				FEDC76261DE825F700699E49 /* PhotoEditToolBar.swift */,
 				FEDC76281DE8260100699E49 /* PhotoEditToolBar.xib */,
+				FE1DC7C01DE836CE005A4676 /* ImageCaptureView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -903,6 +906,7 @@
 				FEBB07741DC88ECE00FF4989 /* ConstraintMakerRelatable.swift in Sources */,
 				FEBB07721DC88ECE00FF4989 /* ConstraintMakerFinalizable.swift in Sources */,
 				FEBB07731DC88ECE00FF4989 /* ConstraintMakerPriortizable.swift in Sources */,
+				FE1DC7C11DE836CE005A4676 /* ImageCaptureView.swift in Sources */,
 				FE2A2D281DD55C7F00136E4A /* UINavigationBar+line.swift in Sources */,
 				FE238B341DB367D40005C190 /* UINavigationBar+Awesome.m in Sources */,
 				FEA0CAC51DAF983500BF6766 /* MessageViewController.swift in Sources */,
