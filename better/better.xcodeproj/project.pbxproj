@@ -29,7 +29,7 @@
 		FE8522251DB9E07F00C0E2C1 /* BetterRefreshHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8522221DB9E07F00C0E2C1 /* BetterRefreshHeader.swift */; };
 		FE8522261DB9E07F00C0E2C1 /* UIScrollView+Refresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8522231DB9E07F00C0E2C1 /* UIScrollView+Refresh.swift */; };
 		FE8522291DB9E0B000C0E2C1 /* CAShapeLayer+AnimateText.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8522281DB9E0B000C0E2C1 /* CAShapeLayer+AnimateText.m */; };
-		FE889D621DE8134F00D3D0CA /* GPUImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE889D611DE8134F00D3D0CA /* GPUImage.framework */; };
+		FE88A1201DE81B8B00D3D0CA /* GPUImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE88A11D1DE81B8100D3D0CA /* GPUImage.framework */; };
 		FE96E2021DCB285100D28F0B /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE96E2001DCB285100D28F0B /* HomeCell.swift */; };
 		FE96E2031DCB285100D28F0B /* HomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE96E2011DCB285100D28F0B /* HomeCell.xib */; };
 		FEA0CAB91DAF959100BF6766 /* AppDelegate+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA0CAB81DAF959100BF6766 /* AppDelegate+Extension.swift */; };
@@ -98,6 +98,23 @@
 		FEFE5C1E1DC2000F00AD5D5E /* WirelessPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFE5C1B1DC2000F00AD5D5E /* WirelessPictureView.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		FE88A11C1DE81B8100D3D0CA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FE88A1171DE81B8100D3D0CA /* GPUImage-iOS.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BCD1B1251C66A262001F2BDC;
+			remoteInfo = GPUImage;
+		};
+		FE88A11E1DE81B8100D3D0CA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FE88A1171DE81B8100D3D0CA /* GPUImage-iOS.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BCD1B12F1C66A262001F2BDC;
+			remoteInfo = GPUImageTests;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		B4C7458C0027C12305DE018F /* Pods-better.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-better.release.xcconfig"; path = "Pods/Target Support Files/Pods-better/Pods-better.release.xcconfig"; sourceTree = "<group>"; };
 		BB14B8F409C13C2E9FA9B62E /* Pods_better.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_better.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,6 +146,7 @@
 		FE8522271DB9E0B000C0E2C1 /* CAShapeLayer+AnimateText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CAShapeLayer+AnimateText.h"; sourceTree = "<group>"; };
 		FE8522281DB9E0B000C0E2C1 /* CAShapeLayer+AnimateText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CAShapeLayer+AnimateText.m"; sourceTree = "<group>"; };
 		FE889D611DE8134F00D3D0CA /* GPUImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GPUImage.framework; path = "../../../Library/Developer/Xcode/DerivedData/better-bklqnxerlmxkntdcamjqgjisnyfl/Build/Products/Debug-iphoneos/GPUImage.framework"; sourceTree = "<group>"; };
+		FE88A1171DE81B8100D3D0CA /* GPUImage-iOS.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "GPUImage-iOS.xcodeproj"; path = "../../../Downloads/GPUImage2-master/framework/GPUImage-iOS.xcodeproj"; sourceTree = "<group>"; };
 		FE96E2001DCB285100D28F0B /* HomeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
 		FE96E2011DCB285100D28F0B /* HomeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeCell.xib; sourceTree = "<group>"; };
 		FEA0CAB81DAF959100BF6766 /* AppDelegate+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Extension.swift"; sourceTree = "<group>"; };
@@ -203,7 +221,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FE889D621DE8134F00D3D0CA /* GPUImage.framework in Frameworks */,
+				FE88A1201DE81B8B00D3D0CA /* GPUImage.framework in Frameworks */,
 				35B04F73FA88D94014F9A101 /* Pods_better.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -293,6 +311,7 @@
 		FE83A4131DAF5987002BB862 = {
 			isa = PBXGroup;
 			children = (
+				FE88A1171DE81B8100D3D0CA /* GPUImage-iOS.xcodeproj */,
 				FE83A41E1DAF5987002BB862 /* better */,
 				FE83A41D1DAF5987002BB862 /* Products */,
 				EC6A669B7F641300714E7AE8 /* Pods */,
@@ -332,6 +351,15 @@
 				FE8522281DB9E0B000C0E2C1 /* CAShapeLayer+AnimateText.m */,
 			);
 			path = BetterRefresh;
+			sourceTree = "<group>";
+		};
+		FE88A1181DE81B8100D3D0CA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FE88A11D1DE81B8100D3D0CA /* GPUImage.framework */,
+				FE88A11F1DE81B8100D3D0CA /* GPUImageTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		FEA0CA9B1DAF950A00BF6766 /* Classes */ = {
@@ -703,12 +731,35 @@
 			mainGroup = FE83A4131DAF5987002BB862;
 			productRefGroup = FE83A41D1DAF5987002BB862 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = FE88A1181DE81B8100D3D0CA /* Products */;
+					ProjectRef = FE88A1171DE81B8100D3D0CA /* GPUImage-iOS.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				FE83A41B1DAF5987002BB862 /* better */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		FE88A11D1DE81B8100D3D0CA /* GPUImage.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = GPUImage.framework;
+			remoteRef = FE88A11C1DE81B8100D3D0CA /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FE88A11F1DE81B8100D3D0CA /* GPUImageTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = GPUImageTests.xctest;
+			remoteRef = FE88A11E1DE81B8100D3D0CA /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		FE83A41A1DAF5987002BB862 /* Resources */ = {

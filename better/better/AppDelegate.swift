@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import GPUImage
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
