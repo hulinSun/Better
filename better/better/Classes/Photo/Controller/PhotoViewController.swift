@@ -51,7 +51,6 @@ class PhotoViewController: UIViewController {
             collectionView.reloadData()
         }
     }
-    
 
     fileprivate lazy var photoCollections: [PHFetchResult<PHAssetCollection>] = {
     let i = [PHFetchResult<PHAssetCollection>]()
@@ -145,6 +144,7 @@ class PhotoViewController: UIViewController {
     
     /// 点击按钮
     func titleClick(){
+//        if collectionView.isDecelerating{return}
         view.addSubview(listView)
         view.bringSubview(toFront: navView)
         listView.snp.makeConstraints { (make) in
@@ -226,6 +226,7 @@ class PhotoViewController: UIViewController {
             make.right.left.bottom.equalToSuperview()
             make.top.equalTo(navView.snp.bottom)
         }
+
     }
     
     func getCollection() {
@@ -304,8 +305,13 @@ class PhotoViewController: UIViewController {
 
 typealias PhotoViewCollectionProtocol = PhotoViewController
 
-extension PhotoViewCollectionProtocol: UICollectionViewDelegate , UICollectionViewDataSource{
+extension PhotoViewCollectionProtocol: UICollectionViewDelegate , UICollectionViewDataSource, UIScrollViewDelegate{
 
+//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+//        if self.titleView.isSelected{
+//            self.titleClick()
+//        }
+//    }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return gridItems.count
     }
@@ -316,10 +322,10 @@ extension PhotoViewCollectionProtocol: UICollectionViewDelegate , UICollectionVi
         let model = gridItems[indexPath.item]
         model.indexPath = indexPath
         cell.item = model
-        
         cell.clickClosure = { (cell , idx) in
             self.cellClickDeal(cell: cell, idx: idx)
         }
+        
         return cell
     }
     
@@ -336,6 +342,11 @@ extension PhotoViewCollectionProtocol: UICollectionViewDelegate , UICollectionVi
     
     /// 处理cell 的点击
     func cellClickDeal(cell: PhotoGridCell, idx: IndexPath)  {
+        
+        if self.titleView.isSelected{
+            self.titleClick()
+        }
+        
         if idx.item == 0{ return }// 去照相
         let itemModel = self.gridItems[idx.item]
         // 在这里做单选 还是 多选的 操作

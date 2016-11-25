@@ -42,11 +42,7 @@ class PhotoTitleView: UIButton {
 }
 
 class PhotoGridCell: UICollectionViewCell {
-    
-    
     static let tgSize: CGSize = CGSize(width: ((UIConst.screenWidth - 5) / 3.0) * (UIConst.screenScale), height: ((UIConst.screenWidth - 5 ) / 3.0) * (UIConst.screenScale))
-    
-    
     fileprivate lazy var opt: PHImageRequestOptions = {
         let i = PHImageRequestOptions()
         i.deliveryMode = .highQualityFormat
