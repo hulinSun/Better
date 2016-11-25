@@ -80,6 +80,10 @@
 		FEC325FF1DE427F20091FC05 /* PhotoGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC325FD1DE427F20091FC05 /* PhotoGroupCell.swift */; };
 		FEC326001DE427F20091FC05 /* PhotoGroupCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEC325FE1DE427F20091FC05 /* PhotoGroupCell.xib */; };
 		FEC326021DE429B70091FC05 /* GroupTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC326011DE429B70091FC05 /* GroupTableView.swift */; };
+		FEDC76251DE8251100699E49 /* PhotoEditController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDC76241DE8251100699E49 /* PhotoEditController.swift */; };
+		FEDC76271DE825F700699E49 /* PhotoEditToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDC76261DE825F700699E49 /* PhotoEditToolBar.swift */; };
+		FEDC76291DE8260100699E49 /* PhotoEditToolBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEDC76281DE8260100699E49 /* PhotoEditToolBar.xib */; };
+		FEDC762B1DE8283900699E49 /* UIView+Nib.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDC762A1DE8283900699E49 /* UIView+Nib.swift */; };
 		FEF0B55F1DC046C6000C632C /* String+Directionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF0B55E1DC046C6000C632C /* String+Directionary.swift */; };
 		FEF0B5611DC047E2000C632C /* UIBarButtonItem+category.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF0B5601DC047E2000C632C /* UIBarButtonItem+category.swift */; };
 		FEF0B5631DC0485E000C632C /* UIColor+random.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF0B5621DC0485E000C632C /* UIColor+random.swift */; };
@@ -198,6 +202,10 @@
 		FEC325FE1DE427F20091FC05 /* PhotoGroupCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoGroupCell.xib; sourceTree = "<group>"; };
 		FEC326011DE429B70091FC05 /* GroupTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupTableView.swift; sourceTree = "<group>"; };
 		FEDC761B1DE823D300699E49 /* GPUImage-iOS.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "GPUImage-iOS.xcodeproj"; path = "framework/GPUImage-iOS.xcodeproj"; sourceTree = "<group>"; };
+		FEDC76241DE8251100699E49 /* PhotoEditController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoEditController.swift; sourceTree = "<group>"; };
+		FEDC76261DE825F700699E49 /* PhotoEditToolBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoEditToolBar.swift; sourceTree = "<group>"; };
+		FEDC76281DE8260100699E49 /* PhotoEditToolBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoEditToolBar.xib; sourceTree = "<group>"; };
+		FEDC762A1DE8283900699E49 /* UIView+Nib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Nib.swift"; sourceTree = "<group>"; };
 		FEF0B55E1DC046C6000C632C /* String+Directionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Directionary.swift"; sourceTree = "<group>"; };
 		FEF0B5601DC047E2000C632C /* UIBarButtonItem+category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+category.swift"; sourceTree = "<group>"; };
 		FEF0B5621DC0485E000C632C /* UIColor+random.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+random.swift"; sourceTree = "<group>"; };
@@ -277,6 +285,7 @@
 			isa = PBXGroup;
 			children = (
 				FE63AE161DB087190047F66E /* PhotoViewController.swift */,
+				FEDC76241DE8251100699E49 /* PhotoEditController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -302,6 +311,8 @@
 				FEC325FD1DE427F20091FC05 /* PhotoGroupCell.swift */,
 				FEC325FE1DE427F20091FC05 /* PhotoGroupCell.xib */,
 				FEC326011DE429B70091FC05 /* GroupTableView.swift */,
+				FEDC76261DE825F700699E49 /* PhotoEditToolBar.swift */,
+				FEDC76281DE8260100699E49 /* PhotoEditToolBar.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -370,6 +381,7 @@
 			isa = PBXGroup;
 			children = (
 				FEF0B55E1DC046C6000C632C /* String+Directionary.swift */,
+				FEDC762A1DE8283900699E49 /* UIView+Nib.swift */,
 				FEF0B5601DC047E2000C632C /* UIBarButtonItem+category.swift */,
 				FEF0B5621DC0485E000C632C /* UIColor+random.swift */,
 				FEF0B5741DC08A9B000C632C /* String+Extension.swift */,
@@ -772,6 +784,7 @@
 				FEB91C2A1DD05CAE007962BA /* TopCategoryCell.xib in Resources */,
 				FEC326001DE427F20091FC05 /* PhotoGroupCell.xib in Resources */,
 				FE63AE101DB07A390047F66E /* MainVCSettings.json in Resources */,
+				FEDC76291DE8260100699E49 /* PhotoEditToolBar.xib in Resources */,
 				FEF551E81DC343460044F1D5 /* DiscoverArticleCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -841,6 +854,8 @@
 				FE83A4201DAF5987002BB862 /* AppDelegate.swift in Sources */,
 				FE19FFBB1DD028820090C194 /* DiscoverArticleController.swift in Sources */,
 				FEBB07811DC88ECE00FF4989 /* UILayoutSupport+Extensions.swift in Sources */,
+				FEDC76251DE8251100699E49 /* PhotoEditController.swift in Sources */,
+				FEDC762B1DE8283900699E49 /* UIView+Nib.swift in Sources */,
 				FEBB077A1DC88ECE00FF4989 /* ConstraintView+Extensions.swift in Sources */,
 				FEBB07791DC88ECE00FF4989 /* ConstraintRelation.swift in Sources */,
 				FEA0CABD1DAF972A00BF6766 /* MainNavigationController.swift in Sources */,
@@ -850,6 +865,7 @@
 				FEF0B55F1DC046C6000C632C /* String+Directionary.swift in Sources */,
 				FE63AE0E1DB079460047F66E /* MainTabbar.swift in Sources */,
 				FEBB076B1DC88ECE00FF4989 /* ConstraintLayoutGuide.swift in Sources */,
+				FEDC76271DE825F700699E49 /* PhotoEditToolBar.swift in Sources */,
 				FE4AA4101DD4746B001D88C6 /* PhotoGridCell.swift in Sources */,
 				FEBB076A1DC88ECE00FF4989 /* ConstraintLayoutGuide+Extensions.swift in Sources */,
 				FEA0CAB91DAF959100BF6766 /* AppDelegate+Extension.swift in Sources */,

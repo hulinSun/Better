@@ -186,7 +186,6 @@ class PhotoViewController: UIViewController {
         view.backgroundColor = UIColor.white
         view.addSubview(collectionView)
         titleView.snp.makeConstraints { (make) in
-            make.center.equalToSuperview()
             make.width.lessThanOrEqualTo(250)
             make.height.equalTo(40)
         }
@@ -307,6 +306,9 @@ extension PhotoViewCollectionProtocol: UICollectionViewDelegate , UICollectionVi
     /// 处理cell 的点击
     func cellClickDeal(cell: PhotoGridCell, idx: IndexPath)  {
         
+        let edit = PhotoEditController()
+        navigationController?.pushViewController(edit, animated: true)
+        return
         if self.titleView.isSelected{
             self.titleClick()
         }
