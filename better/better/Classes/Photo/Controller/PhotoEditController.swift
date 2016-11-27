@@ -37,6 +37,8 @@ class PhotoEditController: UIViewController {
             make.height.equalTo(200)
         }
         
+        //FIXME: 日你奶奶
+        
         navigationController?.navigationBar.lt_setBackgroundColor(UIColor.clear)
         navigationItem.leftBarButtonItem = UIBarButtonItem.init(title: "", style: .done, target: nil, action: nil)
         view.addSubview(captureView)
