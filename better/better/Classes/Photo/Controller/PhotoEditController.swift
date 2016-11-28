@@ -38,18 +38,23 @@ class PhotoEditController: UIViewController {
         }
         
         //FIXME: 日你奶奶
-        
         navigationController?.navigationBar.lt_setBackgroundColor(UIColor.clear)
         navigationItem.leftBarButtonItem = UIBarButtonItem.init(title: "", style: .done, target: nil, action: nil)
         view.addSubview(captureView)
+    
+        let topLayer = CALayer()
+        topLayer.backgroundColor = UIColor.black.withAlphaComponent(0.5).cgColor
+        topLayer.bounds = CGRect(x: 0, y: 0, width: UIConst.screenWidth, height: 40)
+        topLayer.position = CGPoint(x: 0, y: 0)
+        topLayer.anchorPoint = CGPoint(x: 0, y: 0)
+        view.layer.addSublayer(topLayer)
         
-//        
-//        let bottomLay = CALayer()
-//        bottomLay.backgroundColor = UIColor.black.withAlphaComponent(0.5).cgColor
-//        bottomLay.bounds = CGRect(x: 0, y: 0, width: UIConst.screenWidth, height: 30)
-//        bottomLay.position = CGPoint(x: 0, y: UIConst.screenHeight - 200.0 - 30.0)
-//        bottomLay.anchorPoint = CGPoint(x: 0, y: 0)
-//        view.layer.addSublayer(bottomLay)
+        let bottomLay = CALayer()
+        bottomLay.backgroundColor = UIColor.black.withAlphaComponent(0.5).cgColor
+        bottomLay.bounds = CGRect(x: 0, y: 0, width: UIConst.screenWidth, height: 40)
+        bottomLay.position = CGPoint(x: 0, y: UIConst.screenHeight - 200.0 - 40.0)
+        bottomLay.anchorPoint = CGPoint(x: 0, y: 0)
+        view.layer.addSublayer(bottomLay)
     }
     
     private func response(){
@@ -60,11 +65,14 @@ class PhotoEditController: UIViewController {
         
         editBar.cancleClosure = {
             print("点击了取消")
-            self.navigationController?.popViewController(animated: true)
+           let _ = self.navigationController?.popViewController(animated: true)
         }
         
         editBar.rotateClosure = {
             print("点击了旋转")
+            UIView.animate(withDuration: 0.25, animations: { 
+                self.captureView.transform = self.captureView.transform.rotated(by: CGFloat.pi * 0.5);
+            })
         }
     }
     

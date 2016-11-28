@@ -24,7 +24,7 @@ class ImageCaptureView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         addSubview(scrollView)
-        scrollView.contentInset = UIEdgeInsets(top: 30, left: 0, bottom: 30, right: 0)
+        scrollView.contentInset = UIEdgeInsets(top: 40, left: 0, bottom: 40, right: 0)
         scrollView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
         }
@@ -35,24 +35,10 @@ class ImageCaptureView: UIView {
         redView.backgroundColor = UIColor.red
         scrollView.contentSize = CGSize(width: 0, height: 700)
         redView.snp.makeConstraints { (make) in
-//            make.edges.equalToSuperview()
-            make.top.left.equalToSuperview()
-            make.size.equalTo(CGSize(width: 200, height: 60))
+            make.left.equalToSuperview()
+            make.top.equalToSuperview().offset(40)
+            make.size.equalTo(CGSize(width: 200, height: 170))
         }
-        // 画图层
-        let topLayer = CALayer()
-        topLayer.backgroundColor = UIColor.black.withAlphaComponent(0.5).cgColor
-        topLayer.bounds = CGRect(x: 0, y: 0, width: UIConst.screenWidth, height: 30)
-        topLayer.position = CGPoint(x: 0, y: 0)
-        topLayer.anchorPoint = CGPoint(x: 0, y: 0)
-        
-        let bottomLay = CALayer()
-        bottomLay.backgroundColor = UIColor.black.withAlphaComponent(0.5).cgColor
-        bottomLay.bounds = CGRect(x: 0, y: 0, width: UIConst.screenWidth, height: 30)
-        bottomLay.position = CGPoint(x: 0, y: frame.size.height - 30)
-        bottomLay.anchorPoint = CGPoint(x: 0, y: 0)
-        layer.addSublayer(topLayer)
-        layer.addSublayer(bottomLay)
     }
     
     required init?(coder aDecoder: NSCoder) {
