@@ -306,13 +306,15 @@ extension PhotoViewCollectionProtocol: UICollectionViewDelegate , UICollectionVi
     
     /// 处理cell 的点击
     func cellClickDeal(cell: PhotoGridCell, idx: IndexPath)  {
-        
         let edit = PhotoEditController()
-        navigationController?.pushViewController(edit, animated: true)
         let im = self.gridItems[idx.item]
-        // 4288 2848
-        print((im.asset?.pixelWidth)!)
-        print((im.asset?.pixelHeight)!)
+        if let asst = im.asset{
+            asst.fitImage(callBack: { (img, info) in
+                edit.photoSize = asst.fitSize()
+                edit.img = img
+                self.navigationController?.pushViewController(edit, animated: true)
+            })
+        }
         return
         if self.titleView.isSelected{
             self.titleClick()

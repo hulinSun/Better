@@ -12,14 +12,26 @@ class ImageCaptureView: UIView {
     
     fileprivate lazy var scrollView: UIScrollView = {
         let i = UIScrollView()
+        i.addSubview(self.imgView)
         return i
     }()
     
-    
-    fileprivate lazy var redView: UIView = {
-        let i = UIView()
+    fileprivate lazy var imgView: UIImageView = {
+        let i = UIImageView()
         return i
     }()
+    
+    var img: UIImage!{
+        didSet{
+           imgView.image = img
+        }
+    }
+    
+    var contSize: CGSize!{
+        didSet{
+           scrollView.contentSize = contSize
+        }
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -29,16 +41,13 @@ class ImageCaptureView: UIView {
             make.edges.equalToSuperview()
         }
         
+        imgView.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+        }
+        
+        scrollView.bounces = false
         scrollView.showsVerticalScrollIndicator = false
         scrollView.showsHorizontalScrollIndicator = false
-        scrollView.addSubview(redView)
-        redView.backgroundColor = UIColor.red
-        scrollView.contentSize = CGSize(width: 0, height: 700)
-        redView.snp.makeConstraints { (make) in
-            make.left.equalToSuperview()
-            make.top.equalToSuperview().offset(40)
-            make.size.equalTo(CGSize(width: 200, height: 170))
-        }
     }
     
     required init?(coder aDecoder: NSCoder) {

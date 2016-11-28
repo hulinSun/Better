@@ -20,6 +20,7 @@ class PhotoGroupCell: UITableViewCell {
                 let opt = PHImageRequestOptions()
                 opt.deliveryMode = .highQualityFormat
                 PHCachingImageManager.default().requestImage(for: firstImage, targetSize: CGSize(width: 54, height: 54), contentMode: .aspectFit, options: opt, resultHandler: { (img , info) in
+                    print("groupimg = \(img)")
                     self.iconView.image = img
                 })
             }else{

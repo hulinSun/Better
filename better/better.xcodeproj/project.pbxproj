@@ -97,6 +97,8 @@
 		FEF0B5791DC0A53E000C632C /* DiscoverModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF0B5781DC0A53E000C632C /* DiscoverModel.swift */; };
 		FEF551E71DC343460044F1D5 /* DiscoverArticleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF551E51DC343460044F1D5 /* DiscoverArticleCell.swift */; };
 		FEF551E81DC343460044F1D5 /* DiscoverArticleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEF551E61DC343460044F1D5 /* DiscoverArticleCell.xib */; };
+		FEFE21C81DEBDEA000634523 /* UIImage+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFE21C71DEBDEA000634523 /* UIImage+extension.swift */; };
+		FEFE21CC1DEBDFAE00634523 /* PHAsset+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFE21CB1DEBDFAE00634523 /* PHAsset+extension.swift */; };
 		FEFE5C1C1DC2000F00AD5D5E /* PictureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFE5C191DC2000F00AD5D5E /* PictureCell.swift */; };
 		FEFE5C1D1DC2000F00AD5D5E /* PictureProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFE5C1A1DC2000F00AD5D5E /* PictureProtocol.swift */; };
 		FEFE5C1E1DC2000F00AD5D5E /* WirelessPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFE5C1B1DC2000F00AD5D5E /* WirelessPictureView.swift */; };
@@ -220,6 +222,8 @@
 		FEF0B5781DC0A53E000C632C /* DiscoverModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DiscoverModel.swift; path = better/Classes/Category/DiscoverModel.swift; sourceTree = SOURCE_ROOT; };
 		FEF551E51DC343460044F1D5 /* DiscoverArticleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverArticleCell.swift; sourceTree = "<group>"; };
 		FEF551E61DC343460044F1D5 /* DiscoverArticleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DiscoverArticleCell.xib; sourceTree = "<group>"; };
+		FEFE21C71DEBDEA000634523 /* UIImage+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+extension.swift"; sourceTree = "<group>"; };
+		FEFE21CB1DEBDFAE00634523 /* PHAsset+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PHAsset+extension.swift"; sourceTree = "<group>"; };
 		FEFE5C191DC2000F00AD5D5E /* PictureCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureCell.swift; sourceTree = "<group>"; };
 		FEFE5C1A1DC2000F00AD5D5E /* PictureProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureProtocol.swift; sourceTree = "<group>"; };
 		FEFE5C1B1DC2000F00AD5D5E /* WirelessPictureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WirelessPictureView.swift; sourceTree = "<group>"; };
@@ -393,6 +397,8 @@
 				FEF0B5761DC08BD7000C632C /* GCD+Extension.swift */,
 				FE558CAB1DC2FA3E00AC15B3 /* UIBarButtonItem+item.swift */,
 				FE2A2D271DD55C7F00136E4A /* UINavigationBar+line.swift */,
+				FEFE21C71DEBDEA000634523 /* UIImage+extension.swift */,
+				FEFE21CB1DEBDFAE00634523 /* PHAsset+extension.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -853,12 +859,14 @@
 				FEF0B5731DC087B8000C632C /* UIView+Extension.swift in Sources */,
 				FEB91C3D1DD089BB007962BA /* HotTopView.swift in Sources */,
 				FEFE5C1C1DC2000F00AD5D5E /* PictureCell.swift in Sources */,
+				FEFE21CC1DEBDFAE00634523 /* PHAsset+extension.swift in Sources */,
 				FE96E2021DCB285100D28F0B /* HomeCell.swift in Sources */,
 				FE83A4201DAF5987002BB862 /* AppDelegate.swift in Sources */,
 				FE19FFBB1DD028820090C194 /* DiscoverArticleController.swift in Sources */,
 				FEBB07811DC88ECE00FF4989 /* UILayoutSupport+Extensions.swift in Sources */,
 				FEDC76251DE8251100699E49 /* PhotoEditController.swift in Sources */,
 				FEDC762B1DE8283900699E49 /* UIView+Nib.swift in Sources */,
+				FEFE21C81DEBDEA000634523 /* UIImage+extension.swift in Sources */,
 				FEBB077A1DC88ECE00FF4989 /* ConstraintView+Extensions.swift in Sources */,
 				FEBB07791DC88ECE00FF4989 /* ConstraintRelation.swift in Sources */,
 				FEA0CABD1DAF972A00BF6766 /* MainNavigationController.swift in Sources */,

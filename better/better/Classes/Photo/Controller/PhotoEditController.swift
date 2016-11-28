@@ -16,9 +16,11 @@ class PhotoEditController: UIViewController {
         return i
     }()
     
+    
+    
     fileprivate lazy var captureView: ImageCaptureView = {
         let i = ImageCaptureView(frame:
-            CGRect(x: 0, y: 0, width: UIConst.screenWidth, height: UIConst.screenHeight - 200.0))
+            CGRect(x: 0, y: 0, width: UIConst.screenWidth, height: UIConst.screenHeight - 210.0))
         return i
     }()
     
@@ -26,6 +28,18 @@ class PhotoEditController: UIViewController {
         super.viewDidLoad()
         setupUI()
         response()
+    }
+    
+    var photoSize: CGSize!{
+        didSet{
+            captureView.contSize = photoSize
+        }
+    }
+    
+    var img: UIImage!{
+        didSet{
+            captureView.img = img
+        }
     }
     
     private func setupUI() {
@@ -56,6 +70,7 @@ class PhotoEditController: UIViewController {
         bottomLay.anchorPoint = CGPoint(x: 0, y: 0)
         view.layer.addSublayer(bottomLay)
     }
+    
     
     private func response(){
         
