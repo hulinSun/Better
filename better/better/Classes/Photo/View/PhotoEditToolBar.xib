@@ -16,8 +16,8 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UG8-6l-xaA">
-                    <rect key="frame" x="152" y="76" width="46" height="30"/>
-                    <state key="normal" title="Button"/>
+                    <rect key="frame" x="149" y="63" width="52" height="56"/>
+                    <state key="normal" backgroundImage="crop_rotate"/>
                     <connections>
                         <action selector="retate:" destination="iN0-l3-epB" eventType="touchUpInside" id="TmR-vw-2bb"/>
                     </connections>
@@ -63,4 +63,7 @@
             <point key="canvasLocation" x="75" y="-176"/>
         </view>
     </objects>
+    <resources>
+        <image name="crop_rotate" width="52" height="56"/>
+    </resources>
 </document>

@@ -194,7 +194,8 @@ class PhotoViewController: UIViewController {
             make.right.left.bottom.equalToSuperview()
             make.top.equalToSuperview()
         }
-
+        
+        
     }
     
     func getCollection() {
@@ -307,7 +308,7 @@ extension PhotoViewCollectionProtocol: UICollectionViewDelegate , UICollectionVi
     func cellClickDeal(cell: PhotoGridCell, idx: IndexPath)  {
         
         let edit = PhotoEditController()
-//        navigationController?.pushViewController(edit, animated: true)
+        navigationController?.pushViewController(edit, animated: true)
         let im = self.gridItems[idx.item]
         // 4288 2848
         print((im.asset?.pixelWidth)!)

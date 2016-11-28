@@ -34,7 +34,7 @@ class PhotoEditController: UIViewController {
         editBar.backgroundColor = .white
         editBar.snp.makeConstraints { (make) in
             make.left.right.bottom.equalToSuperview()
-            make.height.equalTo(200)
+            make.height.equalTo(210)
         }
         
         //FIXME: 日你奶奶
