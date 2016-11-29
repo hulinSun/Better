@@ -66,7 +66,7 @@ class PhotoEditController: UIViewController {
         let bottomLay = CALayer()
         bottomLay.backgroundColor = UIColor.black.withAlphaComponent(0.5).cgColor
         bottomLay.bounds = CGRect(x: 0, y: 0, width: UIConst.screenWidth, height: 40)
-        bottomLay.position = CGPoint(x: 0, y: UIConst.screenHeight - 200.0 - 40.0)
+        bottomLay.position = CGPoint(x: 0, y: UIConst.screenHeight - 210.0 - 40.0)
         bottomLay.anchorPoint = CGPoint(x: 0, y: 0)
         view.layer.addSublayer(bottomLay)
     }
