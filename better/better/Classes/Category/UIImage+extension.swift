@@ -17,4 +17,9 @@ extension UIImage {
         UIGraphicsEndImageContext()
         return i ?? self
     }
+    
+    func cropImage(withSize: CGSize) -> UIImage {
+        return self
+    }
+    
 }

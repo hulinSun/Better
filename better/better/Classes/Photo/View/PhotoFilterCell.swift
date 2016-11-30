@@ -53,15 +53,6 @@ class PhotoFilterCell: UICollectionViewCell {
             iconView.backgroundColor = UIColor.random()
         }
     }
-    
-    var item: FiltItem?{
-        didSet{
-            guard let  toonFilter = self.item?.filter else { return }
-            if let filteredImage = self.item?.img.filterWithOperation(toonFilter){
-                self.iconView.image = filteredImage
-            }
-        }
-    }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

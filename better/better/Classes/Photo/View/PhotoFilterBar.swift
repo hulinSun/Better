@@ -12,18 +12,13 @@ class PhotoFilterBar: UIView {
 
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var filterBtn: PhotoItemButton!
-    let filters: [BasicOperation] = [ZoomBlur(),MotionBlur(),MonochromeFilter(),SepiaToneFilter(),ThresholdSketchFilter(),EmbossFilter(),EmbossFilter(),BulgeDistortion(),SketchFilter(),BulgeDistortion()]
+    typealias leftClosure = ()-> Void
+    
+    var leftClickClo: leftClosure?
     
     var img: UIImage!{
         didSet{
             
-            collectionView.register(UINib.init(nibName: "PhotoFilterCell", bundle: nil), forCellWithReuseIdentifier: "PhotoFilterCell")
-            var v = [FiltItem]()
-            for i in 0..<10 {
-              let i = FiltItem(img: img, filter:filters[i])
-                v.append(i)
-            }
-            datas = v
         }
     }
     
@@ -33,9 +28,8 @@ class PhotoFilterBar: UIView {
         }
     }
     
-    
     @IBAction func leftBtnClick(_ sender: Any) {
-        
+        leftClickClo?()
     }
 
     @IBAction func nextClick(_ sender: Any) {
@@ -54,7 +48,6 @@ class PhotoFilterBar: UIView {
     
     
     private func setupUI(){
-        
         collectionView.register(UINib.init(nibName: "PhotoFilterCell", bundle: nil), forCellWithReuseIdentifier:"PhotoFilterCell")
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -71,12 +64,11 @@ extension PhotoFilterBar: UICollectionViewDelegate , UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoFilterCell", for: indexPath) as! PhotoFilterCell
-        cell.item = datas?[indexPath.item]
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return datas?.count ?? 0
+        return datas?.count ?? 10
     }
     
 }

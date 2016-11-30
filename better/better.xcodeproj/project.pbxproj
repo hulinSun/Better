@@ -96,6 +96,8 @@
 		FEDC76271DE825F700699E49 /* PhotoEditToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDC76261DE825F700699E49 /* PhotoEditToolBar.swift */; };
 		FEDC76291DE8260100699E49 /* PhotoEditToolBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEDC76281DE8260100699E49 /* PhotoEditToolBar.xib */; };
 		FEDC762B1DE8283900699E49 /* UIView+Nib.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDC762A1DE8283900699E49 /* UIView+Nib.swift */; };
+		FEEA0D8E1DEED32900315D45 /* FilterTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEA0D8D1DEED32900315D45 /* FilterTool.swift */; };
+		FEEA0D911DEED5CF00315D45 /* FilterList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEA0D901DEED5CF00315D45 /* FilterList.swift */; };
 		FEF0B55F1DC046C6000C632C /* String+Directionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF0B55E1DC046C6000C632C /* String+Directionary.swift */; };
 		FEF0B5611DC047E2000C632C /* UIBarButtonItem+category.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF0B5601DC047E2000C632C /* UIBarButtonItem+category.swift */; };
 		FEF0B5631DC0485E000C632C /* UIColor+random.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF0B5621DC0485E000C632C /* UIColor+random.swift */; };
@@ -250,6 +252,8 @@
 		FEDC76261DE825F700699E49 /* PhotoEditToolBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoEditToolBar.swift; sourceTree = "<group>"; };
 		FEDC76281DE8260100699E49 /* PhotoEditToolBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoEditToolBar.xib; sourceTree = "<group>"; };
 		FEDC762A1DE8283900699E49 /* UIView+Nib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Nib.swift"; sourceTree = "<group>"; };
+		FEEA0D8D1DEED32900315D45 /* FilterTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterTool.swift; sourceTree = "<group>"; };
+		FEEA0D901DEED5CF00315D45 /* FilterList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterList.swift; sourceTree = "<group>"; };
 		FEF0B55E1DC046C6000C632C /* String+Directionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Directionary.swift"; sourceTree = "<group>"; };
 		FEF0B5601DC047E2000C632C /* UIBarButtonItem+category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+category.swift"; sourceTree = "<group>"; };
 		FEF0B5621DC0485E000C632C /* UIColor+random.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+random.swift"; sourceTree = "<group>"; };
@@ -354,6 +358,8 @@
 		FE63AE141DB087050047F66E /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				FEEA0D8D1DEED32900315D45 /* FilterTool.swift */,
+				FEEA0D901DEED5CF00315D45 /* FilterList.swift */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -945,11 +951,13 @@
 				FEBB077F1DC88ECE00FF4989 /* LayoutConstraint.swift in Sources */,
 				FEA0CAC31DAF982000BF6766 /* HomeViewController.swift in Sources */,
 				FEBB076D1DC88ECE00FF4989 /* ConstraintLayoutSupport.swift in Sources */,
+				FEEA0D8E1DEED32900315D45 /* FilterTool.swift in Sources */,
 				FE84BA251DEE6F28005229E4 /* PhotoFilterController.swift in Sources */,
 				FEA0CAC71DAF984100BF6766 /* ProfileViewController.swift in Sources */,
 				FEBB07661DC88ECE00FF4989 /* ConstraintDSL.swift in Sources */,
 				FE8522241DB9E07F00C0E2C1 /* BetterRefreshFooter.swift in Sources */,
 				FEBB07631DC88ECE00FF4989 /* ConstraintConfig.swift in Sources */,
+				FEEA0D911DEED5CF00315D45 /* FilterList.swift in Sources */,
 				FEBB07801DC88ECE00FF4989 /* LayoutConstraintItem.swift in Sources */,
 				FE8522261DB9E07F00C0E2C1 /* UIScrollView+Refresh.swift in Sources */,
 				FEBB076F1DC88ECE00FF4989 /* ConstraintMaker.swift in Sources */,
