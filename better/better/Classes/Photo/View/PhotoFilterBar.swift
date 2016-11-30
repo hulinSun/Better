@@ -14,7 +14,10 @@ class PhotoFilterBar: UIView {
     @IBOutlet weak var filterBtn: PhotoItemButton!
     typealias leftClosure = ()-> Void
     
+    typealias clickItemClosure = (_ index: IndexPath) -> Void
+    
     var leftClickClo: leftClosure?
+    var clickItemClo: clickItemClosure?
     
     var img: UIImage!{
         didSet{
@@ -59,7 +62,7 @@ class PhotoFilterBar: UIView {
 
 extension PhotoFilterBar: UICollectionViewDelegate , UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        clickItemClo?(indexPath)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

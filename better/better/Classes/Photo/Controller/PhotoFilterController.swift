@@ -51,6 +51,11 @@ class PhotoFilterController: UIViewController {
         filterBar.leftClickClo = {[unowned self] in
             let _ = self.navigationController?.popViewController(animated: true)
         }
+        
+        filterBar.clickItemClo = { [unowned self] idx in
+            print("点击了\(idx.item) 个")
+            self.imgView.image = FilterTool.softElegance(with: self.img)
+        }
         filterBar.snp.makeConstraints { (make) in
             make.right.left.bottom.equalToSuperview()
             make.height.equalTo(290)

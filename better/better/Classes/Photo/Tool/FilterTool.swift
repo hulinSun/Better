@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import  GPUImage
 
 /// 滤镜帮助类
 class FilterTool: NSObject {
@@ -25,6 +26,11 @@ class FilterTool: NSObject {
         "炫光": "ScreenBlend",
         "柔光": "SoftLightBlend"
     ]
-    /// 给我一张图片。我返回这张图片的某种滤镜结果
     
+    /// 给我一张图片。我返回这张图片的某种滤镜结果
+    class func softElegance(with image: UIImage) -> UIImage {
+        let toonFilter = AmatorkaFilter()
+        let filteredImage = image.filterWithOperation(toonFilter)
+        return filteredImage
+    }
 }
