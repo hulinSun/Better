@@ -17,7 +17,6 @@ class PhotoEditController: UIViewController {
     }()
     
     
-    
     fileprivate lazy var captureView: ImageCaptureView = {
         let i = ImageCaptureView(frame:
             CGRect(x: 0, y: 0, width: UIConst.screenWidth, height: UIConst.screenHeight - 210.0))
@@ -30,6 +29,10 @@ class PhotoEditController: UIViewController {
         response()
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        navigationController?.navigationBar.lt_reset()
+    }
     var photoSize: CGSize!{
         didSet{
             captureView.contSize = photoSize
@@ -74,8 +77,10 @@ class PhotoEditController: UIViewController {
     
     private func response(){
         
-        editBar.nextClosure = {
+        editBar.nextClosure = { [unowned self] in
             print("点击了下一步")
+            let filterVC = PhotoFilterController()
+            self.navigationController?.pushViewController(filterVC, animated: true)
         }
         
         editBar.cancleClosure = {

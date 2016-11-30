@@ -26,6 +26,11 @@
 		FE83A4201DAF5987002BB862 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE83A41F1DAF5987002BB862 /* AppDelegate.swift */; };
 		FE83A4271DAF5987002BB862 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE83A4261DAF5987002BB862 /* Assets.xcassets */; };
 		FE83A42A1DAF5987002BB862 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE83A4281DAF5987002BB862 /* LaunchScreen.storyboard */; };
+		FE84BA251DEE6F28005229E4 /* PhotoFilterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE84BA241DEE6F28005229E4 /* PhotoFilterController.swift */; };
+		FE84BA271DEE6F65005229E4 /* PhotoFilterBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE84BA261DEE6F65005229E4 /* PhotoFilterBar.swift */; };
+		FE84BA291DEE6F6E005229E4 /* PhotoFilterBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE84BA281DEE6F6E005229E4 /* PhotoFilterBar.xib */; };
+		FE84BA2C1DEE7A9D005229E4 /* PhotoFilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE84BA2A1DEE7A9D005229E4 /* PhotoFilterCell.swift */; };
+		FE84BA2D1DEE7A9D005229E4 /* PhotoFilterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE84BA2B1DEE7A9D005229E4 /* PhotoFilterCell.xib */; };
 		FE8522241DB9E07F00C0E2C1 /* BetterRefreshFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8522211DB9E07F00C0E2C1 /* BetterRefreshFooter.swift */; };
 		FE8522251DB9E07F00C0E2C1 /* BetterRefreshHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8522221DB9E07F00C0E2C1 /* BetterRefreshHeader.swift */; };
 		FE8522261DB9E07F00C0E2C1 /* UIScrollView+Refresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8522231DB9E07F00C0E2C1 /* UIScrollView+Refresh.swift */; };
@@ -147,6 +152,11 @@
 		FE83A4261DAF5987002BB862 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FE83A4291DAF5987002BB862 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FE83A42B1DAF5987002BB862 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FE84BA241DEE6F28005229E4 /* PhotoFilterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoFilterController.swift; sourceTree = "<group>"; };
+		FE84BA261DEE6F65005229E4 /* PhotoFilterBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoFilterBar.swift; sourceTree = "<group>"; };
+		FE84BA281DEE6F6E005229E4 /* PhotoFilterBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoFilterBar.xib; sourceTree = "<group>"; };
+		FE84BA2A1DEE7A9D005229E4 /* PhotoFilterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoFilterCell.swift; sourceTree = "<group>"; };
+		FE84BA2B1DEE7A9D005229E4 /* PhotoFilterCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoFilterCell.xib; sourceTree = "<group>"; };
 		FE8522211DB9E07F00C0E2C1 /* BetterRefreshFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BetterRefreshFooter.swift; sourceTree = "<group>"; };
 		FE8522221DB9E07F00C0E2C1 /* BetterRefreshHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BetterRefreshHeader.swift; sourceTree = "<group>"; };
 		FE8522231DB9E07F00C0E2C1 /* UIScrollView+Refresh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Refresh.swift"; sourceTree = "<group>"; };
@@ -292,6 +302,7 @@
 			children = (
 				FE63AE161DB087190047F66E /* PhotoViewController.swift */,
 				FEDC76241DE8251100699E49 /* PhotoEditController.swift */,
+				FE84BA241DEE6F28005229E4 /* PhotoFilterController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -320,6 +331,10 @@
 				FEDC76261DE825F700699E49 /* PhotoEditToolBar.swift */,
 				FEDC76281DE8260100699E49 /* PhotoEditToolBar.xib */,
 				FE1DC7C01DE836CE005A4676 /* ImageCaptureView.swift */,
+				FE84BA261DEE6F65005229E4 /* PhotoFilterBar.swift */,
+				FE84BA281DEE6F6E005229E4 /* PhotoFilterBar.xib */,
+				FE84BA2A1DEE7A9D005229E4 /* PhotoFilterCell.swift */,
+				FE84BA2B1DEE7A9D005229E4 /* PhotoFilterCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -791,7 +806,9 @@
 				FEBB077E1DC88ECE00FF4989 /* Info.plist in Resources */,
 				FE558CB21DC2FCB900AC15B3 /* DiscoverTitleView.xib in Resources */,
 				FEB91C2A1DD05CAE007962BA /* TopCategoryCell.xib in Resources */,
+				FE84BA291DEE6F6E005229E4 /* PhotoFilterBar.xib in Resources */,
 				FEC326001DE427F20091FC05 /* PhotoGroupCell.xib in Resources */,
+				FE84BA2D1DEE7A9D005229E4 /* PhotoFilterCell.xib in Resources */,
 				FE63AE101DB07A390047F66E /* MainVCSettings.json in Resources */,
 				FEDC76291DE8260100699E49 /* PhotoEditToolBar.xib in Resources */,
 				FEF551E81DC343460044F1D5 /* DiscoverArticleCell.xib in Resources */,
@@ -882,11 +899,13 @@
 				FEA0CAB91DAF959100BF6766 /* AppDelegate+Extension.swift in Sources */,
 				FEBB07621DC88ECE00FF4989 /* ConstraintAttributes.swift in Sources */,
 				FEA0CAC11DAF981000BF6766 /* DiscoverViewController.swift in Sources */,
+				FE84BA2C1DEE7A9D005229E4 /* PhotoFilterCell.swift in Sources */,
 				FEF551E71DC343460044F1D5 /* DiscoverArticleCell.swift in Sources */,
 				FEBB07681DC88ECE00FF4989 /* ConstraintInsetTarget.swift in Sources */,
 				FEBB077F1DC88ECE00FF4989 /* LayoutConstraint.swift in Sources */,
 				FEA0CAC31DAF982000BF6766 /* HomeViewController.swift in Sources */,
 				FEBB076D1DC88ECE00FF4989 /* ConstraintLayoutSupport.swift in Sources */,
+				FE84BA251DEE6F28005229E4 /* PhotoFilterController.swift in Sources */,
 				FEA0CAC71DAF984100BF6766 /* ProfileViewController.swift in Sources */,
 				FEBB07661DC88ECE00FF4989 /* ConstraintDSL.swift in Sources */,
 				FE8522241DB9E07F00C0E2C1 /* BetterRefreshFooter.swift in Sources */,
@@ -930,6 +949,7 @@
 				FEF0B56B1DC05B18000C632C /* HomeHttpHelper.swift in Sources */,
 				FEBB07761DC88ECE00FF4989 /* ConstraintOffsetTarget.swift in Sources */,
 				FEB91C291DD05CAE007962BA /* TopCategoryCell.swift in Sources */,
+				FE84BA271DEE6F65005229E4 /* PhotoFilterBar.swift in Sources */,
 				FEB91C2C1DD072C0007962BA /* HotRecommondController.swift in Sources */,
 				FE8522251DB9E07F00C0E2C1 /* BetterRefreshHeader.swift in Sources */,
 				FEBB076E1DC88ECE00FF4989 /* ConstraintLayoutSupportDSL.swift in Sources */,
