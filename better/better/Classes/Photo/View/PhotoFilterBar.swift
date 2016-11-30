@@ -19,6 +19,7 @@ class PhotoFilterBar: UIView {
     }
 
     @IBAction func nextClick(_ sender: Any) {
+        
     }
     
     @IBAction func barClick(_ sender: Any) {

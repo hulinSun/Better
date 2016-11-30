@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		35B04F73FA88D94014F9A101 /* Pods_better.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB14B8F409C13C2E9FA9B62E /* Pods_better.framework */; };
 		FE19FF9B1DD01B540090C194 /* Single.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE19FF9A1DD01B540090C194 /* Single.swift */; };
 		FE19FFBB1DD028820090C194 /* DiscoverArticleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE19FFBA1DD028820090C194 /* DiscoverArticleController.swift */; };
 		FE19FFBD1DD028A90090C194 /* DiscoverSingleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE19FFBC1DD028A90090C194 /* DiscoverSingleController.swift */; };
@@ -32,6 +31,7 @@
 		FE84BA2C1DEE7A9D005229E4 /* PhotoFilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE84BA2A1DEE7A9D005229E4 /* PhotoFilterCell.swift */; };
 		FE84BA2D1DEE7A9D005229E4 /* PhotoFilterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE84BA2B1DEE7A9D005229E4 /* PhotoFilterCell.xib */; };
 		FE84BA2F1DEE7DE0005229E4 /* UIView+IBIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE84BA2E1DEE7DE0005229E4 /* UIView+IBIn.swift */; };
+		FE84BA311DEE9E98005229E4 /* Pods_better.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB14B8F409C13C2E9FA9B62E /* Pods_better.framework */; };
 		FE8522241DB9E07F00C0E2C1 /* BetterRefreshFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8522211DB9E07F00C0E2C1 /* BetterRefreshFooter.swift */; };
 		FE8522251DB9E07F00C0E2C1 /* BetterRefreshHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8522221DB9E07F00C0E2C1 /* BetterRefreshHeader.swift */; };
 		FE8522261DB9E07F00C0E2C1 /* UIScrollView+Refresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8522231DB9E07F00C0E2C1 /* UIScrollView+Refresh.swift */; };
@@ -246,7 +246,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				35B04F73FA88D94014F9A101 /* Pods_better.framework in Frameworks */,
+				FE84BA311DEE9E98005229E4 /* Pods_better.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

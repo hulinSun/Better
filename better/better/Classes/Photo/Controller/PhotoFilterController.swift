@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GPUImage
 
 class PhotoFilterController: UIViewController {
 
@@ -16,11 +17,11 @@ class PhotoFilterController: UIViewController {
         return i
     }()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
     }
+    
     
     private func setupUI(){
         view.backgroundColor = .white
@@ -29,6 +30,7 @@ class PhotoFilterController: UIViewController {
             make.right.left.bottom.equalToSuperview()
             make.height.equalTo(290)
         }
+        
     }
 
     override func didReceiveMemoryWarning() {
