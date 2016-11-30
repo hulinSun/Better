@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GPUImage
 import Photos
 
 class PhotoGroupItem: CustomStringConvertible {
@@ -52,6 +53,9 @@ class PhotoViewController: UIViewController {
         }
     }
 
+    
+    var camera: Camera!
+    
     fileprivate lazy var photoCollections: [PHFetchResult<PHAssetCollection>] = {
     let i = [PHFetchResult<PHAssetCollection>]()
         return i
@@ -306,14 +310,27 @@ extension PhotoViewCollectionProtocol: UICollectionViewDelegate , UICollectionVi
     
     /// 处理cell 的点击
     func cellClickDeal(cell: PhotoGridCell, idx: IndexPath)  {
-        let edit = PhotoEditController()
-        let im = self.gridItems[idx.item]
-        if let asst = im.asset{
-            asst.fitImage(callBack: { (img, info) in
-                edit.photoSize = asst.fitSize()
-                edit.img = img
-                self.navigationController?.pushViewController(edit, animated: true)
-            })
+        
+        if idx.item == 0 { // 打开照相机
+            do {
+                camera = try Camera(sessionPreset:AVCaptureSessionPreset640x480)
+//                let filter = SaturationAdjustment()
+                // FIXME: 日你奶奶
+//                camera --> filter --> renderView
+//                camera.startCapture()
+            } catch {
+                fatalError("Could not initialize rendering pipeline: \(error)")
+            }
+        }else{
+            let edit = PhotoEditController()
+            let im = self.gridItems[idx.item]
+            if let asst = im.asset{
+                asst.fitImage(callBack: { (img, info) in
+                    edit.photoSize = asst.fitSize()
+                    edit.img = img
+                    self.navigationController?.pushViewController(edit, animated: true)
+                })
+            }
         }
         return
         if self.titleView.isSelected{

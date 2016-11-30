@@ -16,6 +16,8 @@ class PhotoFilterBar: UIView {
     
     var img: UIImage!{
         didSet{
+            
+            collectionView.register(UINib.init(nibName: "PhotoFilterCell", bundle: nil), forCellWithReuseIdentifier: "PhotoFilterCell")
             var v = [FiltItem]()
             for i in 0..<10 {
               let i = FiltItem(img: img, filter:filters[i])
