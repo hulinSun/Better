@@ -76,10 +76,10 @@ class PhotoEditController: UIViewController {
     
     
     private func response(){
-        
         editBar.nextClosure = { [unowned self] in
             print("点击了下一步")
             let filterVC = PhotoFilterController()
+            filterVC.img = self.img
             self.navigationController?.pushViewController(filterVC, animated: true)
         }
         

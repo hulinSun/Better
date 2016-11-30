@@ -21,7 +21,12 @@ class PhotoFilterController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        
+    }
+    
+    var img: UIImage!{
+        didSet{
+            filterBar.img = img
+        }
     }
     
     
@@ -32,8 +37,6 @@ class PhotoFilterController: UIViewController {
             make.right.left.bottom.equalToSuperview()
             make.height.equalTo(290)
         }
-        
-        
     }
 
     override func didReceiveMemoryWarning() {

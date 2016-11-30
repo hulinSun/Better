@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import GPUImage
 
 class PhotoItemButton: UIButton {
     override init(frame: CGRect) {
@@ -38,16 +38,28 @@ class PhotoItemButton: UIButton {
     
 }
 
+struct FiltItem {
+    var img: UIImage
+    var filter: BasicOperation
+}
 
 class PhotoFilterCell: UICollectionViewCell {
 
     @IBOutlet weak var nameLabel: UILabel!
-    
     @IBOutlet weak var iconView: UIImageView!{
         didSet{
             iconView.layer.cornerRadius = 2
             iconView.clipsToBounds = true
             iconView.backgroundColor = UIColor.random()
+        }
+    }
+    
+    var item: FiltItem?{
+        didSet{
+            guard let  toonFilter = self.item?.filter else { return }
+            if let filteredImage = self.item?.img.filterWithOperation(toonFilter){
+                self.iconView.image = filteredImage
+            }
         }
     }
     override func awakeFromNib() {
