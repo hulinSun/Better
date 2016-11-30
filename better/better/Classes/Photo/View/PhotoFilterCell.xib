@@ -45,7 +45,11 @@
                 <constraint firstAttribute="trailing" secondItem="IF1-Eq-NdJ" secondAttribute="trailing" constant="5" id="xgV-9v-A1C"/>
             </constraints>
             <size key="customSize" width="113" height="140"/>
-            <point key="canvasLocation" x="78.5" y="112"/>
+            <connections>
+                <outlet property="iconView" destination="IF1-Eq-NdJ" id="cTI-nr-1Jk"/>
+                <outlet property="nameLabel" destination="gVg-af-EZO" id="qaj-pE-q1V"/>
+            </connections>
+            <point key="canvasLocation" x="45" y="-67"/>
         </collectionViewCell>
     </objects>
 </document>

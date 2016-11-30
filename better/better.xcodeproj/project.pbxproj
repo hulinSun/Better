@@ -31,6 +31,7 @@
 		FE84BA291DEE6F6E005229E4 /* PhotoFilterBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE84BA281DEE6F6E005229E4 /* PhotoFilterBar.xib */; };
 		FE84BA2C1DEE7A9D005229E4 /* PhotoFilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE84BA2A1DEE7A9D005229E4 /* PhotoFilterCell.swift */; };
 		FE84BA2D1DEE7A9D005229E4 /* PhotoFilterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE84BA2B1DEE7A9D005229E4 /* PhotoFilterCell.xib */; };
+		FE84BA2F1DEE7DE0005229E4 /* UIView+IBIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE84BA2E1DEE7DE0005229E4 /* UIView+IBIn.swift */; };
 		FE8522241DB9E07F00C0E2C1 /* BetterRefreshFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8522211DB9E07F00C0E2C1 /* BetterRefreshFooter.swift */; };
 		FE8522251DB9E07F00C0E2C1 /* BetterRefreshHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8522221DB9E07F00C0E2C1 /* BetterRefreshHeader.swift */; };
 		FE8522261DB9E07F00C0E2C1 /* UIScrollView+Refresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8522231DB9E07F00C0E2C1 /* UIScrollView+Refresh.swift */; };
@@ -157,6 +158,7 @@
 		FE84BA281DEE6F6E005229E4 /* PhotoFilterBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoFilterBar.xib; sourceTree = "<group>"; };
 		FE84BA2A1DEE7A9D005229E4 /* PhotoFilterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoFilterCell.swift; sourceTree = "<group>"; };
 		FE84BA2B1DEE7A9D005229E4 /* PhotoFilterCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoFilterCell.xib; sourceTree = "<group>"; };
+		FE84BA2E1DEE7DE0005229E4 /* UIView+IBIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+IBIn.swift"; sourceTree = "<group>"; };
 		FE8522211DB9E07F00C0E2C1 /* BetterRefreshFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BetterRefreshFooter.swift; sourceTree = "<group>"; };
 		FE8522221DB9E07F00C0E2C1 /* BetterRefreshHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BetterRefreshHeader.swift; sourceTree = "<group>"; };
 		FE8522231DB9E07F00C0E2C1 /* UIScrollView+Refresh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Refresh.swift"; sourceTree = "<group>"; };
@@ -414,6 +416,7 @@
 				FE2A2D271DD55C7F00136E4A /* UINavigationBar+line.swift */,
 				FEFE21C71DEBDEA000634523 /* UIImage+extension.swift */,
 				FEFE21CB1DEBDFAE00634523 /* PHAsset+extension.swift */,
+				FE84BA2E1DEE7DE0005229E4 /* UIView+IBIn.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -944,6 +947,7 @@
 				FEBB07691DC88ECE00FF4989 /* ConstraintItem.swift in Sources */,
 				FEBB077B1DC88ECE00FF4989 /* ConstraintView.swift in Sources */,
 				FE558CAC1DC2FA3E00AC15B3 /* UIBarButtonItem+item.swift in Sources */,
+				FE84BA2F1DEE7DE0005229E4 /* UIView+IBIn.swift in Sources */,
 				FE8522291DB9E0B000C0E2C1 /* CAShapeLayer+AnimateText.m in Sources */,
 				FE19FFBD1DD028A90090C194 /* DiscoverSingleController.swift in Sources */,
 				FEF0B56B1DC05B18000C632C /* HomeHttpHelper.swift in Sources */,
