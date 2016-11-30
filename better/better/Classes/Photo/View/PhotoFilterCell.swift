@@ -8,6 +8,36 @@
 
 import UIKit
 
+
+class PhotoItemButton: UIButton {
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setup()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setup()
+    }
+    
+    func setup() {
+        setTitleColor(UIColor.lightGray, for: .normal)
+        setTitleColor(UIConst.themeColor, for: .selected)
+        imageView?.contentMode = .center
+        titleLabel?.font = UIFont.systemFont(ofSize: 14)
+    }
+    
+    override func titleRect(forContentRect contentRect: CGRect) -> CGRect {
+        return CGRect(x: 0, y: contentRect.height * 0.7, width: contentRect.width, height: contentRect.height * 3)
+    }
+    
+    override func imageRect(forContentRect contentRect: CGRect) -> CGRect {
+        return CGRect(x: 0, y: 0, width: contentRect.width, height: contentRect.height * 0.6)
+    }
+    
+}
+
+
 class PhotoFilterCell: UICollectionViewCell {
 
     @IBOutlet weak var nameLabel: UILabel!
