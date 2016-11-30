@@ -8,6 +8,7 @@
 
 import UIKit
 import GPUImage
+import AVFoundation
 
 class PhotoFilterController: UIViewController {
 
@@ -20,6 +21,7 @@ class PhotoFilterController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        
     }
     
     
@@ -30,6 +32,7 @@ class PhotoFilterController: UIViewController {
             make.right.left.bottom.equalToSuperview()
             make.height.equalTo(290)
         }
+        
         
     }
 
