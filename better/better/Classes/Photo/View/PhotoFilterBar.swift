@@ -12,13 +12,12 @@ class PhotoFilterBar: UIView {
 
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var filterBtn: PhotoItemButton!
-    
-    let filters: [BasicOperation] = [ZoomBlur(),MotionBlur(),MonochromeFilter(),SepiaToneFilter(),ThresholdSketchFilter(),EmbossFilter(),ZoomBlur(),ZoomBlur(),ZoomBlur()]
+    let filters: [BasicOperation] = [ZoomBlur(),MotionBlur(),MonochromeFilter(),SepiaToneFilter(),ThresholdSketchFilter(),EmbossFilter(),EmbossFilter(),BulgeDistortion(),SketchFilter(),BulgeDistortion()]
     
     var img: UIImage!{
         didSet{
             var v = [FiltItem]()
-            for i in 0..<8 {
+            for i in 0..<10 {
               let i = FiltItem(img: img, filter:filters[i])
                 v.append(i)
             }
@@ -75,7 +74,7 @@ extension PhotoFilterBar: UICollectionViewDelegate , UICollectionViewDataSource{
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 6
+        return datas?.count ?? 0
     }
     
 }
