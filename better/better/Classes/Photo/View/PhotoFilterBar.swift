@@ -12,7 +12,10 @@ class PhotoFilterBar: UIView {
 
     @IBOutlet weak var collectionView: UICollectionView!
     
+    @IBOutlet weak var filterBtn: PhotoItemButton!
+    
     @IBAction func leftBtnClick(_ sender: Any) {
+        
     }
 
     @IBAction func nextClick(_ sender: Any) {
@@ -28,6 +31,7 @@ class PhotoFilterBar: UIView {
     
     
     private func setupUI(){
+        
         collectionView.register(UINib.init(nibName: "PhotoFilterCell", bundle: nil), forCellWithReuseIdentifier:"PhotoFilterCell")
         collectionView.delegate = self
         collectionView.dataSource = self

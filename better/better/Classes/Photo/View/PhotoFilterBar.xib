@@ -41,7 +41,9 @@
                                 <constraint firstAttribute="height" constant="30" id="6C0-im-FvH"/>
                                 <constraint firstAttribute="width" constant="46" id="Xyo-1C-dWv"/>
                             </constraints>
-                            <state key="normal" title="下一部"/>
+                            <state key="normal" title="下一步">
+                                <color key="titleColor" red="0.92549019607843142" green="0.32156862745098036" blue="0.32156862745098036" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
                             <connections>
                                 <action selector="nextClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="yGU-TH-Vj6"/>
                             </connections>
@@ -153,6 +155,7 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="collectionView" destination="YEk-pb-Z1b" id="wAh-s8-tyJ"/>
+                <outlet property="filterBtn" destination="S0e-Km-d1I" id="gM7-vU-SLs"/>
             </connections>
             <point key="canvasLocation" x="153.5" y="-491"/>
         </view>

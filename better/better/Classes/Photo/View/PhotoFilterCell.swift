@@ -25,15 +25,16 @@ class PhotoItemButton: UIButton {
         setTitleColor(UIConst.themeColor, for: .selected)
         imageView?.contentMode = .center
         titleLabel?.font = UIFont.systemFont(ofSize: 14)
+        
     }
     
-    override func titleRect(forContentRect contentRect: CGRect) -> CGRect {
-        return CGRect(x: 0, y: contentRect.height * 0.7, width: contentRect.width, height: contentRect.height * 3)
-    }
-    
-    override func imageRect(forContentRect contentRect: CGRect) -> CGRect {
-        return CGRect(x: 0, y: 0, width: contentRect.width, height: contentRect.height * 0.6)
-    }
+//    override func titleRect(forContentRect contentRect: CGRect) -> CGRect {
+//        return CGRect(x: 0, y: contentRect.height * 0.6, width: contentRect.width, height: contentRect.height * 3)
+//    }
+//    
+//    override func imageRect(forContentRect contentRect: CGRect) -> CGRect {
+//        return CGRect(x: 0, y: 0, width: contentRect.width, height: contentRect.height * 0.6)
+//    }
     
 }
 
