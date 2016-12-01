@@ -57,6 +57,7 @@ class PhotoFilterBar: UIView {
     
     
     private func setupUI(){
+        filterBtn.isSelected = true
         collectionView.register(UINib.init(nibName: "PhotoFilterCell", bundle: nil), forCellWithReuseIdentifier:"PhotoFilterCell")
         collectionView.delegate = self
         collectionView.dataSource = self

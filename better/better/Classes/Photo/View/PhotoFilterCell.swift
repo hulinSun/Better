@@ -21,11 +21,13 @@ class PhotoItemButton: UIButton {
     }
     
     func setup() {
+        
         setTitleColor(UIColor.lightGray, for: .normal)
         setTitleColor(UIConst.themeColor, for: .selected)
         imageView?.contentMode = .center
         titleLabel?.font = UIFont.systemFont(ofSize: 14)
-        
+        imageEdgeInsets = UIEdgeInsetsMake(-25, 0, 0, 0)
+        titleEdgeInsets = UIEdgeInsetsMake(35, -50, 0, 0)
     }
     
 //    override func titleRect(forContentRect contentRect: CGRect) -> CGRect {
@@ -45,7 +47,11 @@ struct FiltItem {
 
 class PhotoFilterCell: UICollectionViewCell {
 
-    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!{
+        didSet{
+            nameLabel.textColor = UIColor.rgb(red: 110, green: 110, blue: 110)
+        }
+    }
     @IBOutlet weak var iconView: UIImageView!{
         didSet{
             iconView.layer.cornerRadius = 2

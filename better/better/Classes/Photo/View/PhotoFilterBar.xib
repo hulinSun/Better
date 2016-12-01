@@ -85,7 +85,7 @@
                             </state>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KgV-zf-9Qc" customClass="PhotoItemButton" customModule="better" customModuleProvider="target">
-                            <rect key="frame" x="231" y="2.5" width="60" height="70"/>
+                            <rect key="frame" x="241" y="2.5" width="60" height="70"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <state key="normal" title="标签" image="btn_publish_tag">
                                 <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -97,6 +97,7 @@
                             <state key="normal" title="滤镜" image="btn_publish_filter">
                                 <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <state key="selected" image="btn_publish_filter_selected"/>
                             <connections>
                                 <action selector="barClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="qqW-GR-QkR"/>
                             </connections>
@@ -119,7 +120,7 @@
                         <constraint firstItem="KgV-zf-9Qc" firstAttribute="width" secondItem="KU2-aF-vhu" secondAttribute="width" id="KxB-cy-M2d"/>
                         <constraint firstAttribute="height" constant="75" id="Mts-jG-cI1"/>
                         <constraint firstItem="S0e-Km-d1I" firstAttribute="width" secondItem="KU2-aF-vhu" secondAttribute="width" id="afP-Ws-Ams"/>
-                        <constraint firstAttribute="trailing" secondItem="KgV-zf-9Qc" secondAttribute="trailing" constant="40" id="bA7-g1-tHE"/>
+                        <constraint firstAttribute="trailing" secondItem="KgV-zf-9Qc" secondAttribute="trailing" constant="30" id="bA7-g1-tHE"/>
                         <constraint firstItem="6k5-Id-Xmt" firstAttribute="top" secondItem="ge0-iO-9H0" secondAttribute="top" constant="1" id="hHc-K9-KeD"/>
                         <constraint firstItem="S0e-Km-d1I" firstAttribute="centerY" secondItem="KU2-aF-vhu" secondAttribute="centerY" id="hye-af-Pov"/>
                         <constraint firstItem="S0e-Km-d1I" firstAttribute="leading" secondItem="ge0-iO-9H0" secondAttribute="leading" constant="40" id="kPS-Ry-bxQ"/>
@@ -164,6 +165,7 @@
         <image name="btn_publish_attach" width="26" height="25"/>
         <image name="btn_publish_back_dark" width="10" height="19"/>
         <image name="btn_publish_filter" width="23" height="26"/>
+        <image name="btn_publish_filter_selected" width="23" height="26"/>
         <image name="btn_publish_tag" width="23" height="23"/>
     </resources>
 </document>
