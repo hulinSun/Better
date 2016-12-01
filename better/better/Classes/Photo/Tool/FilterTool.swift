@@ -26,7 +26,7 @@ class FilterTool: NSObject {
         "晕影": Vignette(),
         "水晶球": GlassSphereRefraction()
     ]
-    static let types: [String] = ["复古","HDR","优格","卡通","素描","Box","水粉画","浮雕","朦胧","Threshold","晕影","水晶球"]
+    static let types: [String] = ["复古","HDR","优格","晕影","Box","水粉画","朦胧","怀旧","水晶球","Gamma","素描","浮雕"]
     
     static var arr = [UIImage]()
     
@@ -34,19 +34,18 @@ class FilterTool: NSObject {
     
     class func allFilterd(with image: UIImage) -> [UIImage] {
         if arr.isEmpty {
-            
             arr.append(self.softElegance(with: image,big: true))
             arr.append(self.missEtikate(with: image,big: true))
             arr.append(self.amatorka(with: image,big: true))
-            arr.append(self.smoothToon(with: image,big: true))
-            arr.append(self.sketch(with: image,big: true))
+            arr.append(self.vignette(with: image,big: true))
             arr.append(self.boxBlur(with: image,big: true))
             arr.append(self.kuwahara(with: image,big: true))
-            arr.append(self.emboss(with: image,big: true))
             arr.append(self.haze(with: image,big: true))
             arr.append(self.thresholdSketch(with: image,big: true))
-            arr.append(self.vignette(with: image,big: true))
+            arr.append(self.smoothToon(with: image,big: true))
             arr.append(self.glassSphereRefraction(with: image,big: true))
+            arr.append(self.sketch(with: image,big: true))
+            arr.append(self.emboss(with: image,big: true))
         }
         return arr
     }
@@ -57,15 +56,15 @@ class FilterTool: NSObject {
             small.append(self.softElegance(with: image,big: false))
             small.append(self.missEtikate(with: image,big: false))
             small.append(self.amatorka(with: image,big: false))
-            small.append(self.smoothToon(with: image,big: false))
-            small.append(self.sketch(with: image,big: false))
+            small.append(self.vignette(with: image,big: false))
             small.append(self.boxBlur(with: image,big: false))
             small.append(self.kuwahara(with: image,big: false))
-            small.append(self.emboss(with: image,big: false))
             small.append(self.haze(with: image,big: false))
             small.append(self.thresholdSketch(with: image,big: false))
-            small.append(self.vignette(with: image,big: false))
+            small.append(self.smoothToon(with: image,big: false))
             small.append(self.glassSphereRefraction(with: image,big: false))
+            small.append(self.sketch(with: image,big: false))
+            small.append(self.emboss(with: image,big: false))
         }
         return small
     }
@@ -104,10 +103,19 @@ class FilterTool: NSObject {
         let filteredImage = new.filterWithOperation(toonFilter)
         return filteredImage
     }
+    
+    
+    /// 晕影
+    class func vignette(with image: UIImage, big: Bool ) -> UIImage {
+        let new = self.realImage(with: image, big: big)
+        let toonFilter = Vignette()
+        let filteredImage = new.filterWithOperation(toonFilter)
+        return filteredImage
+    }
     /// 卡通
     class func smoothToon(with image: UIImage, big: Bool ) -> UIImage {
         let new = self.realImage(with: image, big: big)
-        let toonFilter = SmoothToonFilter()
+        let toonFilter = GammaAdjustment()
         let filteredImage = new.filterWithOperation(toonFilter)
         return filteredImage
     }
@@ -150,23 +158,13 @@ class FilterTool: NSObject {
         return filteredImage
     }
     
-    
-    //FIXME: XX
-    /// 桑园
     class func thresholdSketch(with image: UIImage, big: Bool ) -> UIImage {
         let new = self.realImage(with: image, big: big)
-        let toonFilter = ThresholdSketchFilter()
+        let toonFilter = SepiaToneFilter()
         let filteredImage = new.filterWithOperation(toonFilter)
         return filteredImage
     }
     
-    /// 晕影
-    class func vignette(with image: UIImage, big: Bool ) -> UIImage {
-        let new = self.realImage(with: image, big: big)
-        let toonFilter = Vignette()
-        let filteredImage = new.filterWithOperation(toonFilter)
-        return filteredImage
-    }
     
     /// 水晶球
     class func glassSphereRefraction(with image: UIImage, big: Bool ) -> UIImage {
