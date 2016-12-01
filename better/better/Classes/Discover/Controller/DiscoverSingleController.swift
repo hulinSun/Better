@@ -105,6 +105,7 @@ class DiscoverSingleController: UIViewController {
         let i = UICollectionView(frame: .zero, collectionViewLayout: self.bottomLayout)
         return i
     }()
+    
     fileprivate lazy var bottomLayout: UICollectionViewFlowLayout = {
         let i = UICollectionViewFlowLayout()
         return i
