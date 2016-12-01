@@ -18,10 +18,16 @@ class PhotoFilterBar: UIView {
     
     var leftClickClo: leftClosure?
     var clickItemClo: clickItemClosure?
-    
     var img: UIImage!{
         didSet{
-            
+            let arr = FilterTool.smallFilterd(with: img)
+            let types = FilterTool.types
+            var temp = [FiltItem]()
+            for i in 0..<arr.count{
+                let t = FiltItem(img: arr[i], name: types[i])
+                temp.append(t)
+            }
+            datas = temp
         }
     }
     
@@ -67,11 +73,12 @@ extension PhotoFilterBar: UICollectionViewDelegate , UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoFilterCell", for: indexPath) as! PhotoFilterCell
+        cell.item = datas?[indexPath.item]
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return datas?.count ?? 10
+        return datas?.count ?? 0
     }
     
 }

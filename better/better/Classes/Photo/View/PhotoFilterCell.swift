@@ -40,7 +40,7 @@ class PhotoItemButton: UIButton {
 
 struct FiltItem {
     var img: UIImage
-    var filter: BasicOperation
+    var name: String
 }
 
 class PhotoFilterCell: UICollectionViewCell {
@@ -50,12 +50,20 @@ class PhotoFilterCell: UICollectionViewCell {
         didSet{
             iconView.layer.cornerRadius = 2
             iconView.clipsToBounds = true
+            iconView.contentMode = .scaleAspectFill
             iconView.backgroundColor = UIColor.random()
         }
     }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+    }
+    
+    var item: FiltItem?{
+        didSet{
+            iconView.image = item?.img
+            nameLabel.text = item?.name
+        }
     }
 
 }

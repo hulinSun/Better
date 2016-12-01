@@ -15,6 +15,8 @@ class PhotoFilterController: UIViewController {
     
     fileprivate lazy var imgView: UIImageView = {
         let i = UIImageView()
+        i.contentMode = .scaleAspectFill
+        i.clipsToBounds = true
         return i
     }()
     
@@ -54,7 +56,8 @@ class PhotoFilterController: UIViewController {
         
         filterBar.clickItemClo = { [unowned self] idx in
             print("点击了\(idx.item) 个")
-            self.imgView.image = FilterTool.softElegance(with: self.img)
+            self.imgView.image = FilterTool.filterdImage(at: idx.item, img: self.img)
+//            self.imgView.image = FilterTool.screenBlend(with: self.img)
         }
         filterBar.snp.makeConstraints { (make) in
             make.right.left.bottom.equalToSuperview()
