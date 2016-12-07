@@ -8,12 +8,15 @@
 
 import Foundation
 
-extension DispatchQueue{
-    public func after(delay: TimeInterval, execute closure: @escaping () -> ()) {
-        asyncAfter(deadline: .now() + delay, execute: closure)
+
+
+public func delay(_ delay: Double, closure: @escaping (Void) -> Void) {
+    
+    let delayTime = DispatchTime.now() + DispatchTimeInterval.seconds(Int(delay))
+    DispatchQueue.main.asyncAfter(deadline: delayTime) {
+        closure()
     }
 }
-
 
 public extension DispatchQueue {
     

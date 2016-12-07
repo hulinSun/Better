@@ -8,12 +8,18 @@
 
 import UIKit
 
+
+
 class PlayerController: UIViewController {
 
     
     override var prefersStatusBarHidden: Bool{
+
         return true
+        
     }
+    
+    
     
     fileprivate lazy var playView: PlayerView = {
         let i = PlayerView()
