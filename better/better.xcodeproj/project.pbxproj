@@ -43,6 +43,8 @@
 		FE8522291DB9E0B000C0E2C1 /* CAShapeLayer+AnimateText.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8522281DB9E0B000C0E2C1 /* CAShapeLayer+AnimateText.m */; };
 		FE96E2021DCB285100D28F0B /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE96E2001DCB285100D28F0B /* HomeCell.swift */; };
 		FE96E2031DCB285100D28F0B /* HomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE96E2011DCB285100D28F0B /* HomeCell.xib */; };
+		FE9FE50B1DF7B217002647A6 /* PlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9FE50A1DF7B217002647A6 /* PlayerController.swift */; };
+		FE9FE50D1DF7B262002647A6 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9FE50C1DF7B262002647A6 /* PlayerView.swift */; };
 		FEA0CAB91DAF959100BF6766 /* AppDelegate+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA0CAB81DAF959100BF6766 /* AppDelegate+Extension.swift */; };
 		FEA0CABD1DAF972A00BF6766 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA0CABC1DAF972A00BF6766 /* MainNavigationController.swift */; };
 		FEA0CABF1DAF97BE00BF6766 /* MainTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA0CABE1DAF97BE00BF6766 /* MainTabbarController.swift */; };
@@ -197,6 +199,8 @@
 		FE889D611DE8134F00D3D0CA /* GPUImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GPUImage.framework; path = "../../../Library/Developer/Xcode/DerivedData/better-bklqnxerlmxkntdcamjqgjisnyfl/Build/Products/Debug-iphoneos/GPUImage.framework"; sourceTree = "<group>"; };
 		FE96E2001DCB285100D28F0B /* HomeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
 		FE96E2011DCB285100D28F0B /* HomeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeCell.xib; sourceTree = "<group>"; };
+		FE9FE50A1DF7B217002647A6 /* PlayerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerController.swift; sourceTree = "<group>"; };
+		FE9FE50C1DF7B262002647A6 /* PlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		FEA0CAB81DAF959100BF6766 /* AppDelegate+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Extension.swift"; sourceTree = "<group>"; };
 		FEA0CABC1DAF972A00BF6766 /* MainNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
 		FEA0CABE1DAF97BE00BF6766 /* MainTabbarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabbarController.swift; sourceTree = "<group>"; };
@@ -344,6 +348,7 @@
 				FE63AE161DB087190047F66E /* PhotoViewController.swift */,
 				FEDC76241DE8251100699E49 /* PhotoEditController.swift */,
 				FE84BA241DEE6F28005229E4 /* PhotoFilterController.swift */,
+				FE9FE50A1DF7B217002647A6 /* PlayerController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -367,6 +372,7 @@
 		FE63AE151DB087050047F66E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FE9FE50C1DF7B262002647A6 /* PlayerView.swift */,
 				FE4AA40F1DD4746B001D88C6 /* PhotoGridCell.swift */,
 				FEC325FD1DE427F20091FC05 /* PhotoGroupCell.swift */,
 				FEC325FE1DE427F20091FC05 /* PhotoGroupCell.xib */,
@@ -935,6 +941,7 @@
 				FEA0CABD1DAF972A00BF6766 /* MainNavigationController.swift in Sources */,
 				FEBB07671DC88ECE00FF4989 /* ConstraintInsets.swift in Sources */,
 				FEB91C3B1DD088D6007962BA /* HotRecommondCell.swift in Sources */,
+				FE9FE50D1DF7B262002647A6 /* PlayerView.swift in Sources */,
 				FEA0CABF1DAF97BE00BF6766 /* MainTabbarController.swift in Sources */,
 				FEF0B55F1DC046C6000C632C /* String+Directionary.swift in Sources */,
 				FE63AE0E1DB079460047F66E /* MainTabbar.swift in Sources */,
@@ -962,6 +969,7 @@
 				FE8522261DB9E07F00C0E2C1 /* UIScrollView+Refresh.swift in Sources */,
 				FEBB076F1DC88ECE00FF4989 /* ConstraintMaker.swift in Sources */,
 				FEBB073D1DC8875800FF4989 /* UIColor+hex.swift in Sources */,
+				FE9FE50B1DF7B217002647A6 /* PlayerController.swift in Sources */,
 				FE19FF9B1DD01B540090C194 /* Single.swift in Sources */,
 				FEF0B5751DC08A9B000C632C /* String+Extension.swift in Sources */,
 				FEFE5C1D1DC2000F00AD5D5E /* PictureProtocol.swift in Sources */,

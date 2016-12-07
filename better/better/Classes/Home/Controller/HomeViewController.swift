@@ -132,6 +132,8 @@ class HomeViewController: UIViewController {
     
     func giftClearClick() {
         print("点击了右边礼物")
+        let i = PlayerController()
+        present(i, animated: true)
     }
 }
 
